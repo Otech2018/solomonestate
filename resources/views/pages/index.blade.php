@@ -192,6 +192,7 @@
 			<div class="bordered">
 			</div>
 		</div>
+		<p></p>
 		<div class="owl-carousel agents-slider">
 			<div class="single-agent">
 				<div class="image-box">
@@ -211,12 +212,12 @@
 						<i class="fa fa-phone"></i> 900 123 456 789
 					</p>
 					<p class="person-email">
-						<i class="fa fa-envelope"></i> agent@solomonsidea.ltd
+						<i class="fa fa-envelope"></i> agent@solomonsideas.ltd
 					</p>
 					<p class="person-fax">
-						<i class="fa fa-print"></i> 900 123 456 789
+						<i class="fa fa-user"></i> Sales Agent
 					</p>
-					<a href="#" class='gray-btn'>view full profile</a>
+					<a href="#" class='gray-btn'>Book Agent</a>
 				</div>
 			</div>
 			<div class="single-agent">
@@ -237,12 +238,12 @@
 						<i class="fa fa-phone"></i> 900 123 456 789
 					</p>
 					<p class="person-email">
-						<i class="fa fa-envelope"></i> agent@solomonsidea.ltd
+						<i class="fa fa-envelope"></i> agent@solomonsideas.ltd
 					</p>
 					<p class="person-fax">
-						<i class="fa fa-print"></i> 900 123 456 789
+						<i class="fa fa-user"></i> Rental Agent
 					</p>
-					<a href="#" class='gray-btn'>view full profile</a>
+					<a href="#" class='gray-btn'>Book Agent</a>
 				</div>
 			</div>
 			<div class="single-agent">
@@ -263,12 +264,12 @@
 						<i class="fa fa-phone"></i> 900 123 456 789
 					</p>
 					<p class="person-email">
-						<i class="fa fa-envelope"></i> agent@solomonsidea.ltd
+						<i class="fa fa-envelope"></i> agent@solomonsideas.ltd
 					</p>
 					<p class="person-fax">
-						<i class="fa fa-print"></i> 900 123 456 789
+						<i class="fa fa-user"></i> Sales Agent
 					</p>
-					<a href="#" class='gray-btn'>view full profile</a>
+					<a href="#" class='gray-btn'>Book Agent</a>
 				</div>
 			</div>
 			<div class="single-agent">
@@ -289,15 +290,18 @@
 						<i class="fa fa-phone"></i> 900 123 456 789
 					</p>
 					<p class="person-email">
-						<i class="fa fa-envelope"></i> agent@solomonsidea.ltd
+						<i class="fa fa-envelope"></i> agent@solomonsideas.ltd
 					</p>
 					<p class="person-fax">
-						<i class="fa fa-print"></i> 900 123 456 789
+						<i class="fa fa-user"></i> Rental Agent
 					</p>
-					<a href="#" class='gray-btn'>view full profile</a>
+					<a href="#" class='gray-btn'>Book Agent</a>
 				</div>
 			</div>
 		</div>
+			<center>
+<a href="{{route('our_team')}}" class="btn btn-success btn-lg">View All Our Agents</a>
+</center>
 	</div>
 </div>
 
@@ -314,6 +318,28 @@
 			</div>
 		</div>
 		<div class="owl-carousel agents-slider">
+
+
+			<div class="single-agent">
+				<div class="image-box">
+					<img src="img/agents/a12.jpg"  alt="agent">
+					<a  href="{{route('register')}}"  class="btn social-icons">
+						Get Started
+					</a>
+				</div>
+				<div class="desc-box">
+					<h4>Become Our Free Agent </h4>
+					<p class="person-number">
+						 waiting for the write up waiting for the write up
+						 waiting for the write up waiting for the write up
+						 waiting for the write up waiting for the write up
+						 waiting for the write up waiting for the write up
+					</p>
+					
+				</div>
+			</div>
+
+
 			<div class="single-agent">
 				<div class="image-box">
 					<img src="img/agents/a12.jpg"  alt="agent">
@@ -470,7 +496,7 @@
 				</div>
 				<a href="#" class='readmore'></a>
 			</div>
-			<div class="col-md-3 col-sm-12 single-service ot_ch">
+			<div class="col-md-3 single-service ot_ch">
 				<div class="bordered top-bordered">
 				</div>
 				<h4>Dedicated Server</h4>

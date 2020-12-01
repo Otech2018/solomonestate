@@ -3,80 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Country;
+use App\Models\State;
+use App\Models\Lga;
 
-class PageController extends Controller
+
+
+
+class UserFormController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    
     public function index()
     {
-        return view('pages.index');
+        //
     }
 
-
-    public function listing()
-    {
-        return view('pages.listing');
-    }
-
-
-    public function listing_details()
-    {
-        return view('pages.listing_details');
-    }
-
-    
-    public function contact_us()
-    {
-        return view('pages.contact_us');
-    }
-
-
-    public function our_team()
-    {
-        return view('pages.our_team');
-    }
-
-
-    public function agric_consult()
-    {
-        return view('pages.agric_consult');
-    }
-    
-
-    public function build_u()
-    {
-        return view('pages.build_u');
-    }
-    
-    public function sale_rent_property()
-    {
-        return view('pages.sale_rent_property');
-    }
-
-
-    public function pay_rent()
-    {
-        return view('pages.pay_rent');
-    }
-     
-
-
-    public function save_build()
-    {
-        return view('pages.save_build');
-    }
-     /**
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        //Salea / Rent Properties
+        $Countries = Country::all();
+        $states = State::all();
+        $lgas = Lga::all();
+        
+        return view('pages.sale_rent_properties_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**

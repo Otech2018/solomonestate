@@ -339,7 +339,9 @@ header #login-box a span {
   border-radius:5px;
 }
 .dropdown-menu li a {
-  color:#000 !important;
+  color:#fff !important;
+  border-bottom:2px Solid white !important;
+  background-color:green !important;
 }
 .navbar-nav.navbar-right:last-child {
   margin-top:15px;
@@ -962,7 +964,7 @@ footer .container .footer-newsletter input[type='submit'] {
 }
 .page-title-section .breadcrumb {
   margin-bottom:0;
-  background-color:rgba(58,186,255,0.9);
+  background-color:rgba(0,186,0,0.9);
 }
 .page-title-section .breadcrumb a {
   font-family:Roboto;

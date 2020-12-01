@@ -54,7 +54,7 @@
 				 SOLOMON'S IDEAS LTD (RC: 1718316) is just one company you can always and firmly
                   rely on any day, anytime when it comes to Real Estate matters. 
                   <br/><br/>
-                  We takes direct responsibility for any Land sold to you. This means that your 
+                  We take direct responsibility for any Land sold to you. This means that your 
                   investment is safe as we directly give you a Power of Attorney posing as the
                    Seller. We make it look so easy, the Seller/Landlord must give Solomon’s Ideas 
                    Ltd a conditional Power of Attorney which gives the company the power and position 
@@ -65,13 +65,13 @@
                    Be assured that Solomon’s Ideas Team do conduct a detailed investigation/search on 
                    properties before handing over your money to the seller. We deal on only genuine 
                    lands and properties,
-                    no more, no less. Your investment is 100% guaranteed.
+                    no more, no less. Your investment's Security is 100% guaranteed.
                 
                 </p>
 				<div class="info-wrapper" >
 					<span style="color:black;"><i class="fa fa-home"></i>119 ORLU ROAD, OWERRI.</span>
-					<br/><span style="color:black;"><i class="fa fa-phone"></i>+234 803 7735 915 </span>
-					<span style="color:black;"><i class="fa fa-envelope"></i> support@solomonsidea.ltd </span>
+					<br/><span style="color:black;"><i class="fa fa-phone"></i>+234 708 719 7054 </span>
+					<span style="color:black;"><i class="fa fa-envelope"></i> support@solomonsideas.ltd </span>
 				</div>
 				<div class="clearfix">
 				</div>
@@ -84,7 +84,7 @@
 					<div class="contact-form-left">
 						<span><i class='fa fa-user'></i></span><input type="text" name='name' placeholder='Name' id='name'>
 						<span><i class='fa fa-envelope-o'></i></span><input type="text" name='email' placeholder='e-mail' id='email'>
-						<span><i class='fa fa-link'></i></span><input type="text" name='website' placeholder='website' id='website'>
+						<span><i class='fa fa-phone'></i></span><input type="text" name='phone' placeholder='Phone' id='phone'>
 					</div>
 					<div class="contact-form-right">
 						<textarea id="message" name='message' placeholder='Message'></textarea>

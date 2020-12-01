@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Our Teams</h2>
+				<h2>Our Agents</h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
@@ -61,12 +61,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Sales Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -88,12 +88,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Sales Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -115,12 +115,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Rental Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -142,12 +142,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Sales Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -169,12 +169,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Rental Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -196,12 +196,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Sales Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -223,12 +223,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Rental Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 		<!-- single-agent -->
@@ -250,12 +250,12 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsidea.ltd
+					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-print"></i> 900 123 456 789
+					<i class="fa fa-user"></i> Sales Agent
 				</p>
-				<a href="#" class='gray-btn'>view full profile</a>
+				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
 	</div>

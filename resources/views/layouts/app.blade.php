@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="{{ asset('css/owl.theme.css')}}">
 <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css"/>
  <link rel="shortcut icon" href="img/logo1.png" />
+<link rel="stylesheet" href="{{asset('dropify/dist/css/dropify.min.css')}}"> 
+
 <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -44,7 +46,8 @@
 			<li><a href="#" class="fa fa-facebook"></a></li>
 		</ul>
 		<div id="login-box" class='pull-right'>
-			
+			<a href="#" class='btn btn-success'><span>Online Shop</span></a>
+							
 			@guest
 				<a href="{{route('login')}}" class='fa fa-user'><span>Login</span></a>
 				<a href="{{route('register')}}" class='fa fa-pencil'><span>Register</span></a>
@@ -82,7 +85,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="{{route('homepage')}}" style=" color:white !important; font-weight:bold;"><img src="{{ asset('img/logo1.png')}}" style="height:75px;" alt="logo">SOLOMON'S IDEA LTD</a>
+					<a class="navbar-brand" href="{{route('homepage')}}" style=" color:white !important; font-weight:bold;"><img src="{{ asset('img/logo1.png')}}" width="50px" height="50px" alt="logo">SOLOMON'S IDEAS LTD</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -97,6 +100,7 @@
 						<ul class="dropdown-menu">
 							{{-- <li><a href="#">About Us</a></li> --}}
 							<li><a href="{{route('our_team')}}">Our Team</a></li>
+							<li><a a href="{{route('contact_us')}}">contact			</a></li>
 							<li><a href="#">Our Project</a></li>
 							<li><a href="#">Our Gallery</a></li>
 						</ul>
@@ -106,24 +110,16 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Real Estate<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Virgin Lands For ale </a></li>
-							<li><a href="#">Buildings For Sale</a></li>
-							<li><a href="#">Estate Management </a></li>
-							<li><a href="#">To Let/Lease</a></li>
-							<li><a href="#">Book Our Sales Agents</a></li>
-							<li><a href="#">Book Our Rental Agents</a></li>
-							<li><a href="#">Sale Your Land/House Within Days</a></li>
-							
-							<li><a href="#">Let's Pay Your Rent</a></li>
-							<li><a href="#">Save To Buy Land </a></li>
-							<li><a href="#">Save To Build </a></li>
-							<li><a href="#">Homestead/Work Place Appliance Savings</a></li>
-							<li><a href="#">Auto Savings</a></li>
-							
-							<li><a href="#">Agric Consultancy</a></li>
+							<li><a href="{{route('listing')}}"> Lands/Buildings For Sale/Lease </a></li>
+							<li><a href="{{route('our_team')}}">Book Our Agent</a></li>
+							<li><a href="{{route('build_u')}}">Let's Build for you</a></li>
+							<li><a href="{{route('sale_rent_property')}}">Let's Sale/Rent Your Property For You  Within Days</a></li>
+							<li><a href="{{route('save_build')}}">Save To Build/Buy Land or Some Stuff </a></li>
+							<li><a href="{{route('save_build')}}">Auto Mobile Savings</a></li>
+							<li><a href="{{route('pay_rent')}}">Let's Pay your House Rent</a></li>
 						</ul>
 						</li>
-						<li class="@if(isset($contact_us)) active @endif"><a href="{{route('contact_us')}}">contact</a></li>
+						<li class="@if(isset($agric)) active @endif"><a href="{{route('agric_consult')}}">Agric Consultancy</a></li>
 						@guest
 						@else
 						<li class="dropdown">
@@ -148,8 +144,8 @@
 						</li>
 
 						@endguest
-
-						<li><a href="#!" class="btn btn-success">Online Shop</a></li>
+						
+						<li class="active" ><a href="{{route('pay_rent')}}" >Let's Pay Your Rent </a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -166,38 +162,42 @@
 
 <!-- footer-section -->
 <footer>
-<div class="container">
+<div class="container" >
 	<div class="col-md-3 footer-about">
-		<a class="logo" href="#"><img src="img/logo1.png" style="height:80px;" alt="logo"></a>
-		<p>
+		<a class="logo" href="#"><img src="{{ asset('img/logo1.png')}}" style="height:80px;" alt="logo"></a>
+		<p style="color:white !important; font-weight:normal;">
 			<b>SOLOMON'S IDEAS LTD </b>(RC: 1718316) is just one company you can always and 
 			firmly rely on any day,
 			 anytime when it comes to Real Estate matters.
 		</p>
 	</div>
-	<div class="col-md-3 footer-recent-posts">
+	<div class="col-md-3 footer-recent-posts" >
 		<h3 class='footer-title'>Links</h3>
 		<ul>
-			<li><a href="#"><i class="fa fa-arrow-circle-right"></i>  Terms And Conditions</a></li>
-			<li><a href="#"><i class="fa fa-arrow-circle-right"></i>   Privacy Policy</a></li>
-			<li><a href="{{route('homepage')}}"><i class="fa fa-arrow-circle-right"></i>  HomePage</a></li>
+			<li><a href="#" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  Terms And Conditions</a></li>
+			<li><a href="#" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>   Privacy Policy</a></li>
+			<li><a href="{{route('homepage')}}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  HomePage</a></li>
+			<li><a href="{{route('pay_rent')}}" class="btn btn-success" style="font-weight:normal;"  > Let's Pay Your Rent</a></li>
+			<li> .</li>
+			
+			<li><a href="#!" class="btn btn-primary" style="font-weight:normal;"  ><i class="fa fa-facebook"></i> We are on  FaceBook</a></li>
 		</ul>
 	</div>
 	<div class="col-md-3 footer-contact-info">
 		<h3 class='footer-title'>contact info</h3>
-		<p class="website-number">
-			<i class="fa fa-phone"></i> +234 803 7735 915
+		<p class="website-number" style="font-weight:normal;"  >
+			<i class="fa fa-phone"></i> +234 708 7197 054
 		</p>
-		<p class="website-email">
-			<i class="fa fa-envelope"></i> support@solomonsidea.ltd
+		<p class="website-email" style="font-weight:normal;"  >
+			<i class="fa fa-envelope"></i> support@solomonsideas.ltd
 		</p>
-		<p class="website-fax">
+		<p class="website-fax" style="font-weight:normal;"  >
 			<i class="fa fa-map-marker"></i> 119 ORLU ROAD, OWERRI.
 		</p>
 	</div>
 	<div class="col-md-3 footer-newsletter">
 		<h3 class='footer-title'>newsletter</h3>
-		<p>
+		<p style="font-weight:normal;"  >
 			 Let's Keep you Updated About Our Services and Other Information 
 			 by Subscribing to Our NewsLetter
 		</p>
@@ -212,7 +212,7 @@
 	<div class="container">
 		<div class="col-md-4">
 			<p class='pull-left'>
-				<b> © <?php echo date('Y')?> -{{config('app.name', "solomons Idea")}}
+				<b> © <?php echo date('Y')?> -{{config('app.name', "solomons Ideas")}}
 				</b>
 			</p>
 		</div>
@@ -239,6 +239,68 @@
 <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js')}}"></script>
 
 <script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
+ <script src="{{ asset('dropify/dist/js/dropify.min.js') }}"></script>
+ 
+<script>
+
+
+        $(document).ready(function(){
+            $("select.country").change(function(){
+                var selectedCountry = $(this).children("option:selected").val();
+               // alert("You have selected the country - " + selectedCountry);
+               if(selectedCountry == 162 ){
+                  $('#lga').hide(); $('#state').hide(); $('#state-list').show();$('#state-text').hide(); $('#lga-list').show();$('#lga-text').hide();
+                    //
+                     $('.state').attr('required','required'); 
+                     $('.lgaa').attr('required','required');  
+                    
+               }else{
+                 $('#lga').hide(); $('#state').hide(); $('#state-list').hide();$('#state-text').show(); $('#lga-list').hide();$('#lga-text').show();
+                  //
+                  $('.lgaa').removeAttr('required');
+                 $('.state').removeAttr('required');
+                }
+            });
+        });
+
+
+
+        $(document).ready(function(){
+            $("select.state").change(function(){
+                $('.lgaa').prop('selectedIndex', 0);
+                var selectedState = $(this).children("option:selected").val();
+
+                if(selectedState =='all'){
+                   $('.rankf').hide();   
+                 }else{
+                   $('.rankf').show();  
+                 }
+                $('.lga').attr('disabled','disabled');  $('.lga').hide();
+                $('.lgaClass'+selectedState).removeAttr('disabled'); 
+                 $('.lgaClass'+selectedState).show(); 
+                 if(selectedState =='all'){
+                   $('.rankf').hide();   
+                 }
+            });
+        });
+
+       
+
+   // Basic
+   // $('.dropify').dropify();
+   $('.dropify').dropify({
+   messages: {
+       'default': 'Drag and drop',
+       'replace': 'Drag and drop or click to replace',
+       'remove':  'Remove',
+       'error':   'Ooops, something wrong happended.'
+   }
+});
+
+
+
+</script>
+
 
 
 </body>
