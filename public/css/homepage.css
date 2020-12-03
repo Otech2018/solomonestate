@@ -1,0 +1,764 @@
+/* CSS exclusively for writersgig homepage */
+@font-face{
+    src: url(fonts/Poppins-Bold.9d82f769.ttf);
+    font-family: poppins;
+    font-weight: 900;
+}
+@font-face{
+    src: url(fonts/Poppins-SemiBold.ttf);
+    font-family: poppins;
+    font-weight: bold;
+}
+@font-face{
+    src: url(fonts/Poppins-Regular.ttf);
+    font-family: poppins;
+}
+
+:root{
+    --text-color: #7d7d7d;
+    --text-color2: #474747;
+    --deep-blue:#322983;
+    --bg-color: #f2f2f2;
+    --bg-color-white:#f9f9f9;
+    --blob-blue: #e1f5fe;
+    --btn-color: #4339f2;
+    --btn-color2:#717cff;
+    --btn-color3:#85d5f5;
+    --royal-pink:#ff0066;
+}
+
+body{
+    font-family: poppins,sans-serif;
+    font-weight: normal;
+    color: var(--text-color);
+    background: var(--bg-color-white);
+}
+
+.logo{
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--deep-blue);
+    text-decoration: none;
+    transition: 400ms ease;
+}
+.logo:hover{text-decoration: none;}
+.logo-img{
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.wg-main{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wg-header{
+    background: var(--bg-color-white);
+    transition: 400ms ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.wg-ctn{
+    width: 100%;
+    max-width: 1360px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.wg-section-heading{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color2);
+}
+
+.wg-header-link{color: var(--bg-color-white) !important;transition: 400ms ease;}
+
+.wg-header-link.sticky{color: var(--deep-blue) !important;}
+
+.wg-header-link.sticky.btn-outline-dark:hover{color: var(--bg-color-white) !important;}
+.wg-nav-link {
+    margin: 0 15px 0 0;
+}
+.wg-nav-link-lm{
+    margin: 0 5px 0 0;
+}
+.wg-home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wg-home-bg{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+                url(img/landing_page_image.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -10;
+}
+.wg-home-ctn{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wg-home-text{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-color);
+    margin: 25vh auto 0 auto;
+}
+
+.wg-home-heading{
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+.wg-home-heading .wg-focus-text{
+    display: inline-block;
+    color: var(--btn-color);
+}
+.wg-home-sub-heading{
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+.wg-home-cta{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.wg-home-btn{
+    margin: 10px 20px;
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+.wg-home-image-ctn{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 400px;
+    margin: 50px 0 15px 0;
+}
+
+.wg-home-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wg-platform{
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+.wg-platform-ctn,.wg-cms-ctn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10vh 0;
+}
+
+.wg-platform-svg,.wg-cms-svg{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 45%;
+    min-width: 300px;
+    height: 100%;
+    z-index: -10;
+    transform: scale(1.5);
+}
+.wg-section-header-ctn{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.wg-platform-card-ctn,.wg-blog-card-ctn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto !important;
+}
+
+.wg-platform-card,.wg-blog-card{
+    width: 280px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.94rem;
+    background: #fff;
+    padding: 15px 10px;
+    margin:10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: 400ms ease;
+    cursor: pointer;
+}
+
+.wg-platform-card:hover,.wg-blog-card:hover{transform: scale(1.05);}
+.wg-platform-icon-ctn{
+    width: 50px;
+    height: 50px;
+    font-size: 17px;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 100vh;
+}
+
+.wg-platform-icon-ctn-one{background: var(--btn-color2);}
+.wg-platform-icon-ctn-two{background: rgb(247, 117, 139);}
+.wg-platform-icon-ctn-three{background: var(--btn-color);}
+.wg-platform-card-title{
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+.wg-cms,.wg-testimonial,.wg-blog,.wg-offers{
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    margin: 50px 0;
+}
+
+.wg-cms-svg{left: 0;}
+.wg-cms-ctn{margin: 5vh 0;}
+.wg-cms-image-ctn{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    overflow: hidden;
+    margin: 15px 0 10px 0;
+}
+.wg-cms-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wg-cms-adbox-ctn{width: 100%;margin: 20px auto;}
+.wg-cms-adbox{
+    position: relative;
+    width: 95%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.94rem;
+    background-color: var(--deep-blue);
+    color: var(--bg-color);
+    padding: 22px 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.wg-cms-adbox-icon-ctn{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    font-size: 100px;
+    color: rgba(0,0,0,0.18);
+    transform: scale(2);
+    z-index: 1;
+}
+
+.wg-cms-adbox-content{
+    width: 100%;
+    max-width: 700px;
+    z-index: 10;
+}
+.wg-adbox-heading{
+    display: block;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 5px 0 8px;
+    letter-spacing: 0.02rem;
+}
+.wg-adbox-btn,.wg-get-started-btn{
+    float: right;
+    clear: right;
+    width: 150px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.94rem;
+    outline: none;
+    text-decoration: none;
+    background: var(--bg-color);
+    color: var(--text-color2);
+    margin: 0 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: 400ms ease;
+}
+.wg-adbox-btn:hover{transform: scale(0.95);}
+
+.wg-testimonial-box,.wg-categories-box{
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.wg-testimonial-card{
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #fff;
+    padding: 25px 20px;
+    margin: 20px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.wg-testimonial-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.wg-testimonial-card-image{
+    float: left;
+    clear: left;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+}
+
+.wg-testimonial-card-text{
+    margin: 0 10px;
+    padding: 4px 10px;
+}
+.wg-paragraph-start{
+    text-align: start;
+}
+.wg-testimonial-card-name,.wg-categories-card-heading{font-weight: bold;color: var(--text-color2);}
+.wg-testimonial-card-title{display: block;}
+.wg-testimonial-card-paragraph{
+    margin: 10px 0 10px 0;
+}
+
+.wg-testimonial-controls{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.wg-testimonial-control-btn{
+    display: inline-block;
+    width: 10.6px;
+    height: 10.6px;
+    border-radius: 100vh;
+    background:rgb(207, 207, 207);
+    margin: 5px;
+    transition: 300ms ease;
+}
+
+.wg-testimonial-control-btn.wg-active{
+    background: var(--btn-color2);
+    transform: scale(1.24);
+}
+
+
+.wg-categories-card {
+	position: relative;
+	width: 260px;
+	height: 260px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 6px;
+	padding: 20px 10px;
+	margin: 10px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.wg-categories-card-top {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 400ms;
+}
+
+.wg-categories-card-img {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	color: #757575;
+	margin: 0 auto 10px auto;
+	transition: 400ms;
+}
+
+.wg-categories-card-title{color: var(--text-color2);}
+
+.wg-categories-card-bottom {
+	position: absolute;
+	bottom: -60%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 4px;
+	transition: 400ms;
+}
+
+.wg-categories-card-p,
+.wg-categories-card-btn {
+	text-align: center;
+}
+
+.wg-categories-card:hover .wg-categories-card-bottom {
+	bottom: 10%;
+}
+.wg-categories-card:hover .wg-categories-card-top {
+	top: 10%;
+}
+
+.wg-categories-card:hover .wg-categories-card-top .wg-categories-card-img {
+	transform: translateY(-60px);
+}
+
+
+
+.wg-subscribe{width: 100%;min-height: 60vh;background: #fff; margin:0 0 0 0;padding: 15vh 0;}
+
+.wg-subscribe-form{
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    border: none;
+}
+
+.wg-subscribe-form-control{
+    width: 100%;
+    height: 65px;
+    background: var(--bg-color);
+    padding: 15px 25px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.wg-subscribe-btn{
+    position: absolute;
+    top: 15%;
+    right: 0;
+    transform: translate(-10%,-5%);
+    width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--btn-color);
+    color: var(--bg-color);
+    outline: none;
+    border: none;
+    border-radius:5.6px;
+}
+
+.wg-blog-btn-ctn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 5px auto;
+}
+
+.wg-blog-card{width: 300px; padding: 0;justify-content: flex-start;}
+.wg-blog-card-image-ctn{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+}
+.wg-blog-card-image{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.wg-blog-card-text{
+    height:150px;
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+}
+.wg-blog-card-title{display: inline-block;font-weight: bold;color: var(--text-color2);padding: 10px 0;}
+.wg-btn-center{display: inline-block; text-align: center; margin: 0 auto;}
+
+
+.wg-get-started{
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    margin: 20px 0 0 0;
+}
+.wg-get-started::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--deep-blue);
+    z-index: -10;
+}
+
+.wg-get-started-ctn{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wg-get-started-box{
+    width: 100%;
+    max-width: 900px;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 25px 15px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.wg-get-started-heading{
+    width: 100%;
+    max-width: 500px;
+    text-align: start;
+}
+
+.wg-get-started-btn{
+    background: var(--deep-blue);
+    color: var(--bg-color);
+}
+.wg-get-started-btn:hover{color: white;transform: scale(0.95);}
+
+
+.wg-navbar-categories{
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.wg-navbar-nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: auto;
+    list-style: none;
+}
+.wg-navbar-nav::-webkit-scrollbar{
+    width: 0;
+}
+
+.wg-navbar-category-btn{
+    min-width: 120px;
+    border-radius: 50px;
+    margin: auto 5px;
+}
+
+.wg-cms-dashboard{
+    margin: 15vh auto 5vh auto;
+}
+
+.wg-offers-ctn{
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.wg-offers-aside{
+    flex: 1 1 auto;
+    width: 100%;
+    /* max-width: 260px; */
+    min-height: 80vh;
+    height: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid lightblue;
+    border-radius: 6px;
+}
+
+.wg-offers-main{
+    flex: 1 1 auto;
+    min-width: 300px;
+    max-width: 920px;
+    min-height: 80vh;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px auto;
+    /* border: 1px solid lightpink; */
+    border-radius: 6px;
+}
+
+.wg-offers-card{
+    width: 100%;
+    /* max-width: 300px; */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow:  0 0 10px rgba(0,0,0,0.1);
+}
+
+.wg-offers-card-img-ctn{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 6px 6px 0 0;
+}
+.wg-offers-card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.wg-offers-card-content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 5px;
+}
+.wg-offers-price{
+    position: absolute;
+    top: 19px;
+    right: 10px;
+    color: var(--btn-color);
+}
+.wg-offers-card-profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100vh;
+    object-fit: cover;
+    margin: 0 0 0 5px;
+}
+
+.wg-offers-card-name{
+    font-weight: bold;
+    margin: 5px;
+}
+
+.wg-offers-text{
+    padding: 4px 10px;
+}
+
+/* Styles below are for the footer section alone /FOOTER/ */
+.wg-footer{
+    background: var(--deep-blue);
+    color:var(--bg-color);
+    margin-bottom: 0;
+}
+
+.wg-footer-heading{
+    font-size: 1.2rem;
+    color: var(--blob-blue);
+    font-weight: bold;
+}
+
+.wg-footer-nav-link{
+    display: inline-block;
+    margin: 4px 0;
+    color: #ebebeb;
+    font-size: 0.94rem;
+}
+.wg-footer-nav-link-underline{text-decoration: underline;}
+.wg-footer-nav-link:hover{color: var(--bg-color);}
+
+@media (min-width:768px){
+    .wg-home-heading{
+        font-size:50px;
+    }
+    .wg-section-heading{
+        font-size: 30px;
+    }
+    .wg-home-sub-heading{
+        font-size: 20px;
+    }   
+}

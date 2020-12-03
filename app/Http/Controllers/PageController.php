@@ -58,6 +58,12 @@ class PageController extends Controller
     }
 
 
+    public function sale_rent_land()
+    {
+        return view('pages.sale_rent_land');
+    }
+
+
     public function pay_rent()
     {
         return view('pages.pay_rent');

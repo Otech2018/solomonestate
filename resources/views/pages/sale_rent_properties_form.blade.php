@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Register </h2>
+				<h2>Sale Property </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Register</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Sale Property</a>
 			</div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 		
             <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
-				<h1><b>LAND/HOUSE SALES REGISTRATION FORM</b></h1><hr/>
+				<h1><b>PROPERTY SALES/RENT REGISTRATION FORM</b></h1><hr/>
 				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
 
 
@@ -183,51 +183,30 @@
                         </div>
 
 
+                       
 
+                        
 
                         <div class=" row">
-                            <label class="col-md-3 col-form-label text-md-right">Type Of Property <span style="color:red;">*</span></label>
+                            <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
-                            <div class="col-md-7">
+                            <div class="col-md-3">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember2">
 
-
-
-                           <ul class="nav  nav-tabs" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link "  style="color:green;"  id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                                     LAND
-                                
-                                </a>
-                            </li>
-
-
-
-
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" style="color:green;" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                 BULIDING
-                                
-                                </a>
-                            </li>
-                            
-                            </ul>
-                            </div></div>
-                            <div class="tab-content" id="pills-tabContent">
-
-                                {{-- For land --}}
-                                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                        for land
-                                </div>
-
-
-
-                                    {{-- For BULIDING --}}
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                For BULIDING
-                                </div>
+                                    <label class="form-check-label btn btn-success" for="remember2" >
+                                       For Sale  
+                                    </label>
                            </div>
+
+
+                           <div class="col-md-3">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember3">
+
+                                    <label class="form-check-label btn btn-success" for="remember3" >
+                                       For Rent   
+                                    </label>
+                           </div>
+                        </div>
 
 
                     

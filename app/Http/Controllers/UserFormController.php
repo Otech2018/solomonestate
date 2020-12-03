@@ -37,7 +37,7 @@ class UserFormController extends Controller
      */
     public function create()
     {
-        //Salea / Rent Properties
+        //Sale Rent Properties
         $Countries = Country::all();
         $states = State::all();
         $lgas = Lga::all();
@@ -64,7 +64,12 @@ class UserFormController extends Controller
      */
     public function show($id)
     {
-        //
+        //Sale  Land
+        $Countries = Country::all();
+        $states = State::all();
+        $lgas = Lga::all();
+        
+        return view('pages.sale_rent_land_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**

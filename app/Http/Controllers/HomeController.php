@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(auth()->user()->user_group != 0){
+            return redirect( route('admin.dashboard'));
+        }else{
+            return view('home');
+        }
+        
     }
 }

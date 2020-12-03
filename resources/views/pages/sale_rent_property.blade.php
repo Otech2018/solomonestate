@@ -57,11 +57,7 @@
               etc. Solomon's Ideas makes it easier for you. We take so much burdens off your shoulders while 
               you seat back and get your rent money so effortlessly.
               <br/><br/>
-					From the comfort of your home or place of work, you can post the property you 
-                    desire to sell and have it sold within days. If you have scanned copies of your 
-                    valid ID card, a passport photo, the relevant land/house documents, pictures
-                     and short video clip of the property to be sold, then you're good to go. 
-                     <br/><br/>
+				
                      Simply fill our
                       <b>PROPERTY SALES FORM </b>
                       to put in your details, upload the documents, 
