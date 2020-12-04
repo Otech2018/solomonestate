@@ -49,11 +49,8 @@ Route::prefix('sax')->group(function(){
 	Route::resource('sub_gigs', App\Http\Controllers\Backend\SubCatController::class);
 	Route::resource('train', App\Http\Controllers\Backend\TrainingController::class);
 	Route::resource('lesson', App\Http\Controllers\Backend\LessonsController::class);
-	Route::resource('accessment', App\Http\Controllers\Backend\AccessmentController::class);
 	Route::resource('myprofile', App\Http\Controllers\Backend\MyProfileController::class);
 	Route::resource('admin_users', App\Http\Controllers\Backend\AdminUserController::class);
-	Route::resource('admin_buyers', App\Http\Controllers\Backend\AdminBuyerController::class);
-	Route::resource('admin_writers', App\Http\Controllers\Backend\AdminWriterController::class);
 	Route::resource('admin_admin', App\Http\Controllers\Backend\AdminAdminController::class);
 	Route::resource('UserAsessment', App\Http\Controllers\Backend\UserAsessmentController::class);
 	Route::post('change_password/{id}', [App\Http\Controllers\Backend\MyProfileController::class,'change_password'])->name('change_password');
