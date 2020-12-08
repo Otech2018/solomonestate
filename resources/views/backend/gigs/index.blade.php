@@ -20,7 +20,7 @@
        <div class="col-md-10">
       <div class="card shadow-lg">
         <div class="card-body">
-            <h5 class="card-title">List of All GIgs Category</h5>
+            <h5 class="card-title">List of All Property Category</h5>
 
 		@include('layouts.messages')
 		  <table class=" table table-bordered table-striped table-sm" id='example' width='100%'>

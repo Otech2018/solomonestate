@@ -17,39 +17,44 @@
       <div class="container-fluid">
       <br/><br/><br/>
       <div class="row justify-content-center">
-       <div class="col-md-7">
+       <div class="col-md-11">
       <div class="card shadow-lg">
         <div class="card-body">
-            <h5 class="card-title">Add Gig Sub-Category</h5>
+            <h5 class="card-title">Add A Property</h5><br/><br/>
 		
 		@include('layouts.messages')
 					
-                    <form method="POST" action={{route('sub_gigs.store')}} enctype="multipart/form-data">
-                        @csrf
-						
-                         <div class="form-group">
-                             <label> Name Of Gig Sub-Category  <span style="color:red;">*</span></label>
-                           
-                             <input type="text"  
-                            class="form-control" 
-                            required
-                             name="name" />
-							
-                             
-                        </div>
 
-                      
 
-                        
-                           
-                         
 
-                         <div class="form-group ">
-                            
-                            <label> Gig Category <span style="color:red;">*</span></label>
+
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-primary" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" style="font-weight:bold;font-size:25px; margin-right:40px;">LAND</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link btn btn-outline-primary" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" style="font-weight:bold;font-size:25px;">BUILDING</a>
+  </li>
+ 
+</ul>
+<div class="tab-content" id="pills-tabContent">
+
+{{-- for land starts here --}}
+  <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <form method="POST" action={{route('sub_gigs.store')}} enctype="multipart/form-data">
+            @csrf
+            
+
+
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+
+                    <label>  Category <span style="color:red;">*</span></label>
                                 <select class="form-control" name='cat_id' required>
 
-                                    <option value='' hidden selected> Select Gig Category </option>
+                                    <option value='' hidden selected> Select  Category </option>
                                         @foreach($GigCategorys as $GigCategory)
                                         <option value='{{$GigCategory->id}}' 
                                             > 
@@ -57,20 +62,90 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            
-                        </div>
+                
+                </div>
+                <div class="form-group col-md-8">
+                    <label> TOPIC/TITLE  <span style="color:red;">*</span></label>
+                        
+                            <input type="text"  
+                            class="form-control" 
+                            required
+                            name="name" />
+                </div>
+            </div>
 
-                     
 
+
+
+            <div class="form-group">
+                <label > Description  </label>
+                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea >
+            </div>
+
+
+
+
+            <div class="form-row">
+                
+                <div class="form-group col-md-4">
+                    <label> TOPIC/TITLE  <span style="color:red;">*</span></label>
                         
-                        
-                            <center>
-                                <button type="submit" class="btn btn-primary">
-                                   ADD  <i class="fa fa-plus"></i> 
-                                </button>
-                           </center>
-                        
-                    </form>
+                            <input type="text"  
+                            class="form-control" 
+                            required
+                            name="name" />
+                </div>
+            </div>
+        
+
+            
+            
+            
+
+            
+
+        
+
+            
+            
+                <center>
+                    <button type="submit" class="btn btn-primary">
+                    ADD  <i class="fa fa-plus"></i> 
+                    </button>
+            </center>
+            
+        </form>
+  
+  
+  
+  
+  
+  </div>
+  
+{{-- for land ends here --}}
+  
+  
+  
+{{-- for building starts here --}}
+  
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+{{-- for building ends here --}}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   
                
 		
 					

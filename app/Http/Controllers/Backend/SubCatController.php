@@ -155,7 +155,7 @@ class SubCatController extends Controller
 
          //listing all the gigs category
          if(CheckAccess::check(5)){
-            $GigSubCategories = GigSubCategory::where('category_id','=',$id)->paginate(20);
+            $GigSubCategories = GigSubCategory::where('gig_category_id','=',$id)->paginate(20);
             $GigCategory = GigCategory::find($id);
            return view('backend.sub_gigs.index1',[
                'GigSubCategories'=>$GigSubCategories,

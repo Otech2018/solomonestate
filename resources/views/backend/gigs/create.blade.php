@@ -20,7 +20,7 @@
        <div class="col-md-5">
       <div class="card shadow-lg">
         <div class="card-body">
-            <h5 class="card-title">Add  Gig Category</h5>
+            <h5 class="card-title">Add  Property Category</h5>
 
          @include('layouts.messages')    
 		<form method="POST" action={{route('gigs.store')}} enctype="multipart/form-data">
@@ -28,7 +28,7 @@
 
 
             <div class="form-group">
-                            <label > Name Of Gig Category  <span style="color:red;">*</span></label>
+                            <label > Name Of Property Category  <span style="color:red;">*</span></label>
                             <input type="text"  
                             class="form-control" 
                             required

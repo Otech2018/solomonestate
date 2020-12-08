@@ -40,9 +40,9 @@
                         @foreach($Perform_Tasks as $Perform_Task)
                             <tr>
                                 <td>{{$no}}</td>
-                                <td>{{$Perform_Task->task->name}}</td> 
+                                <td style="width:220px !important">{{$Perform_Task->task->name}}</td> 
                                 <td>{{$Perform_Task->task->desc}}</td> 
-                                <td>
+                                <td style="width:150px !important" >
                                
                                      <form class="form-inline" action={{route('task.update',$Perform_Task->id)}} method='post'>
                                      @csrf
