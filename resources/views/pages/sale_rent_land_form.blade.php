@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		
-            <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
+            <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
 				<h1><b>LANDS SALES REGISTRATION FORM</b></h1><hr/>
 				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
@@ -301,10 +301,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Price <span style="color:red;">*</span></label>
+                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell your Land?</i>) <span style="color:red;">*</span></label>
 
-                            <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="land Shape" required >
+                            <div class="col-md-6">
+                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
                             </div>
                         </div>
 
@@ -343,6 +343,84 @@
                         </div>
 
                         </div>
+
+
+                            <h2 align="center" style="font-size:27px; font-weight:bold;">Images</h2><hr/>
+
+     <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                      <label>Cover Image <span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+              
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 1<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 2<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="form-row">
+                
+               
+
+                <div class="form-group col-md-3">
+                      <label> Image 3<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 4<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 5<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 6<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+            </div>
+
+
+
+
+                        
+            
+      
 
                             <br/><br/><br/>
                             <div class="col-md-12">

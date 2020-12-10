@@ -135,7 +135,7 @@ class gigsController extends Controller
             $new_gig->category_name= $request->input('gig_cat');
             $new_gig->category_description= $request->input('gig_desc');
              $new_gig->save();
-            return redirect()->back()->with('success','Edited Created Successfully!');
+            return redirect()->back()->with('success','Edited  Successfully!');
 
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');

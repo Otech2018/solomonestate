@@ -190,23 +190,270 @@
                         <div class=" row">
                             <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
-                            <div class="col-md-3">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember2">
+                          <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" id="remember21">
 
-                                    <label class="form-check-label btn btn-success" for="remember2" >
+                                    <label class="form-check-label btn btn-success" for="remember21" onclick="$('#land').fadeIn();" >
+                                       Full Sale  
+                                    </label>
+                           </div>
+                          
+                          
+                            <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" id="remember12">
+
+                                    <label class="form-check-label btn btn-primary" for="remember12" >
                                        For Sale  
                                     </label>
                            </div>
 
 
                            <div class="col-md-3">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember3">
+                                <input class="form-check-input" type="radio" name="remember" id="remember03">
 
-                                    <label class="form-check-label btn btn-success" for="remember3" >
+                                    <label class="form-check-label btn btn-danger" for="remember03" >
                                        For Rent   
                                     </label>
                            </div>
+                        </div><br/><br/>
+
+
+{{-- for full selling land detail --}}
+<div id="land" style="display:none; background-color:#ffebee; padding:20px;">
+  <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
+                                    <div class="col-sm-7">
+                                        <select  class="country form-control form-control-sm" name='land_acq' required>
+
+                                            <option value='' hidden selected> Select Item </option>
+                                               <option value="Inheritance">Inheritance</option>
+                                               <option value="Purchase">Purchase</option>
+                                               <option value="Donation/Gift">Donation/Gift</option>
+                                               <option value="Govt. Allocation">Govt. Allocation</option>
+                                               <option value="Govt/Public Property">Govt/Public Property</option>
+                                               <option value="Communal Land">Communal Land</option>
+                                       </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+                        <div class=" row">
+                            <label class="col-md-3 col-form-label text-md-right">Is the Land Surveyed?:<span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" id="remember2">
+
+                                    <label class="form-check-label btn btn-success" for="remember2" onclick="$('#suv').fadeIn();" >
+                                       Yes  
+                                    </label>
+                           </div>
+
+
+                           <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" id="remember3">
+
+                                    <label class="form-check-label btn btn-danger" for="remember3" onclick="$('#suv').fadeOut();" >
+                                       No   
+                                    </label>
+                           </div>
                         </div>
+
+                    <div style="padding:15px; background-color:#fce4ec; display:none;" id="suv">
+                         <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Plan Number <span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Plan No" name="phone1" required >
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Beacon No" name="phone2"  >
+                            </div>
+
+
+                        </div>
+                        
+                        
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Surveyor <span style="color:red;">*</span></label>
+
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" placeholder="" name="home_address" required >
+                            </div>
+                        </div>
+
+
+
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Surveyor's Address</label>
+
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" placeholder="" name="office_address" required >
+                            </div>
+                        </div>
+
+  
+
+                     </div>
+
+                        <br/><br/>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Number of Plots <span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="No of Plots" name="phone1" required >
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Size In Sq. Meters" name="phone2"  >
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Land Shape <span style="color:red;">*</span></label>
+
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" placeholder="" name="land Shape" required >
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">List Land Document Available <span style="color:red;">*</span></label>
+
+                            <div class="col-md-7">
+                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+            </div>
+            {{-- for full selling land details --}}
+
+
+
+
+
+                             <br/><br/><div class="form-group row">
+                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell your Land?</i>) <span style="color:red;">*</span></label>
+
+                            <div class="col-md-6">
+                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
+                            </div>
+                        </div>
+
+                    <div style="padding:15px; background-color:#e3f2fd;">
+                        
+
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label text-md-right">Valid ID Card<span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Valid ID Card" name="phone1" required >
+                            </div>
+                            <label class="col-md-2 col-form-label text-md-right">ID Number<span style="color:red;">*</span></label>
+                            
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="ID Number" name="phone2"  >
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label text-md-right">Date Issued<span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" placeholder="Date Issued" name="phone1" required >
+                            </div>
+                            <label class="col-md-2 col-form-label text-md-right">Expiry Date<span style="color:red;">*</span></label>
+
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" placeholder="Expiry Date" name="phone2"  >
+                            </div>
+
+
+                        </div>
+
+                        </div>
+
+
+                            <h2 align="center" style="font-size:27px; font-weight:bold;">Images</h2><hr/>
+
+     <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                      <label>Cover Image <span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+              
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 1<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 2<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="form-row">
+                
+               
+
+                <div class="form-group col-md-3">
+                      <label> Image 3<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 4<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 5<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 6<span class="text-danger">*</label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+            </div>
+
+
+
 
 
                     

@@ -56,7 +56,7 @@
    // $('.dropify').dropify();
    $('.dropify').dropify({
    messages: {
-       'default': 'Drag and drop',
+       'default': 'Image',
        'replace': 'Drag and drop or click to replace',
        'remove':  'Remove',
        'error':   'Ooops, something wrong happended.'
