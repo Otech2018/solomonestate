@@ -40,20 +40,20 @@ ul {
   list-style-type:none;
 }
 input[type="text"]::-webkit-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 input[type="text"]::-moz-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 input[type="text"]::-ms-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 input[type="text"]::-o-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 input[type="text"]:focus {
   outline:none;
@@ -63,20 +63,20 @@ input[type="text"]:focus {
   border-color:#333;
 }
 textarea::-webkit-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 textarea::-moz-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 textarea::-ms-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 textarea::-o-input-placeholder {
-  font-weight:200;
-  color:#D1D1D1;
+  
+  color:green;
 }
 textarea:focus {
   outline:none;
@@ -211,7 +211,7 @@ h5 {
 }
 p {
   color:#89949b;
-  font-weight:200;
+  
   font-size: 1rem;
 }
 /**** Header-Section ****/

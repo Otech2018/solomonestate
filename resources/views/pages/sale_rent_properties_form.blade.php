@@ -40,9 +40,12 @@
 			</div>
 		</div>
 		
-            <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
+            <div class="col-md-12 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
-				<h1><b>PROPERTY SALES/RENT REGISTRATION FORM</b></h1><hr/>
+				<h1><b>PROPERTY SALES/RENT REGISTRATION FORM</b></h1>
+                <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
+                <hr/>
+                
 				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
 
 
@@ -190,37 +193,65 @@
                         <div class=" row">
                             <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
-                          <div class="col-md-3">
+                          <div class="col-md-4">
                                 <input class="form-check-input" type="radio" name="remember" id="remember21">
 
-                                    <label class="form-check-label btn btn-success" for="remember21" onclick="$('#land').fadeIn();" >
-                                       Full Sale  
+                                    <label class="form-check-label btn btn-success" for="remember21" onclick="$('#noland').fadeOut();$('#land').fadeIn();" >
+                                      <b> LANDED PROPERTY  <br/>(Selling both Land & Structure(s))</b></i>
                                     </label>
                            </div>
                           
                           
-                            <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" id="remember12">
+                            <div class="col-md-4">
+                                <input class="form-check-input" type="radio" name="remember" id="remember12" onclick="$('#land').fadeOut();$('#noland').fadeIn();" >
 
                                     <label class="form-check-label btn btn-primary" for="remember12" >
-                                       For Sale  
+                                      <b> NON LANDED PROPERTY  <br/>(Selling Without Ownership of the Land)</b></i>
+                                       
                                     </label>
                            </div>
 
 
-                           <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" id="remember03">
-
-                                    <label class="form-check-label btn btn-danger" for="remember03" >
-                                       For Rent   
-                                    </label>
-                           </div>
                         </div><br/><br/>
 
 
+{{-- for not full selling  --}}
+<div id="noland" style="display:none;padding:20px;">
+
+
+  <div class="form-row">
+                
+                <div class="form-group col-md-6" >
+                      <label>Purchase Reciept  <span class="text-danger">*</span>(image,pdf,doc)</label>
+                          <input style='font-size:5px !important;' name="cover_image"  type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+              
+
+
+                <div class="form-group col-md-6">
+                      <label> Allocation Papers (image,pdf,doc)</label>
+                          <input style='font-size:5px !important;' name="cover_image"  type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+</div>
+{{-- for not full selling  --}}
+
+
 {{-- for full selling land detail --}}
-<div id="land" style="display:none; background-color:#ffebee; padding:20px;">
-  <div class="form-group row">
+<div id="land" style="display:none; background-color:#e3f2fd; padding:20px;">
+                            <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
                                         <select  class="country form-control form-control-sm" name='land_acq' required>
@@ -240,7 +271,7 @@
 
 
 
-                        <div class=" row">
+                        <div class="row">
                             <label class="col-md-3 col-form-label text-md-right">Is the Land Surveyed?:<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
@@ -387,7 +418,7 @@
      <div class="form-row">
                 
                 <div class="form-group col-md-6">
-                      <label>Cover Image <span class="text-danger">*</label>
+                      <label>Cover Image <span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
@@ -396,7 +427,7 @@
 
 
                 <div class="form-group col-md-3">
-                      <label> Image 1<span class="text-danger">*</label>
+                      <label> Image 1<span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
@@ -404,7 +435,7 @@
 
 
                 <div class="form-group col-md-3">
-                      <label> Image 2<span class="text-danger">*</label>
+                      <label> Image 2<span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
@@ -420,22 +451,14 @@
                
 
                 <div class="form-group col-md-3">
-                      <label> Image 3<span class="text-danger">*</label>
+                      <label> Image 3<span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
 
                 <div class="form-group col-md-3">
-                      <label> Image 4<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
-                      
-                </div>
-
-
-
-                <div class="form-group col-md-3">
-                      <label> Image 5<span class="text-danger">*</label>
+                      <label> Image 4<span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
@@ -443,7 +466,15 @@
 
 
                 <div class="form-group col-md-3">
-                      <label> Image 6<span class="text-danger">*</label>
+                      <label> Image 5<span class="text-danger">*</span></label>
+                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      
+                </div>
+
+
+
+                <div class="form-group col-md-3">
+                      <label> Image 6<span class="text-danger">*</span></label>
                           <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
@@ -464,7 +495,7 @@
 
                                     <label class="form-check-label" for="remember11" >
                                        Accept Our   
-                                    </label><a href="#!" target="_blank" style="color:green;"> Terms and Conditions</a>
+                                    </label><a href="{{route('tos')}}" target="_blank" style="color:green;"> Terms and Conditions</a>
                                 </div>
                             
 
