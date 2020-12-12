@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <label > Old Password <span style="color:red;">*</span></label>
-                <input type="text"  
+                <input type="password"  
                 class="form-control" 
                 required
                   name="old_password"
@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label > New Password <span style="color:red;">*</span></label>
-                <input type="text"  
+                <input type="password"  
                 class="form-control" 
                 required
                   name="new_password"
@@ -51,7 +51,7 @@
 
             <div class="form-group">
                 <label > Confirm Password <span style="color:red;">*</span></label>
-                <input type="text"  
+                <input type="password"  
                 class="form-control" 
                 required
                   name="confirm_password"

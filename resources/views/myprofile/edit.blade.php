@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Let's Build For you </h2>
+				<h2>Edit Profile</h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Let's Build For you</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Edit Profile</a>
 			</div>
 		</div>
 	</div>
@@ -46,10 +46,10 @@
                 
                 <hr/>
 
-                  @include('layouts.messages')    
+                  @include('layouts.messages1')    
 		         
          <div class="row">                 
-              @include('layouts.messages')    
+             
 		        <form action="{{route('myprofile1.update', 1)}}"  method="POST" enctype="multipart/form-data">    
               @csrf <input type="hidden" name="_method" value="put">
  

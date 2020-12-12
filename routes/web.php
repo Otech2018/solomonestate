@@ -35,10 +35,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('myprofile1', App\Http\Controllers\MyProfileController::class);
 	
-Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::class,'change_password'])->name('change_password1');
+Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::class,'change_password'])->name('change_password2');
 	Route::get('change_password1', [App\Http\Controllers\MyProfileController::class,'change_password1'])->name('change_password11');
 	
-
 
 
 

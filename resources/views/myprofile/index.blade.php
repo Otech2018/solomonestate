@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Let's Build For you </h2>
+				<h2>My Profile </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Let's Build For you</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">My Profile</a>
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
                 
                 <hr/>
 
-                  @include('layouts.messages')    
+                     @include('layouts.messages1')   
 		         
          <div class="row">                 
              <div class="col-lg-4"> 

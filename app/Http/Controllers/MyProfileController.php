@@ -103,7 +103,7 @@ class MyProfileController extends Controller
             //upload Image
 
             if(auth()->user()->pic !=null){
-                unlink("storage/profile_img/".auth()->user()->pic); //delete existing file
+              //  unlink("storage/profile_img/".auth()->user()->pic); //delete existing file
             
             }
             $path = $request->file('cover_image')->storeAs('public/profile_img', $fileNameToStore);
