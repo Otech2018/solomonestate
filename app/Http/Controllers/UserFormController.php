@@ -20,7 +20,7 @@ class UserFormController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except'=>['edit']]);
     }
 
 
@@ -80,7 +80,12 @@ class UserFormController extends Controller
      */
     public function edit($id)
     {
-        //
+        //build for you
+        $Countries = Country::all();
+        $states = State::all();
+        $lgas = Lga::all();
+        
+        return view('pages.build_u_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**

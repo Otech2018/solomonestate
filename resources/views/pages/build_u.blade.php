@@ -62,7 +62,7 @@ We have a team of engineers that will start that your dream house right from the
 To prove the trust and reliance Nigerians at home and in diaspora have on our company, we have built
  hundreds of edifices for our citizens in diaspora who never visited for one day to supervise the 
  building, but had unquantifiable satisfaction once we handed over the keys to them. <br/>
-<a href="#!" class='btn btn-success btn-lg'>Let's Build For You</a>
+<a href="{{route('form.edit',2)}}" class='btn btn-success btn-lg'>Let's Build For You</a>
 				</p>
 				<div class="clearfix">
 				</div>
