@@ -67,15 +67,15 @@
 				Hire a Consultant </h4>
 				<form class='contact-form' method="POST">
 					<div class="contact-form-left">
-						<span><i class='fa fa-user'></i></span><input type="text" name='name' placeholder='Name' id='name'>
+						<span><i class='fa fa-user'></i></span><input type="text" name='name' placeholder='Name' id='name' required>
 						<span><i class='fa fa-envelope-o'></i></span><input type="text" name='email' placeholder='e-mail' id='email'>
-						<span><i class='fa fa-phone'></i></span><input type="text" name='phone' placeholder='Phone' id='phone'>
-						<span><i class='fa fa-money'></i></span><input type="text" name='' placeholder='Project Budget' id='phone'>
+						<span><i class='fa fa-phone'></i></span><input type="text" name='phone' placeholder='Phone' id='phone' required>
+						<span><i class='fa fa-money'></i></span><input type="text" name='' placeholder='Project Budget' id='phone' required>
 						
 					</div>
 					<div class="contact-form-right">
-						<textarea id="message" name='message' placeholder='Full Details of Site Location'></textarea>
-						<textarea id="message" name='message' placeholder='Why do you need a Consultant?'></textarea>
+						<textarea id="message" name='message' placeholder='Full Details of Site Location' required></textarea>
+						<textarea id="message" name='message' placeholder='Why do you need a Consultant?' required></textarea>
 					</div>
 						<input type="submit" value='Hire a Consultant' id='submit-btn'>
 					

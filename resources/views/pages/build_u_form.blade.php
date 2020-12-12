@@ -43,6 +43,7 @@
             <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
 				<h1><b>LETS BUILD FOR YOU FORM</b></h1>
+                <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
                 
                 <hr/>
@@ -68,7 +69,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address (optional)</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email" required >
+                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email"  >
                             </div>
                         </div>
 
@@ -89,7 +90,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Office/Home Address</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address" required >
+                                <input type="text" class="form-control" placeholder="" name="office_address"  >
                             </div>
                         </div>
 
@@ -175,7 +176,7 @@
 
                             <br/><br/>
                            <div class="col-md-12">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember11">
+                                    <input class="form-check-input" type="checkbox" name="saswddw" id="remember11">
 
                                     <label class="form-check-label" for="remember11" >
                                        Accept Our   

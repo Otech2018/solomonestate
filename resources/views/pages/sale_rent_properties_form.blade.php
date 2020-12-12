@@ -43,6 +43,8 @@
             <div class="col-md-12 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
 				<h1><b>PROPERTY SALES/RENT REGISTRATION FORM</b></h1>
+                <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
+
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
                 <hr/>
                 
@@ -105,7 +107,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Office Address</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address" required >
+                                <input type="text" class="form-control" placeholder="" name="office_address"  >
                             </div>
                         </div>
 
@@ -194,7 +196,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
                           <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember21">
+                                <input class="form-check-input" type="radio" name="remember" required id="remember21">
 
                                     <label class="form-check-label btn btn-success" for="remember21" onclick="$('#noland').fadeOut();$('#land').fadeIn();" >
                                       <b> LANDED PROPERTY  <br/>(Selling both Land & Structure(s))</b></i>
@@ -203,7 +205,7 @@
                           
                           
                             <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember12" onclick="$('#land').fadeOut();$('#noland').fadeIn();" >
+                                <input class="form-check-input" type="radio" name="remember" required id="remember12" onclick="$('#land').fadeOut();$('#noland').fadeIn();" >
 
                                     <label class="form-check-label btn btn-primary" for="remember12" >
                                       <b> NON LANDED PROPERTY  <br/>(Selling Without Ownership of the Land)</b></i>
@@ -231,8 +233,8 @@
 
 
                 <div class="form-group col-md-6">
-                      <label> Allocation Papers (image,pdf,doc)</label>
-                          <input style='font-size:5px !important;' name="cover_image"  type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                      <label> Allocation Papers(optional) (image,pdf,doc)</label>
+                          <input style='font-size:5px !important;' name="cover_image"  type="file" id="input-file-now"  class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -254,7 +256,7 @@
                             <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select  class="country form-control form-control-sm" name='land_acq' required>
+                                        <select  class="country form-control form-control-sm" name='land_acq' >
 
                                             <option value='' hidden selected> Select Item </option>
                                                <option value="Inheritance">Inheritance</option>
@@ -297,7 +299,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Plan Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Plan No" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="Plan No" name="phone1"  >
                             </div>
 
                             <div class="col-md-4">
@@ -312,7 +314,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Surveyor <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="home_address" required >
+                                <input type="text" class="form-control" placeholder="" name="home_address"  >
                             </div>
                         </div>
 
@@ -322,7 +324,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Surveyor's Address</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address" required >
+                                <input type="text" class="form-control" placeholder="" name="office_address"  >
                             </div>
                         </div>
 
@@ -335,7 +337,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Number of Plots <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="No of Plots" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="No of Plots" name="phone1"  >
                             </div>
 
                             <div class="col-md-4">
@@ -350,7 +352,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Land Shape <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="land Shape" required >
+                                <input type="text" class="form-control" placeholder="" name="land Shape"  >
                             </div>
                         </div>
 
@@ -369,7 +371,7 @@
 
 
                              <br/><br/><div class="form-group row">
-                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell your Land?</i>) <span style="color:red;">*</span></label>
+                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell this Property?</i>) <span style="color:red;">*</span></label>
 
                             <div class="col-md-6">
                                 <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
@@ -388,7 +390,7 @@
                             <label class="col-md-2 col-form-label text-md-right">ID Number<span style="color:red;">*</span></label>
                             
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="ID Number" name="phone2"  >
+                                <input type="text" class="form-control" placeholder="ID Number" name="phone2" required >
                             </div>
 
 
@@ -491,7 +493,7 @@
 
                             <br/><br/><br/>
                             <div class="col-md-12">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember11">
+                                    <input class="form-check-input" type="checkbox" required name="remertember" id="remember11">
 
                                     <label class="form-check-label" for="remember11" >
                                        Accept Our   

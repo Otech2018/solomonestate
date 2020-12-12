@@ -126,8 +126,10 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user'></i> {{auth()->user()->name}}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Wallet</a></li>
-
+							<li><a href="#"> <i class='fa fa-money'></i> Wallet</a></li>
+								<li><a href="{{route('myprofile1.index')}}"> <i class='fa fa-user'></i> My Profile</a></li>
+                			<li><a href="{{route('change_password11')}}"><i class='fa fa-key'></i>  Change Password</a></li>
+               
 							<div class="dropdown-divider"></div>
 								<li><a href="#"
 								onclick="
