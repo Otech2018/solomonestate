@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class MyProfileController extends Controller
@@ -87,7 +87,7 @@ class MyProfileController extends Controller
            'gender' => 'required|string|max:955',
             ]);
 
-        $Admin =Admin::find(auth()->user()->id);
+        $Admin =User::find(auth()->user()->id);
 
 
         if($request->hasFile('cover_image')){
@@ -137,7 +137,7 @@ class MyProfileController extends Controller
            'confirm_password' => 'required|string|max:955',
             ]);
 
-        $Admin =Admin::find($id);
+        $Admin =User::find($id);
         $old_pw_hash = Hash::make($request->input('old_password'));
         if( password_verify($request->input('old_password'), auth()->user()->password) ){
             //password_verify(password,hash)

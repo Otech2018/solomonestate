@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class MyProfileController extends Controller
@@ -23,7 +23,7 @@ class MyProfileController extends Controller
 
     public function index()
     {
-        return view('backend.myprofile.index');
+        return view('myprofile.index');
     }
 
     /**
@@ -66,7 +66,7 @@ class MyProfileController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.myprofile.edit');
+        return view('myprofile.edit');
     }
 
     /**
@@ -87,7 +87,7 @@ class MyProfileController extends Controller
            'gender' => 'required|string|max:955',
             ]);
 
-        $Admin =Admin::find(auth()->user()->id);
+        $Admin =User::find(auth()->user()->id);
 
 
         if($request->hasFile('cover_image')){
@@ -137,7 +137,7 @@ class MyProfileController extends Controller
            'confirm_password' => 'required|string|max:955',
             ]);
 
-        $Admin =Admin::find($id);
+        $Admin =User::find($id);
         $old_pw_hash = Hash::make($request->input('old_password'));
         if( password_verify($request->input('old_password'), auth()->user()->password) ){
             //password_verify(password,hash)
@@ -162,7 +162,7 @@ class MyProfileController extends Controller
 
     public function change_password1()
     {
-        return view('backend.myprofile.change_password');
+        return view('myprofile.change_password');
     }
 
     /**

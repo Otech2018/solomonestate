@@ -1,28 +1,52 @@
-<?php $User_grp_add ='tffgt';; ?>
+<?php $register ="";  ?>
 
-
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
 
 
-   @include('backend.inc.top_nav')
-     
 
-     
 
-      <div class="container-fluid">
-      <br/><br/><br/>
-      <div class="row justify-content-center">
-       <div class="col-md-10">
-      <div class="card shadow-lg">
-        <div class="card-body">
-            <h1 align='center' class="card-title">My Profile</h1><hr/>
 
-         @include('layouts.messages')    
+
+
+
+
+
+
+
+	<div class="page-title-section">
+		<div class="container">
+			<div class="pull-left page-title">
+				<a href="#">
+				<h2>Let's Build For you </h2>
+				</a>
+			</div>
+			<div class="pull-right breadcrumb">
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Let's Build For you</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+		<div class="col-md-3 contact-info">
+			<div >
+				<div class="clearfix">
+				</div>
+			</div>
+		</div>
+		
+            <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
+			<div class="inner-wrapper">
+				<h1><b><i class="fa fa-user"></i> My Profile</b></h1>
+                
+                <hr/>
+
+                  @include('layouts.messages')    
 		         
          <div class="row">                 
              <div class="col-lg-4"> 
@@ -46,36 +70,24 @@
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <i>{{auth()->user()->email}}</i></td></tr>
 
             </table>
-            <a href="{{route('myprofile.edit', 1)}}"  class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i>Edit Profile</a>
+            <a href="{{route('myprofile1.edit', 1)}}"  class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i>Edit Profile</a>
             </div>
+				<div class="clearfix">
+				</div>
+			</div>
+		</div>
 
-           
-        </div>
 
-        
-        </div>
-        </div>
-        </div>
-      
-      
-      
-      
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
 
-    
-
-  </div>
-  <!-- /#wrapper -->
+	</div>
+</div>
 
 
 
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
- 
 
 @endsection
+
+
+
+
