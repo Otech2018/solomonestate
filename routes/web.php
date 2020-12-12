@@ -26,6 +26,8 @@ Route::get('/sale_rent_property', [App\Http\Controllers\PageController::class, '
 Route::get('/pay_rent', [App\Http\Controllers\PageController::class, 'pay_rent'])->name('pay_rent');
 Route::get('/save_build', [App\Http\Controllers\PageController::class, 'save_build'])->name('save_build');
 Route::get('/sale_rent_land', [App\Http\Controllers\PageController::class, 'sale_rent_land'])->name('sale_rent_land');
+Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
+Route::get('/project', [App\Http\Controllers\PageController::class, 'project'])->name('project');
 Route::resource('form', App\Http\Controllers\UserFormController::class);
 
 Auth::routes();

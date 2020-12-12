@@ -23,6 +23,10 @@
  <link rel="shortcut icon" href="img/logo1.png" />
 <link rel="stylesheet" href="{{asset('dropify/dist/css/dropify.min.css')}}"> 
 
+
+
+
+
 <!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -31,6 +35,14 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('engine1/style.css')}}" />
 	<script type="text/javascript" src="{{ asset('engine1/jquery.js')}}"></script>
 	<!-- End WOWSlider.com HEAD section -->
+
+
+	@if(isset($gallery))
+    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/gallery.css')}}" />
+
+
+@endif
     
 </head>
 <body id='top'>
@@ -101,8 +113,8 @@
 							{{-- <li><a href="#">About Us</a></li> --}}
 							<li><a href="{{route('our_team')}}">Our Team</a></li>
 							<li><a a href="{{route('contact_us')}}">contact			</a></li>
-							<li><a href="#">Our Project</a></li>
-							<li><a href="#">Our Gallery</a></li>
+							<li><a  href="{{route('project')}}">Our Project</a></li>
+							<li><a href="{{route('gallery')}}">Our Gallery</a></li>
 						</ul>
 						</li>
 
@@ -302,9 +314,21 @@
 
 
 
+
+
 </script>
 
+@if(isset($gallery))
 
+ <script src="{{ asset('js/gallery.js') }}"></script>
+
+
+  <script>
+            $(document).ready(function(){
+                $('#lightgallery').lightGallery(); 
+            });
+        </script>
+@endif
 
 </body>
 

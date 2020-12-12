@@ -46,6 +46,19 @@ class PageController extends Controller
         return view('pages.agric_consult');
     }
     
+    public function gallery()
+    {
+        return view('pages.gallery');
+    }
+    
+
+
+    public function project()
+    {
+        return view('pages.project');
+    }
+    
+    
 
     public function build_u()
     {

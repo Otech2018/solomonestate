@@ -42,10 +42,12 @@
 <!-- content-Section -->
 <div class="content-section">
 	<div class="container">
+	<div class="row">
+	
 		<!-- single-agent -->
-		<div class="single-agent">
+		<div class="single-agent col-md-6 ">
 			<div class="image-box">
-				<img src="img/agents/08_agent-photo1.png" alt="agent">
+				<img src="storage/agent/a1.jpg" alt="agent">
 				<ul class="social-icons">
 					<li><a href="#" class="fa fa-google-plus"></a></li>
 					<li><a href="#" class="fa fa-twitter"></a></li>
@@ -56,12 +58,12 @@
 				</ul>
 			</div>
 			<div class="desc-box">
-				<h4>Robb Hatman</h4>
+				<h4>HON SOLOMON CHIMEZIE AMAECHI</h4>
 				<p class="person-number">
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
+					<i class="fa fa-envelope"></i> solomon@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
 					<i class="fa fa-user"></i> Sales Agent
@@ -70,9 +72,9 @@
 			</div>
 		</div>
 		<!-- single-agent -->
-		<div class="single-agent">
+		<div class="single-agent col-md-6">
 			<div class="image-box">
-				<img src="img/agents/09_agent-photo2.png" alt="agent">
+				<img src="storage/agent/a2.jpg" alt="agent">
 				<ul class="social-icons">
 					<li><a href="#" class="fa fa-google-plus"></a></li>
 					<li><a href="#" class="fa fa-twitter"></a></li>
@@ -83,39 +85,12 @@
 				</ul>
 			</div>
 			<div class="desc-box">
-				<h4>Robb Hatman</h4>
+				<h4>MICHEAL C. G ODOR </h4>
 				<p class="person-number">
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Sales Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="img/agents/11_agent-photo3.png" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>Robb Hatman</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
+					<i class="fa fa-envelope"></i> odor@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
 					<i class="fa fa-user"></i> Rental Agent
@@ -124,9 +99,9 @@
 			</div>
 		</div>
 		<!-- single-agent -->
-		<div class="single-agent">
+		<div class="single-agent col-md-6">
 			<div class="image-box">
-				<img src="img/agents/12_agent-photo4.png" alt="agent">
+				<img src="storage/agent/a3.jpg" alt="agent">
 				<ul class="social-icons">
 					<li><a href="#" class="fa fa-google-plus"></a></li>
 					<li><a href="#" class="fa fa-twitter"></a></li>
@@ -137,39 +112,12 @@
 				</ul>
 			</div>
 			<div class="desc-box">
-				<h4>Robb Hatman</h4>
+				<h4>COMFORT IFEOMA OKORONKWO</h4>
 				<p class="person-number">
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Sales Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="img/agents/13_agent-photo5.png" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>Robb Hatman</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
+					<i class="fa fa-envelope"></i> ifeoma@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
 					<i class="fa fa-user"></i> Rental Agent
@@ -177,87 +125,8 @@
 				<a href="#" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="img/agents/14_agent-photo6.png" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>Robb Hatman</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Sales Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="img/agents/15_agent-photo7.png" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>Robb Hatman</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Rental Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="img/agents/16_agent-photo8.png" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>Robb Hatman</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Sales Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
+	
+	</div>
 	</div>
 </div>
  
