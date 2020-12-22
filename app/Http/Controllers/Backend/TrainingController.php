@@ -31,7 +31,7 @@ class TrainingController extends Controller
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
         }
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.

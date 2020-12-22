@@ -267,7 +267,7 @@
 					<i class="fa fa-phone"></i> 900 123 456 789
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> robbhatman@solomonsideas.ltd
+					<i class="fa fa-envelope"></i> ifeoma@solomonsideas.ltd
 				</p>
 				<p class="person-fax">
 					<i class="fa fa-user"></i> Rental Agent

@@ -74,3 +74,10 @@ Route::prefix('sax')->group(function(){
 });
 //Admin Routes ends here {wisdom don't touch}
  
+
+
+
+
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});

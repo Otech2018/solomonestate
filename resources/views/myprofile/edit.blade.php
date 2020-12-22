@@ -57,7 +57,7 @@
              <div class="col-lg-4"> 
              <div class="form-group">
                           <label>Profile Picture Click to edit</label>
-                          <input  data-default-file="{{ ( auth()->user()->pic != null) ? asset('storage/profile_img/'.auth()->user()->pic) : '' }}" name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now"  class="dropify" data-max-file-size="1M"/>
+                          <input  data-default-file="{{ ( auth()->user()->pic != null) ? _('../../../storage/profile_img/'.auth()->user()->pic) : '' }}" name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now"  class="dropify" data-max-file-size="1M"/>
                         </div>
              <br/>
              </div> 
