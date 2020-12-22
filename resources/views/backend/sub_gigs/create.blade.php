@@ -159,7 +159,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 1<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image1" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -167,7 +167,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 2<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image2" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -183,14 +183,14 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 3<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image3" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
 
                 <div class="form-group col-md-3">
                       <label> Image 4<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image4" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -198,7 +198,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 5<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image5" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -206,7 +206,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 6<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image6" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -219,7 +219,7 @@
 
         <div class="form-group">
                 <label > Embed Video fron Youtube (optional) </label>
-                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea >
+                <textarea class="form-control"  style='height:130px' name="video" ></textarea >
             </div>
 
             

@@ -64,8 +64,15 @@ class SubCatController extends Controller
         if(CheckAccess::check(4)){
             
                 $this->validate($request, [
-                    'name' => 'required|string|max:255',
-                    'cat_id' => 'required|string|max:255',
+                    'name' => 'required|max:255',
+                    'cat_id' => 'required|max:255',
+                    'cover_image'=>'image|required|max:1999',
+                    'cover_image1'=>'image|required|max:1999',
+                    'cover_image2'=>'image|required|max:1999',
+                    'cover_image3'=>'image|required|max:1999',
+                    'cover_image4'=>'image|required|max:1999',
+                    'cover_image6'=>'image|required|max:1999',
+                    'cover_image6'=>'image|required|max:1999',
                     
             ]);
                     
