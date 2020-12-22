@@ -45,8 +45,8 @@ Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::c
 
 //Admin Routes {wisdom don't touch}
 Route::prefix('sax')->group(function(){
-	Route::get('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'index'])->name('admin.index');
-	Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login');
+	// Route::get('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'index'])->name('admin.index');
+	// Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login');
 	Route::get('/adashboard', [App\Http\Controllers\Backend\AdminController::class, 'index'])->name('admin.dashboard');
 	Route::resource('menu', App\Http\Controllers\Backend\MenuController::class);
 	Route::resource('task', App\Http\Controllers\Backend\TaskController::class);

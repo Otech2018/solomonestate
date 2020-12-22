@@ -1,0 +1,3 @@
+for add property (gig sub categories)
+
+column property type 1=> land, 2=> building

@@ -45,6 +45,7 @@
            
    <form method="POST" action={{route('sub_gigs.store')}} enctype="multipart/form-data">
             @csrf
+                                <input type='hidden' value='1' name="property_type">
 
 
             <br/><br/>
@@ -52,7 +53,7 @@
  <div class="row"  style="margin-left:45px;">
                            
                             <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember2">
+                                <input class="form-check-input" type="radio" value="1" name="sale_mode" id="remember2">
 
                                     <label class="form-check-label btn btn-danger" for="remember2" >
                                        For Sale  
@@ -64,7 +65,7 @@
 
 
                            <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember3">
+                                <input class="form-check-input" type="radio" value="2" name="sale_mode" id="remember3">
 
                                     <label class="form-check-label btn btn-success" for="remember3" >
                                        For Rent   
@@ -253,20 +254,20 @@
                <div class="row"  style="margin-left:45px;">
                            
                             <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember11">
+                                <input class="form-check-input" type="radio" value="3" name="sale_mode" id="remember11">
 
                                     <label class="form-check-label btn btn-danger" for="remember11" >
-                                       For Sale  
+                                       For Sale   as  Landed Property
                                     </label>
                            </div>
 
 
 
                             <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember21">
+                                <input class="form-check-input" type="radio" value="4" name="sale_mode" id="remember21">
 
                                     <label class="form-check-label btn btn-primary" for="remember21" >
-                                       For Sale  
+                                       For Sale  non  as  Landed Property
                                     </label>
                            </div>
 
