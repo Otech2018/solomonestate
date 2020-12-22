@@ -116,9 +116,10 @@
                 <div class="form-group col-md-4">
                     <label> PRICE  <span style="color:red;">*</span></label>
                         
-                            <input type="number"  
+                            <input type="text"  
                             class="form-control" 
                             required
+                            placeholder="eg 10 Million Naira" 
                             name="property_price" />
                 </div>
 
@@ -127,10 +128,10 @@
                 <div class="form-group col-md-8">
                     <label> LAND SIZE (Sq ft)  <span style="color:red;">*</span></label>
                         
-                            <input type="number"  
+                            <input type="text"  
                             class="form-control" 
-                            required
-                            name="name" />
+                            
+                            name="land_size" />
                 </div>
 
 
@@ -219,7 +220,7 @@
 
         <div class="form-group">
                 <label > Embed Video fron Youtube (optional) </label>
-                <textarea class="form-control"  style='height:130px' name="video" ></textarea >
+                <textarea class="form-control"  style='height:130px' name="youtube_video" ></textarea >
             </div>
 
             
@@ -304,7 +305,7 @@
 
 
                            <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" id="remember31">
+                                <input class="form-check-input" type="radio" value="2" name="sale_mode" id="remember31">
 
                                     <label class="form-check-label btn btn-success" for="remember31" >
                                        For Rent   
@@ -317,7 +318,7 @@
                 <div class="form-group col-md-4">
 
                     <label>  Category <span style="color:red;">*</span></label>
-                                <select class="form-control" name='cat_id' required>
+                                <select class="form-control" name='gig_category_id' required>
 
                                     <option value='' hidden selected> Select  Category </option>
                                         @foreach($GigCategorys as $GigCategory)
@@ -335,7 +336,7 @@
                             <input type="text"  
                             class="form-control" 
                             required
-                            name="name" />
+                            name="sub_category_name" />
                 </div>
             </div>
 
@@ -344,7 +345,7 @@
 
             <div class="form-group">
                 <label > Description  </label>
-                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea >
+                <textarea class="form-control"  style='height:130px' name="property_desc" ></textarea >
             </div>
 
 
@@ -358,16 +359,16 @@
                             <input type="number"  
                             class="form-control" 
                             required
-                            name="name" />
+                            name="property_price" />
                 </div>
                 
                 <div class="form-group col-md-3">
-                    <label> SIZE (Sq ft)  <span style="color:red;">*</span></label>
+                    <label> SIZE (Sq ft)  </label>
                         
-                            <input type="number"  
+                            <input type="text"  
                             class="form-control" 
-                            required
-                            name="name" />
+                            
+                            name="land_size" />
                 </div>
 
 

@@ -63,25 +63,66 @@ class SubCatController extends Controller
         //Create A gig sub category
         if(CheckAccess::check(4)){
             
-                $this->validate($request, [
-                    'name' => 'required|max:255',
-                    'cat_id' => 'required|max:255',
+             $data =    $this->validate($request, [
+                    'sale_mode' => 'required|max:255',
+                    'gig_category_id' => 'required|max:255',
+                    'sub_category_name' => 'required|max:255',
+                    'property_desc' => 'required|max:99999',
+                    'property_price' => 'required|max:255',
+                    'land_size' => 'required|max:255',
+                    'youtube_video' => 'max:9999',
                     'cover_image'=>'image|required|max:1999',
                     'cover_image1'=>'image|required|max:1999',
                     'cover_image2'=>'image|required|max:1999',
                     'cover_image3'=>'image|required|max:1999',
                     'cover_image4'=>'image|required|max:1999',
-                    'cover_image6'=>'image|required|max:1999',
+                    'cover_image5'=>'image|required|max:1999',
                     'cover_image6'=>'image|required|max:1999',
                     
             ]);
-                    
-                $GigSubCategory =new GigSubCategory;
-                $GigSubCategory->sub_category_name= $request->input('name');
-                $GigSubCategory->category_id= $request->input('cat_id');
-                $GigSubCategory->admin_id= auth()->user()->id;
-                $GigSubCategory->save();
-                return redirect()->back()->with('success','Sub Gig Category Created Successfully!');
+
+                        $extension = $request->file('cover_image')->getClientOriginalExtension();
+                        $fileNameToStore = time().'.'.$extension;
+                        $path = $request->file('cover_image')->storeAs('public/admin_property_images', $fileNameToStore);
+
+                         $extension1 = $request->file('cover_image1')->getClientOriginalExtension();
+                        $fileNameToStore1 = time().'1.'.$extension1;
+                        $path1 = $request->file('cover_image1')->storeAs('public/admin_property_images', $fileNameToStore1);
+
+
+                        $extension2 = $request->file('cover_image2')->getClientOriginalExtension();
+                        $fileNameToStore2 = time().'2.'.$extension2;
+                        $path2 = $request->file('cover_image2')->storeAs('public/admin_property_images', $fileNameToStore2);
+
+                        $extension3 = $request->file('cover_image3')->getClientOriginalExtension();
+                        $fileNameToStore3 = time().'3.'.$extension3;
+                        $path3 = $request->file('cover_image3')->storeAs('public/admin_property_images', $fileNameToStore3);
+
+                        $extension4 = $request->file('cover_image4')->getClientOriginalExtension();
+                        $fileNameToStore4 = time().'4.'.$extension4;
+                        $path4 = $request->file('cover_image4')->storeAs('public/admin_property_images', $fileNameToStore4);
+
+                        $extension5 = $request->file('cover_image5')->getClientOriginalExtension();
+                        $fileNameToStore5 = time().'5.'.$extension5;
+                        $path5 = $request->file('cover_image5')->storeAs('public/admin_property_images', $fileNameToStore5);
+
+
+                        $extension6 = $request->file('cover_image6')->getClientOriginalExtension();
+                        $fileNameToStore6 = time().'6.'.$extension6;
+                        $path6 = $request->file('cover_image6')->storeAs('public/admin_property_images', $fileNameToStore6);
+
+                GigSubCategory::create( array_merge(
+                    $data,
+                     ['cover_image'=>$fileNameToStore],
+                    ['cover_image1'=>$fileNameToStore1],
+                    ['cover_image2'=>$fileNameToStore2],
+                    ['cover_image3'=>$fileNameToStore3],
+                    ['cover_image4'=>$fileNameToStore4],
+                    ['cover_image5'=>$fileNameToStore5],
+                    ['cover_image6'=>$fileNameToStore6],    
+
+                ));
+                return redirect()->back()->with('success','Property Created Successfully!');
        
 
         }else{
