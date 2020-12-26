@@ -14,7 +14,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+         $properties = GigSubCategory::where('status','=','1')->where('featured','=','1')->get();
+        return view('pages.index',['properties'=>$properties]);
+        
     }
 
 
@@ -25,9 +27,11 @@ class PageController extends Controller
     }
  
 
-    public function listing_details()
+    public function listing_details($id)
     {
-        return view('pages.listing_details');
+        $properties = GigSubCategory::where('status','=','1')->where('featured','=','1')->get();
+         $property = GigSubCategory::find($id);
+        return view('pages.listing_details',['property'=>$property,'properties'=>$properties]);
     }
 
     

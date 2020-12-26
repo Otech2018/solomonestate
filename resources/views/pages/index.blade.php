@@ -34,151 +34,60 @@
 <div class="recent-listings">
 	<div class="container">
 		<div class="title-box">
-			<h3>Recent Listings</h3>
+			<h3>Featured Listings</h3>
 			<div class="bordered">
 			</div>
 		</div>
 		<div class="row listings-items-wrapper">
-			<div class="col-md-4 listing-single-item">
+			
+@foreach($properties as $property )
+
+<div class="col-md-4 listing-single-item">
 				<div class="item-inner">
 					<div class="image-wrapper">
-						<img src="img/listings/02_img-1.png" alt="gallery">
-						<a href="#" class='fa fa-home property-type-icon'></a>
+						<img src="storage/admin_property_images/{{ $property->cover_image }}" height="240px" alt="gallery">
+						<a href="#" class='fa @if($property->property_type == 2 )  fa-home  @else fa-th  @endif property-type-icon'></a>
+					@if($property->featured == 1 )
 						<a href="#" class='featured'><i class='fa fa-star'></i>featured</a>
+					@endif
 					</div>
 					<div class="desc-box">
-						<h4><a href="#">2211 Summer Ridge Dr</a></h4>
+						<h4><a href="#">{{ $property->sub_category_name }}
+						@if( $property->sale_mode == 1)
+							(for sale )
+							@elseif( $property->sale_mode == 2)
+							(for Rent )
+							@elseif( $property->sale_mode == 3)
+							(for sale landed property )
+							@elseif( $property->sale_mode == 4)
+							(for sale nonlanded property)						
+
+							@endif
+							 </a></h4>
 						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
+							<li><span class="fa fa-arrows-alt"></span>{{ $property->land_size }} Sq Ft</li>
+							@if($property->property_type == 2 ) 
+								<li><span class="fa fa-male"></span>{{ $property->no_bathrooms }} bathrooms</li>
+								<li><span class="fa fa-inbox"></span>{{ $property->no_bedrooms }} bedrooms</li>
+							@endif
 						</ul>
 						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
+							<a href="#" class="btn btn-danger">N{{ $property->property_price }}</a>
+							<a href="{{route('payment', $property->id)}}" class="btn btn-success">Pay</a>
+							<a href="{{route('listing_details', $property->id)}}" class="btn btn-primary"><span class="fa fa-file-text-o"></span>Details</a>
 						</div>
 						<div class="clearfix">
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /Single-item -->
-			<div class="col-md-4 listing-single-item">
-				<div class="item-inner">
-					<div class="image-wrapper">
-						<img src="img/listings/03_img-2.png" alt="gallery">
-						<a href="#" class='fa fa-building-o property-type-icon'></a>
-					</div>
-					<div class="desc-box">
-						<h4><a href="#">6571 Mill Creek Cir</a></h4>
-						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
-						</ul>
-						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
-						</div>
-						<div class="clearfix">
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Single-item -->
-			<div class="col-md-4 listing-single-item">
-				<div class="item-inner">
-					<div class="image-wrapper">
-						<img src="img/listings/04_img-3.png" alt="gallery">
-						<a href="#" class='fa fa-home property-type-icon'></a>
-					</div>
-					<div class="desc-box">
-						<h4><a href="#">1141 14Th Street South</a></h4>
-						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
-						</ul>
-						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
-						</div>
-						<div class="clearfix">
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Single-item -->
-			<div class="col-md-4 listing-single-item">
-				<div class="item-inner">
-					<div class="image-wrapper">
-						<img src="img/listings/05_img-4.png" alt="gallery">
-						<a href="#" class='fa fa-building-o property-type-icon'></a>
-					</div>
-					<div class="desc-box">
-						<h4><a href="#">2627 Garry St</a></h4>
-						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
-						</ul>
-						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
-						</div>
-						<div class="clearfix">
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Single-item -->
-			<div class="col-md-4 listing-single-item">
-				<div class="item-inner">
-					<div class="image-wrapper">
-						<img src="img/listings/06_img-5.png" alt="gallery">
-						<a href="#" class='fa fa-home property-type-icon'></a>
-						<a href="#" class='featured'><i class='fa fa-star'></i>featured</a>
-					</div>
-					<div class="desc-box">
-						<h4><a href="#">2222 N 2Nd Ave Unit: 311</a></h4>
-						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
-						</ul>
-						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
-						</div>
-						<div class="clearfix">
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Single-item -->
-			<div class="col-md-4 listing-single-item">
-				<div class="item-inner">
-					<div class="image-wrapper">
-						<img src="img/listings/07_img-6.png" alt="gallery">
-						<a href="#" class='fa fa-home property-type-icon'></a>
-					</div>
-					<div class="desc-box">
-						<h4><a href="#">1436 18Th Street South</a></h4>
-						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
-						</ul>
-						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="#" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
-						</div>
-						<div class="clearfix">
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Single-item -->
+
+@endforeach
+			
+				<center>
+			<a href="{{route('listing')}}" class="btn btn-success btn-lg">View All Our Properties</a>
+			</center>
+
 		</div>
 	</div>
 </div>

@@ -2,4 +2,4 @@ for add property (gig sub categories)
 
 column property_type 1=> land, 2=> building
 
-sale_mode  1=>for sale, 2=>for rent, 3=>for sale landed property, 4=>for sale not landed property
+sale_mode  1=>for sale, 2=>for rent, 3=>for sale landed property, 4=>for sale not landed property 

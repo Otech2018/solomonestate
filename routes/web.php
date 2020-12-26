@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('homepage');
 Route::get('/listing', [App\Http\Controllers\PageController::class, 'listing'])->name('listing');
 Route::get('/listing_details/{id}', [App\Http\Controllers\PageController::class, 'listing_details'])->name('listing_details');
+Route::get('/payment/{id}', [App\Http\Controllers\PageController::class, 'listing_details'])->name('payment');
 Route::get('/contact_us', [App\Http\Controllers\PageController::class, 'contact_us'])->name('contact_us');
 Route::get('/our_team', [App\Http\Controllers\PageController::class, 'our_team'])->name('our_team');
 Route::get('/agric_consult', [App\Http\Controllers\PageController::class, 'agric_consult'])->name('agric_consult');
