@@ -37,28 +37,42 @@
 <div class="content-section">
 	<div class="container">
 		<div class="row listings-items-wrapper">
-			<div class="col-md-4 listing-single-item">
+
+
+@foreach($properties as $property )
+
+<div class="col-md-4 listing-single-item">
 				<div class="item-inner">
 					<div class="image-wrapper">
-						<img src="img/listings/02_img-1.png" alt="gallery">
-						<a href="#" class='fa fa-home property-type-icon'></a>
+						<img src="storage/admin_property_images/{{ $property->cover_image }}" height="240px" alt="gallery">
+						<a href="#" class='fa @if($property->property_type == 2 )  fa-home  @else fa-th  @endif property-type-icon'></a>
 					</div>
 					<div class="desc-box">
-						<h4><a href="#">2211 Summer Ridge Dr</a></h4>
+						<h4><a href="#">{{ $property->sub_category_name }} ben</a></h4>
 						<ul class="slide-item-features item-features">
-							<li><span class="fa fa-arrows-alt"></span>5000 Sq Ft</li>
-							<li><span class="fa fa-male"></span>2 bathrooms</li>
-							<li><span class="fa fa-inbox"></span>3 bedrooms</li>
+							<li><span class="fa fa-arrows-alt"></span>{{ $property->land_size }} Sq Ft</li>
+							@if($property->property_type == 2 ) 
+								<li><span class="fa fa-male"></span>{{ $property->no_bathrooms }} bathrooms</li>
+								<li><span class="fa fa-inbox"></span>{{ $property->no_bedrooms }} bedrooms</li>
+							@endif
 						</ul>
 						<div class="buttons-wrapper">
-							<a href="#" class="yellow-btn">N370,000</a>
-							<a href="{{route('listing_details')}}" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
+							<a href="#" class="yellow-btn">N{{ $property->property_price }}</a>
+							<a href="{{route('listing_details', $property->id)}}" class="gray-btn"><span class="fa fa-file-text-o"></span>Details</a>
 						</div>
 						<div class="clearfix">
 						</div>
 					</div>
 				</div>
 			</div>
+
+@endforeach
+			
+
+
+
+
+
 			<!-- /Single-item -->
 			<div class="col-md-4 listing-single-item">
 				<div class="item-inner">
@@ -248,7 +262,15 @@
 				</div>
 			</div>
 			<!-- /Single-item -->
+
+
+
 		</div>
+
+
+		   {{$properties->links()}}
+
+
 		<div class="pagination-wrapper">
 			<ul class="pagination">
 				<li><a href="#">&laquo;</a></li>

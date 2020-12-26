@@ -281,6 +281,9 @@
   
    <form method="POST" action={{route('sub_gigs.store')}} enctype="multipart/form-data">
             @csrf
+
+                                <input type='hidden' value='2' name="property_type">
+
             
             <br/><br/>
                <div class="row"  style="margin-left:45px;">
@@ -356,7 +359,7 @@
              <div class="form-group col-md-3">
                     <label> PRICE  <span style="color:red;">*</span></label>
                         
-                            <input type="number"  
+                            <input type="text"  
                             class="form-control" 
                             required
                             name="property_price" />
@@ -373,22 +376,22 @@
 
 
                  <div class="form-group col-md-3">
-                    <label> No. of Bedrooms <span style="color:red;">*</span></label>
+                    <label> No. of Bedrooms </label>
                         
                             <input type="number"  
                             class="form-control" 
-                            required
-                            name="name" />
+                            
+                            name="no_bedrooms" />
                 </div>
 
 
                  <div class="form-group col-md-3">
-                    <label>No. of Bathrooms  <span style="color:red;">*</span></label>
+                    <label>No. of Bathrooms  </label>
                         
                             <input type="number"  
                             class="form-control" 
-                            required
-                            name="name" />
+                            
+                            name="no_bathrooms" />
                 </div>
             </div>
 
@@ -400,17 +403,17 @@
 <div style="padding-left:40px;">
 							<h3 style="font-size:27px; font-weight:bold;">Additional Features</h3>
 							<ul class="features">
-								<li><input  value="Ceiling Fan" class="form-check-input" type="checkbox" id="feature1"   name="feature[]"> <label class="form-check-label" for="feature1" >Ceiling Fan</label></li>
-								<li><input  value="Curtains/Drapes" class="form-check-input" type="checkbox" id="feature2"   name="feature[]"> <label class="form-check-label" for="feature2" >Curtains/Drapes</label></li>
-								<li><input  value="Oven/Range" class="form-check-input" type="checkbox" id="feature3"   name="feature[]"> <label class="form-check-label" for="feature3" >Oven/Range</label></li>
-								<li><input  value="Chandelier(s)" class="form-check-input" type="checkbox" id="feature4"   name="feature[]"> <label class="form-check-label" for="feature4" >Chandelier(s)</label></li>
-								<li><input  value="Freezer" class="form-check-input" type="checkbox" id="feature5"   name="feature[]"> <label class="form-check-label" for="feature5" >Freezer</label></li>
-								<li><input  value="Refrigerator" class="form-check-input" type="checkbox" id="feature6"   name="feature[]"> <label class="form-check-label" for="feature6" >Refrigerator</label></li>
-								<li><input  value="Convection Oven" class="form-check-input" type="checkbox" id="feature7"   name="feature[]"> <label class="form-check-label" for="feature7" >Convection Oven</label></li>
-								<li><input  value="Hotwater" class="form-check-input" type="checkbox" id="feature8"   name="feature[]"> <label class="form-check-label" for="feature8" >Hotwater</label></li>
-								<li><input  value="Light Fixtures" class="form-check-input" type="checkbox" id="feature9"   name="feature[]"> <label class="form-check-label" for="feature9" >Light Fixtures</label></li>
-								<li><input  value="Screens" class="form-check-input" type="checkbox" id="feature10"   name="feature[]"> <label class="form-check-label" for="feature10" >Screens</label></li>
-								<li><input  value="Air Conditioning" class="form-check-input" type="checkbox" id="feature11"   name="feature[]"> <label class="form-check-label" for="feature11" >Air Conditioning</label></li>
+								<li><input  value="Ceiling Fan * " class="form-check-input" type="checkbox" id="feature1"   name="feature[]"> <label class="form-check-label" for="feature1" >Ceiling Fan</label></li>
+								<li><input  value="Curtains/Drapes * " class="form-check-input" type="checkbox" id="feature2"   name="feature[]"> <label class="form-check-label" for="feature2" >Curtains/Drapes</label></li>
+								<li><input  value="Oven/Range * " class="form-check-input" type="checkbox" id="feature3"   name="feature[]"> <label class="form-check-label" for="feature3" >Oven/Range</label></li>
+								<li><input  value="Chandelier(s) * " class="form-check-input" type="checkbox" id="feature4"   name="feature[]"> <label class="form-check-label" for="feature4" >Chandelier(s)</label></li>
+								<li><input  value="Freezer * " class="form-check-input" type="checkbox" id="feature5"   name="feature[]"> <label class="form-check-label" for="feature5" >Freezer</label></li>
+								<li><input  value="Refrigerator * " class="form-check-input" type="checkbox" id="feature6"   name="feature[]"> <label class="form-check-label" for="feature6" >Refrigerator</label></li>
+								<li><input  value="Convection Oven * " class="form-check-input" type="checkbox" id="feature7"   name="feature[]"> <label class="form-check-label" for="feature7" >Convection Oven</label></li>
+								<li><input  value="Hotwater * " class="form-check-input" type="checkbox" id="feature8"   name="feature[]"> <label class="form-check-label" for="feature8" >Hotwater</label></li>
+								<li><input  value="Light Fixtures * " class="form-check-input" type="checkbox" id="feature9"   name="feature[]"> <label class="form-check-label" for="feature9" >Light Fixtures</label></li>
+								<li><input  value="Screens * " class="form-check-input" type="checkbox" id="feature10"   name="feature[]"> <label class="form-check-label" for="feature10" >Screens</label></li>
+								<li><input  value="Air Conditioning * " class="form-check-input" type="checkbox" id="feature11"   name="feature[]"> <label class="form-check-label" for="feature11" >Air Conditioning</label></li>
 							</ul>
 						</div>
 
@@ -433,7 +436,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 1<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image1" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -441,7 +444,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 2<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image2" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -457,14 +460,14 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 3<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image3" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
 
                 <div class="form-group col-md-3">
                       <label> Image 4<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image4" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -472,7 +475,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 5<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image5" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -480,7 +483,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 6<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="cover_image6" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -494,7 +497,7 @@
 
         <div class="form-group">
                 <label > Embed Video fron Youtube (optional) </label>
-                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea >
+                <textarea class="form-control"  style='height:130px' name="youtube_video" ></textarea >
             </div>
 
             

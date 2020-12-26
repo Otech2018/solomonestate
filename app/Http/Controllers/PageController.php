@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GigSubCategory;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -19,9 +20,10 @@ class PageController extends Controller
 
     public function listing()
     {
-        return view('pages.listing');
+        $properties = GigSubCategory::where('status','=','1')->paginate(20);
+        return view('pages.listing',['properties'=>$properties]);
     }
-
+ 
 
     public function listing_details()
     {

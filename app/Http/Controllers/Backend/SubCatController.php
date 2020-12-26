@@ -69,7 +69,10 @@ class SubCatController extends Controller
                     'sub_category_name' => 'required|max:255',
                     'property_desc' => 'required|max:99999',
                     'property_price' => 'required|max:255',
-                    'land_size' => 'required|max:255',
+                    'property_type' => 'required|max:255',
+                    'no_bedrooms' => 'max:255',
+                    'no_bathrooms' => 'max:255',
+                    'land_size' => 'max:255',
                     'youtube_video' => 'max:9999',
                     'cover_image'=>'image|required|max:1999',
                     'cover_image1'=>'image|required|max:1999',
@@ -111,6 +114,12 @@ class SubCatController extends Controller
                         $fileNameToStore6 = time().'6.'.$extension6;
                         $path6 = $request->file('cover_image6')->storeAs('public/admin_property_images', $fileNameToStore6);
 
+                    $features =$request->input('feature');
+                    $featur ="";
+                    foreach($features as $feature){
+                        $featur = $featur." ".$feature;
+                    }
+
                 GigSubCategory::create( array_merge(
                     $data,
                      ['cover_image'=>$fileNameToStore],
@@ -120,6 +129,7 @@ class SubCatController extends Controller
                     ['cover_image4'=>$fileNameToStore4],
                     ['cover_image5'=>$fileNameToStore5],
                     ['cover_image6'=>$fileNameToStore6],    
+                    ['feature'=>$featur],    
 
                 ));
                 return redirect()->back()->with('success','Property Created Successfully!');
