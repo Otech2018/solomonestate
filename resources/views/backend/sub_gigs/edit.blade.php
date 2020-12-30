@@ -20,7 +20,7 @@
        <div class="col-md-5">
       <div class="card shadow-lg">
         <div class="card-body">
-            <h5 class="card-title">Edit Sub Gig Category</h5>
+            <h5 class="card-title">Edit Property</h5>
 
              	@include('layouts.messages')
 		<form method="POST" action={{route('sub_gigs.update', $GigSubCategory->id)}} enctype="multipart/form-data">

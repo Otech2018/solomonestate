@@ -60,7 +60,7 @@ class SubCatController extends Controller
      */
     public function store(Request $request)
     {
-        //Create A gig sub category
+        //Create A gig sub category 
         if(CheckAccess::check(4)){
             
              $data =    $this->validate($request, [
@@ -160,13 +160,18 @@ class SubCatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id){
+
+    }
+    public function fea(Request $request, $id)
     {
-        //Edit A gig sub category
-        if(CheckAccess::check(6)){ 
+          //Remove Featured
+        if(CheckAccess::check(6)){
             $GigSubCategory = GigSubCategory::find($id);
-            return view('backend.sub_gigs.edit',['GigSubCategory'=>$GigSubCategory]);
-            
+            $GigSubCategory->featured =0;
+            $GigSubCategory->save();
+            return redirect()->back()->with('success','Featured Removed!');
+        
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
         }
@@ -181,18 +186,13 @@ class SubCatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Edit A gig sub category
-        if(CheckAccess::check(6)){ 
-            $this->validate($request, [
-                'sub_gig_category_name' => 'required|string|max:255',
-               ]);
-
-                $GigSubCategory = GigSubCategory::find($id);
-            $GigSubCategory->sub_category_name= $request->input('sub_gig_category_name');
+         //Set Featured
+        if(CheckAccess::check(6)){
+            $GigSubCategory = GigSubCategory::find($id);
+            $GigSubCategory->featured =1;
             $GigSubCategory->save();
-            return redirect()->back()->with('success','Gigs Sub Category Edited Created Successfully!');
-
-            
+            return redirect()->back()->with('success','Set As a Featured Property!');
+        
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
         }
@@ -206,7 +206,16 @@ class SubCatController extends Controller
      */
     public function destroy($id)
     {
-        //
+          //Delete
+        if(CheckAccess::check(6)){
+            $GigSubCategory = GigSubCategory::find($id);
+            $GigSubCategory->status =0;
+            $GigSubCategory->save();
+            return redirect()->back()->with('success','Property Deleted Successfully!');
+        
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
 
@@ -216,7 +225,7 @@ class SubCatController extends Controller
 
          //listing all the gigs category
          if(CheckAccess::check(5)){
-            $GigSubCategories = GigSubCategory::where('gig_category_id','=',$id)->paginate(20);
+            $GigSubCategories = GigSubCategory::where('gig_category_id','=',$id)->where('status',1)->paginate(20);
             $GigCategory = GigCategory::find($id);
            return view('backend.sub_gigs.index1',[
                'GigSubCategories'=>$GigSubCategories,

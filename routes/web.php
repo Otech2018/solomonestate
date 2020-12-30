@@ -42,7 +42,7 @@ Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::c
 	Route::get('change_password1', [App\Http\Controllers\MyProfileController::class,'change_password1'])->name('change_password11');
 	
 
-
+ 
 
 //Admin Routes {wisdom don't touch}
 Route::prefix('sax')->group(function(){
@@ -71,6 +71,7 @@ Route::prefix('sax')->group(function(){
 	Route::put('/updateAddAdiminToUserGrp/{id}', [App\Http\Controllers\Backend\User_groupController::class, 'updateAddAdiminToUserGrp'])->name('updateAddAdiminToUserGrp');
 	Route::get('/addAdiminToUserGrp/{id}', [App\Http\Controllers\Backend\User_groupController::class, 'addAdiminToUserGrp1'])->name('user_group.addAdiminToUserGrp1');
 	Route::get('/sub_gig/{id}', [App\Http\Controllers\Backend\SubCatController::class, 'subgigs'])->name('sub_gigs.subgigs');
+	Route::put('/sub_gig/{id}', [App\Http\Controllers\Backend\SubCatController::class, 'fea'])->name('fea.subgigs');
 	Route::get('/setTask/{id}', [App\Http\Controllers\Backend\User_groupController::class, 'setTask'])->name('user_group.setTask');
 });
 //Admin Routes ends here {wisdom don't touch}
