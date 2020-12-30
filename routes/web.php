@@ -55,6 +55,7 @@ Route::prefix('sax')->group(function(){
 	Route::resource('gigs', App\Http\Controllers\Backend\gigsController::class);
 	Route::resource('sub_gigs', App\Http\Controllers\Backend\SubCatController::class);
 	Route::resource('train', App\Http\Controllers\Backend\TrainingController::class);
+	Route::resource('accessment', App\Http\Controllers\Backend\AccessmentController::class);
 	Route::resource('lesson', App\Http\Controllers\Backend\LessonsController::class);
 	Route::resource('myprofile', App\Http\Controllers\Backend\MyProfileController::class);
 	Route::resource('admin_users', App\Http\Controllers\Backend\AdminUserController::class);
