@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GigSubCategory;
+use App\Models\Accessment;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -15,7 +16,8 @@ class PageController extends Controller
     public function index()
     {
          $properties = GigSubCategory::where('status','=','1')->where('featured','=','1')->get();
-        return view('pages.index',['properties'=>$properties]);
+         $Accessments = Accessment::where('status','=','1')->get();
+        return view('pages.index',['properties'=>$properties,'Accessments'=>$Accessments]);
         
     }
 
@@ -43,7 +45,9 @@ class PageController extends Controller
 
     public function our_team()
     {
-        return view('pages.our_team');
+         $Accessments = Accessment::where('status','=','1')->get();
+        return view('pages.our_team',['Accessments'=>$Accessments]);
+
     }
 
 

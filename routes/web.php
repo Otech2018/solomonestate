@@ -35,6 +35,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('tos');
+Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'index'])->name('book_agent');
 
 Route::resource('myprofile1', App\Http\Controllers\MyProfileController::class);
 	

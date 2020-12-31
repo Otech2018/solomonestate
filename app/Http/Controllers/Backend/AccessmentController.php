@@ -22,7 +22,8 @@ class AccessmentController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth');
+
     }
 
     public function index()
@@ -30,13 +31,7 @@ class AccessmentController extends Controller
          //Listing all Accessments
          if(CheckAccess::check(17)){
             $Accessments1 = Accessment::where('status',1)->paginate(20);
-            $Accessments2 = Accessment::where('status',2)->paginate(20);
-            $Accessments4 = Accessment::where('status',4)->paginate(20);
-            return view('backend.accessment.index',['Accessments1'=>$Accessments1,
-            'Accessments2'=>$Accessments2,
-            'Accessments4'=>$Accessments4
-            
-            ]);
+            return view('backend.accessment.index',['Accessments1'=>$Accessments1]);
             
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
@@ -77,16 +72,24 @@ class AccessmentController extends Controller
                 'topic' => 'required|string|max:255',
                 'keyword' => 'required|string|max:255',
                 'target_country' => 'required|string|max:255',
+                'sub_heading' => 'required|string|max:255',
+                    'cover_image'=>'image|required|max:1999',
+
                 
         ]);
+
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+                        $fileNameToStore = time().'.'.$extension;
+                        $path = $request->file('cover_image')->storeAs('public/agent', $fileNameToStore);
                 
             $Accessment =new Accessment;
             $Accessment->topic= $request->input('topic');
             $Accessment->keyword= $request->input('keyword');
             $Accessment->target_country= $request->input('target_country');
             $Accessment->sub_heading= $request->input('sub_heading');
+            $Accessment->slug=  $fileNameToStore;
             $Accessment->save();
-            return redirect()->back()->with('success','Accessment Created Successfully!');
+            return redirect()->back()->with('success','Agent Created Successfully!');
    
             
         }else{
@@ -150,12 +153,34 @@ class AccessmentController extends Controller
         ]);
                 
             $Accessment =Accessment::find($id);
+
+             if($request->hasFile('cover_image')){
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //get just filename         
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            //fileNametostore
+          //  $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $fileNameToStore = time().'.'.$extension;
+            //upload Image
+            unlink("storage/agent/".$Accessment->slug); //delete existing file
+            $path = $request->file('cover_image')->storeAs('public/agent', $fileNameToStore);
+            
+        }
+
+
             $Accessment->topic= $request->input('topic');
             $Accessment->keyword= $request->input('keyword');
             $Accessment->target_country= $request->input('target_country');
             $Accessment->sub_heading= $request->input('sub_heading');
+
+            if($request->hasFile('cover_image')){
+            $Accessment->slug= $fileNameToStore;
+        }
             $Accessment->save();
-            return redirect()->back()->with('success','Accessment Edited Successfully!');
+            return redirect()->back()->with('success','Agent Edited Successfully!');
    
             
         }else{
@@ -176,7 +201,7 @@ class AccessmentController extends Controller
             $Accessment = Accessment::find($id);
             $Accessment->status =0;
             $Accessment->save();
-            return redirect()->back()->with('success','Assessment Deleted Successfully!');
+            return redirect()->back()->with('success','Agent Deleted Successfully!');
         
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');

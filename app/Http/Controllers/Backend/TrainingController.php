@@ -159,7 +159,7 @@ class TrainingController extends Controller
             $path = $request->file('cover_image')->storeAs('public/training_img', $fileNameToStore);
             
         }
-
+ 
        
         $Training->name= $request->input('name');
         $Training->description= $request->input('desc');

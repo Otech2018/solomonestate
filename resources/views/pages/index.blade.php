@@ -103,10 +103,13 @@
 		</div>
 		<p></p>
 		<div class="owl-carousel agents-slider">
+
+
+			@foreach($Accessments as $Accessment )
 			<!-- single-agent -->
 		<div class="single-agent">
 			<div class="image-box">
-				<img src="storage/agent/a1.jpg" alt="agent">
+				<img src="storage/agent/{{ $Accessment->slug }}" alt="agent">
 				<ul class="social-icons">
 					<li><a href="#" class="fa fa-google-plus"></a></li>
 					<li><a href="#" class="fa fa-twitter"></a></li>
@@ -117,73 +120,23 @@
 				</ul>
 			</div>
 			<div class="desc-box">
-				<h4>HON .SOLOMON CHIMEZIE AMAECHI</h4>
+				<h4>{{ $Accessment->topic }}</h4>
 				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
+					<i class="fa fa-phone"></i> {{ $Accessment->keyword }}
 				</p>
 				<p class="person-email">
-					<i class="fa fa-envelope"></i> solomon@solomonsideas.ltd
+					<i class="fa fa-envelope"></i> {{ $Accessment->target_country }}
 				</p>
 				<p class="person-fax">
-					<i class="fa fa-user"></i> Sales Agent
+					<i class="fa fa-user"></i> {{ $Accessment->sub_heading }}
 				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
+				<a href="{{ route('book_agent',$Accessment->id) }}" class='gray-btn'>Book Agent</a>
 			</div>
 		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="storage/agent/a2.jpg" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>MICHEAL C. G ODOR </h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> odor@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Rental Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
-		<!-- single-agent -->
-		<div class="single-agent">
-			<div class="image-box">
-				<img src="storage/agent/a3.jpg" alt="agent">
-				<ul class="social-icons">
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-pinterest"></a></li>
-					<li><a href="#" class="fa fa-dribbble"></a></li>
-					<li><a href="#" class="fa fa-linkedin"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-				</ul>
-			</div>
-			<div class="desc-box">
-				<h4>COMFORT IFEOMA OKORONKWO</h4>
-				<p class="person-number">
-					<i class="fa fa-phone"></i> 900 123 456 789
-				</p>
-				<p class="person-email">
-					<i class="fa fa-envelope"></i> ifeoma@solomonsideas.ltd
-				</p>
-				<p class="person-fax">
-					<i class="fa fa-user"></i> Rental Agent
-				</p>
-				<a href="#" class='gray-btn'>Book Agent</a>
-			</div>
-		</div>
+
+		@endforeach
+		
+
 		</div>
 			<center>
 <a href="{{route('our_team')}}" class="btn btn-success btn-lg">View All Our Agents</a>
