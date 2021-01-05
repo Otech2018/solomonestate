@@ -70,6 +70,8 @@ class SubCatController extends Controller
                     'property_desc' => 'required|max:99999',
                     'property_price' => 'required|max:255',
                     'property_type' => 'required|max:255',
+                    'lga_id' => 'required|max:255',
+                    'state_id' => 'required|max:255',
                     'no_bedrooms' => 'max:255',
                     'no_bathrooms' => 'max:255',
                     'land_size' => 'max:255',

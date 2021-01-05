@@ -46,6 +46,26 @@
     
 </head>
 <body id='top'>
+
+
+
+
+	@guest 
+
+	@else
+
+<?php if(auth()->user()->status ==6){
+    die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear User you Account is Suspended please Contact the  Admin</h3>");
+}else if(auth()->user()->status ==0){
+         die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear User you Account is Deleted please Contact the  Admin</h3>");
+
+}  ?>
+
+	@endguest
+
+
+
+
 <header >
 <div id="top-strip" style="background-color:green;">
 	<div class="container">

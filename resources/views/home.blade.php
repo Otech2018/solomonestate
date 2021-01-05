@@ -6,16 +6,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 	<div class="page-title-section">
 		<div class="container">
 			<div class="pull-left page-title">
@@ -55,35 +45,6 @@
 
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -3,3 +3,8 @@ for add property (gig sub categories)
 column property_type 1=> land, 2=> building
 
 sale_mode  1=>for sale, 2=>for rent, 3=>for sale landed property, 4=>for sale not landed property 
+
+
+user table
+
+user_group 0=>other User !=0 =>admin

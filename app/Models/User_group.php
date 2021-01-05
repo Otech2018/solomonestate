@@ -12,6 +12,6 @@ class User_group extends Model
 
 
     public function admin(){
-        return $this->belongsTo('App\Models\Admin','id');
+        return $this->belongsTo('App\Models\User','id');
     }
 }

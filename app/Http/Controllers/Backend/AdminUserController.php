@@ -25,7 +25,7 @@ class AdminUserController extends Controller
     public function index()
     {
         if(CheckAccess::check(20)){
-            $Users = User::where('status','!=',0)->paginate(20);
+            $Users = User::where('status','!=',0)->where('user_group','=',0)->paginate(20);
             return view('backend.admin_users.index',['Users'=>$Users]);
  
         }else{

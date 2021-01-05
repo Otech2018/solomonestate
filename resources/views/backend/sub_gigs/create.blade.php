@@ -46,7 +46,8 @@
    <form method="POST" action={{route('sub_gigs.store')}} enctype="multipart/form-data">
             @csrf
                                 <input type='hidden' value='1' name="property_type">
-
+              <input  value="" type="hidden" selected  name="feature[]">
+                                
 
             <br/><br/>
 
@@ -141,7 +142,37 @@
 
 
         
+  <div class="form-row">
+  
 
+
+                 <div class="form-group col-md-6">
+                      <label>State  <span class="text-danger">*</span></label>
+                         <select id="state-list" class="state form-control form-control-sm" name='state_id' required >
+
+                        <option value='' hidden selected> Select State *</option>
+                         @foreach($states1 as $state)
+                            <option value='{{$state->id}}'> {{$state->name}} </option>
+                        @endforeach
+                    </select>
+                      
+                </div>
+
+
+
+                 <div class="form-group col-md-6">
+                      <label>Lga  <span class="text-danger">*</span></label>
+                         <select id="lga-list" class="lgaa form-control form-control-sm" name='lga_id' required>
+                            <option value='' hidden selected> Select LGA *</option>
+                             @foreach($lgas1 as $lga)
+                                <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
+                            @endforeach
+                        </select>
+                      
+                </div>
+
+
+ </div>
 
 
 
@@ -397,11 +428,43 @@
 
 
 
+  <div class="form-row">
+  
 
+
+                 <div class="form-group col-md-6">
+                      <label>State  <span class="text-danger">*</span></label>
+                         <select id="state-list" class="state form-control form-control-sm" name='state_id' required >
+             
+
+                        <option value='' hidden selected> Select State *</option>
+                         @foreach($states1 as $state)
+                            <option value='{{$state->id}}'> {{$state->name}} </option>
+                        @endforeach
+                    </select>
+                      
+                </div>
+
+
+
+                 <div class="form-group col-md-6">
+                      <label>Lga  <span class="text-danger">*</span></label>
+                         <select id="lga-list" class="lgaa form-control form-control-sm" name='lga_id' required>
+                            <option value='' hidden selected> Select LGA *</option>
+                             @foreach($lgas1 as $lga)
+                                <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
+                            @endforeach
+                        </select>
+                      
+                </div>
+
+
+ </div>
           
         
 <div style="padding-left:40px;">
 							<h3 style="font-size:27px; font-weight:bold;">Additional Features</h3>
+              <input  value="" type="hidden" selected  name="feature[]">
 							<ul class="features">
 								<li><input  value="Ceiling Fan * " class="form-check-input" type="checkbox" id="feature1"   name="feature[]"> <label class="form-check-label" for="feature1" >Ceiling Fan</label></li>
 								<li><input  value="Curtains/Drapes * " class="form-check-input" type="checkbox" id="feature2"   name="feature[]"> <label class="form-check-label" for="feature2" >Curtains/Drapes</label></li>

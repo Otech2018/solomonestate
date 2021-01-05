@@ -49,7 +49,7 @@
 			<!-- single-agent -->
 		<div class="single-agent">
 			<div class="image-box">
-				<img src="storage/agent/{{ $Accessment->slug }}" alt="agent" style="height:280px !important; width:330px !important;">
+				<img src="storage/agent/{{ $Accessment->slug }}" alt="agent" style="height:300px !important; width:300px !important;">
 				<ul class="social-icons">
 					<li><a href="#" class="fa fa-google-plus"></a></li>
 					<li><a href="#" class="fa fa-twitter"></a></li>

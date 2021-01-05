@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User_group;
-use App\Models\Admin;
+use App\Models\User as Admin;
 use App\Models\Perform_Task;
 use App\Models\Task;
 

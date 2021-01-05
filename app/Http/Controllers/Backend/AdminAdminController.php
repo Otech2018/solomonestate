@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Admin;
+use App\Models\User as Admin;
 use App\Models\User_group;
 use App\Http\Controllers\Backend\Customs\CheckAccess;
 
@@ -28,7 +28,7 @@ class AdminAdminController extends Controller
     public function index()
     {
         if(CheckAccess::check(36)){
-            $Admins = Admin::where('status','!=',0)->paginate(20);
+            $Admins = Admin::where('status','!=',0)->where('user_type','!=',0)->paginate(20);
              return view('backend.admin_admin.index',['Admins'=>$Admins]);
  
         }else{

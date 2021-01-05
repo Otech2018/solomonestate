@@ -50,6 +50,51 @@
                 </script>
 
 <script>
+
+
+
+  
+        $(document).ready(function(){
+            $("select.country").change(function(){
+                var selectedCountry = $(this).children("option:selected").val();
+               // alert("You have selected the country - " + selectedCountry);
+               if(selectedCountry == 162 ){
+                  $('#lga').hide(); $('#state').hide(); $('#state-list').show();$('#state-text').hide(); $('#lga-list').show();$('#lga-text').hide();
+                    //
+                     $('.state').attr('required','required'); 
+                     $('.lgaa').attr('required','required');  
+                    
+               }else{
+                 $('#lga').hide(); $('#state').hide(); $('#state-list').hide();$('#state-text').show(); $('#lga-list').hide();$('#lga-text').show();
+                  //
+                  $('.lgaa').removeAttr('required');
+                 $('.state').removeAttr('required');
+                }
+            });
+        });
+
+
+
+        $(document).ready(function(){
+            $("select.state").change(function(){
+                $('.lgaa').prop('selectedIndex', 0);
+                var selectedState = $(this).children("option:selected").val();
+
+                if(selectedState =='all'){
+                   $('.rankf').hide();   
+                 }else{
+                   $('.rankf').show();  
+                 }
+                $('.lga').attr('disabled','disabled');  $('.lga').hide();
+                $('.lgaClass'+selectedState).removeAttr('disabled'); 
+                 $('.lgaClass'+selectedState).show(); 
+                 if(selectedState =='all'){
+                   $('.rankf').hide();   
+                 }
+            });
+        });
+
+       
   
 
    // Basic

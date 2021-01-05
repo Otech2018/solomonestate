@@ -84,11 +84,13 @@
 
 @endforeach
 			
+
+		</div>
+
+		
 				<center>
 			<a href="{{route('listing')}}" class="btn btn-success btn-lg">View All Our Properties</a>
 			</center>
-
-		</div>
 	</div>
 </div>
 
