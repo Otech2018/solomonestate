@@ -202,11 +202,16 @@
 					</ul>
 				</div>
 				<div class="sidebar-widget text-widget">
-					<h4 class="widget-title">Text Widget</h4>
-					<p class='first-paragraph' style="color:black;">
-                            Adverts for Online Shoping
-                            and Savings goes here!
-                    </p>
+					<center>
+					<a href="{{route('pay_rent')}}" class="btn btn-success btn-lg blink_me">Let's Pay Your House Rent</a>
+					</center>
+					<br/><br/><br/>
+					<a href="{{route('agric_consult')}}" >
+						<img src="../img/a.jpeg" width="100%" height="200px" style="border-radius:35px; border:5px solid #ccc;" />
+						<center style="color:black; font-weight:bold; font-size:18px;">
+							AGRIC CONSULTANCY
+						</center>
+					</a>
 					
 				</div>
 			</div>

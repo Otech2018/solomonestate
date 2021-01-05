@@ -19,15 +19,15 @@
 
                  <div class="form-group col-md-2">
                       <label style="font-size:15px;">Property type <span class="text-danger">*</span></label>
-                          <select class='form-control form-control-sm'>
-							<option value="any">any</option>
-							<option value="potato-chips">Potato chips</option>
-							<option value="chips-and-salsa">Chips and salsa</option>
-							<option value="cookies">Cookies</option>
-							<option value="doritos">Doritos</option>
-							<option value="pringles">Pringles</option>
-							<option value="hot-pockets">Hot pockets</option>
-						</select>
+                          <select class=" form-control form-control-sm" name='property_type1' required >
+              <option value="any">All</option>
+
+                         @foreach($property_type1 as $property_type)
+                            <option value='{{$property_type->property_type}}'> 
+                              @if($property_type->property_type == 2 )  Building  @else Land  @endif 
+
+                        @endforeach
+                    </select>
                       
                 </div>
 
@@ -39,7 +39,7 @@
 							<option value="any">All</option>
 
 		                     @foreach($states1 as $state)
-		                        <option value='{{$state->id}}'> {{$state->name}} </option>
+		                        <option value='{{$state->state_id}}'> {{$state->state->name}} </option>
 		                    @endforeach
 		                </select>
                       
@@ -53,7 +53,7 @@
                             <option value='' hidden selected> Select LGA *</option>
                             <option value="any">All</option>
                              @foreach($lgas1 as $lga)
-                                <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
+                                <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->lga_id}}' style='display:none;' disabled> {{$lga->lga->name}} </option>
                             @endforeach
                         </select>
                       

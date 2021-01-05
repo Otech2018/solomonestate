@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Backend\Customs\CheckAccess;
-use App\Models\GigSubCategory;
+use App\Http\Controllers\Controller;
 use App\Models\GigCategory;
+use App\Models\GigSubCategory;
+use App\Models\Lga;
+use App\Models\State;
+use Illuminate\Http\Request;
 
 class SubCatController extends Controller
 {
@@ -45,7 +47,13 @@ class SubCatController extends Controller
         //Create A gig sub category
         if(CheckAccess::check(4)){
             $GigCategorys = GigCategory::where('status',1)->get();
-            return view('backend.sub_gigs.create',['GigCategorys'=>$GigCategorys]);
+            $states = State::all();
+            $lgas = Lga::all();
+            return view('backend.sub_gigs.create',[
+                'GigCategorys'=>$GigCategorys,
+                'states' => $states,
+                'lgas' => $lgas
+            ]);
             
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');

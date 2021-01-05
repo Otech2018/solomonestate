@@ -44,6 +44,19 @@
 
 @endif
     
+
+    <style>
+    	.blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+    </style>
 </head>
 <body id='top'>
 
@@ -180,7 +193,7 @@
 
 						@endguest
 						
-						<li class="active" ><a href="{{route('pay_rent')}}" >Let's Pay Your Rent </a></li>
+						<li class="active" ><a class="blink_me" href="{{route('pay_rent')}}" >Let's Pay Your Rent </a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
