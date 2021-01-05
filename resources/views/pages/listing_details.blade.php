@@ -136,6 +136,10 @@
 					</div>
 					<div class="property-desc">
 						<h3> {{ $property->sub_category_name }} </h3>
+						 <h4 style="color:green;font-size:17px;">
+							 <span class="fa fa-map-marker"></span> {{ $property->lga->name }}
+							 In {{ $property->state->name }}
+							 </h4>
 						<ul class="slide-item-features item-features">
 								<li><span class="fa fa-arrows-alt"></span>{{ $property->land_size }} Sq Ft</li>
 							@if($property->property_type == 2 ) 

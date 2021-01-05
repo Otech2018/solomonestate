@@ -16,4 +16,19 @@ class GigSubCategory extends Model
     	return $this->belongsTo(GigCategory::class);
     }
 
+
+
+
+
+    public function lga()
+{
+    return $this->belongsTo('App\Models\Lga','lga_id');
+}
+
+
+public function state()
+{
+    return $this->belongsTo('App\Models\State','state_id');
+}
+
 }
