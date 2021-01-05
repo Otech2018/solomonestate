@@ -9,7 +9,4 @@ sub_gig = Property
 
 where i stop 
 
-add property admin
-
-
-form
+completion of galery and project

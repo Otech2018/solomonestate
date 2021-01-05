@@ -33,6 +33,13 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(
             ['*'],
             function(View $view){
+
+
+                                  $states1 = GigSubCategory::where('status','1')->groupBy('state_id')->get();
+                                  $lgas1 = GigSubCategory::where('status','1')->groupBy('lga_id')->get();
+                                  $property_type1 = GigSubCategory::where('status','1')->groupBy('property_type')->get();
+
+                                  //when logged in
                 if (auth()->user() != null) {
                    $Perform_task_grps = Perform_Task::where('user_group_id','=', auth()->user()->user_type)
                                   ->where('status','1')->groupBy('menu_id')->get();
@@ -40,9 +47,6 @@ class AppServiceProvider extends ServiceProvider
                     $Perform_task_alls = Perform_Task::where('user_group_id','=', auth()->user()->user_type)
                                   ->where('status','1')->get(); 
 
-                                  $states1 = GigSubCategory::where('status','1')->groupBy('state_id')->get();
-                                  $lgas1 = GigSubCategory::where('status','1')->groupBy('lga_id')->get();
-                                  $property_type1 = GigSubCategory::where('status','1')->groupBy('property_type')->get();
 
                     $view->with(
                         [
@@ -54,7 +58,23 @@ class AppServiceProvider extends ServiceProvider
 
                         ]
                     );
+                }else{
+
+
+                    // not logged in
+                  $view->with(
+                        [
+                            'states1' => $states1,
+                            'lgas1' => $lgas1,
+                            'property_type1' => $property_type1
+
+                        ]
+                    );
                 }
+
+
+
+
             }
         );
 
