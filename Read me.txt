@@ -8,3 +8,11 @@ sale_mode  1=>for sale, 2=>for rent, 3=>for sale landed property, 4=>for sale no
 user table
 
 user_group 0=>other User !=0 =>admin
+
+
+gallery table
+
+
+image_type = 1=>gallery 2=>project 3=>both
+
+accessment is used for Agent

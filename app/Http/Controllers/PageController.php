@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GigSubCategory;
 use App\Models\Accessment;
+use App\Models\Gallery;
+use App\Models\GigSubCategory;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -58,14 +59,17 @@ class PageController extends Controller
     
     public function gallery()
     {
-        return view('pages.gallery');
+        $Galleries = Gallery::orwhere('image_type','=','1')
+        ->orwhere('image_type','=','3')->where('status','=','1')->get();
+        return view('pages.gallery',['Galleries'=>$Galleries]);
     }
     
 
 
     public function project()
     {
-        return view('pages.project');
+         $Projects = Gallery::where('status','=','1')->where('image_type','>=','2')->get();
+        return view('pages.project',['Projects'=>$Projects]);
     }
     
     

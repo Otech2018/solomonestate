@@ -36,83 +36,17 @@
             <h2 style="color:black;padding:40px;text-align:center;font-weight:bold; font-size:45px;">Our Gallery</h2>
             <div class="demo-gallery">
                 <ul id="lightgallery" class="list-unstyled row">
-                    <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p1.jpeg" data-src="storage/project/p1.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+
+                @foreach( $Galleries as $gallery)
+
+                    <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="{{ asset('storage/gallery/'.$gallery->image)}}" data-src="{{ asset('storage/gallery/'.$gallery->image)}}" data-sub-html="<h4>{{ $gallery->name }}</h4><p>{{ $gallery->description }} </p>">
                         <a href="">
-                            <img class="img-responsive" src="storage/project/p1.jpeg">
+                            <img class="img-responsive" src="{{ asset('storage/gallery/'.$gallery->image)}}">
                         </a>
                     </li>
                    
+                @endforeach
 
-                    <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p2.jpeg" data-src="storage/project/p2.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p2.jpeg">
-                        </a>
-                    </li>
-
-
-
-
-                    <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/agent/a1.jpg" data-src="storage/agent/a1.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/agent/a1.jpg">
-                        </a>
-                    </li>
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p3.jpeg" data-src="storage/project/p3.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p3.jpeg">
-                        </a>
-                    </li>
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p4.jpeg" data-src="storage/project/p4.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p4.jpeg">
-                        </a>
-                    </li>
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p5.jpeg" data-src="storage/project/p5.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p5.jpeg">
-                        </a>
-                    </li>
-
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/agent/a3.jpg" data-src="storage/agent/a3.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/agent/a3.jpg">
-                        </a>
-                    </li>
-
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p6.jpeg" data-src="storage/project/p6.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p6.jpeg">
-                        </a>
-                    </li>
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p7.jpeg" data-src="storage/project/p7.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p7.jpeg">
-                        </a>
-                    </li>
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/agent/a2.jpg" data-src="storage/agent/a2.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/agent/a2.jpg">
-                        </a>
-                    </li>
-
-
-                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="storage/project/p8.jpeg" data-src="storage/project/p8.jpeg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-                        <a href="">
-                            <img class="img-responsive" src="storage/project/p8.jpeg">
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
