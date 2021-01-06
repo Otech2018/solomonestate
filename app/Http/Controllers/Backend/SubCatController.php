@@ -142,7 +142,7 @@ class SubCatController extends Controller
                     ['cover_image5'=>$fileNameToStore5],
                     ['cover_image6'=>$fileNameToStore6],    
                     ['feature'=>$featur],    
-                    ['user_id'=>auth()->user()->id],    
+                    ['user_id'=>auth()->user()->id]   
 
                 ));
                 return redirect()->back()->with('success','Property Created Successfully!');

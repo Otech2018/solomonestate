@@ -56,7 +56,12 @@
   }
 }
 
+.tos_p{
+	font-size: 16px;
+	color:black;
+}
     </style>
+}
 </head>
 <body id='top'>
 
@@ -222,8 +227,8 @@
 	<div class="col-md-3 footer-recent-posts" >
 		<h3 class='footer-title'>Links</h3>
 		<ul>
-			<li><a href="#" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  Terms And Conditions</a></li>
-			<li><a href="#" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>   Privacy Policy</a></li>
+			<li><a  href="{{ route('tos') }}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  Terms And Conditions</a></li>
+			<li><a href="{{ route('tos') }}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>   Privacy Policy</a></li>
 			<li><a href="{{route('homepage')}}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  HomePage</a></li>
 			<li><a href="{{route('pay_rent')}}" class="btn btn-success" style="font-weight:normal;"  > Let's Pay Your Rent</a></li>
 			<li> .</li>

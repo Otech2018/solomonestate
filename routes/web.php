@@ -29,12 +29,12 @@ Route::get('/save_build', [App\Http\Controllers\PageController::class, 'save_bui
 Route::get('/sale_rent_land', [App\Http\Controllers\PageController::class, 'sale_rent_land'])->name('sale_rent_land');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/project', [App\Http\Controllers\PageController::class, 'project'])->name('project');
+Route::get('/tos', [App\Http\Controllers\PageController::class, 'tos'])->name('tos');
 Route::resource('form', App\Http\Controllers\UserFormController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('tos');
 Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'index'])->name('book_agent');
 
 Route::resource('myprofile1', App\Http\Controllers\MyProfileController::class);
@@ -82,7 +82,3 @@ Route::prefix('sax')->group(function(){
 
 
 
-
-Route::get('/foo', function () {
-    Artisan::call('storage:link');
-});

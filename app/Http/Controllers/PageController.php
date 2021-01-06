@@ -97,6 +97,11 @@ class PageController extends Controller
     }
      
 
+      public function tos()
+    {
+        return view('pages.tos');
+    }
+
 
     public function save_build()
     {

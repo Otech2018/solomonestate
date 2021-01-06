@@ -438,7 +438,7 @@
              
 
                         <option value='' hidden selected> Select State *</option>
-                         @foreach($states1 as $state)
+                         @foreach($states as $state)
                             <option value='{{$state->id}}'> {{$state->name}} </option>
                         @endforeach
                     </select>
@@ -451,7 +451,7 @@
                       <label>Lga  <span class="text-danger">*</span></label>
                          <select id="lga-list" class="lgaa form-control form-control-sm" name='lga_id' required>
                             <option value='' hidden selected> Select LGA *</option>
-                             @foreach($lgas1 as $lga)
+                             @foreach($lgas as $lga)
                                 <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
                             @endforeach
                         </select>
