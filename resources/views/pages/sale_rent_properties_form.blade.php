@@ -311,13 +311,13 @@
                                                <option value="Govt. Allocation">Govt. Allocation</option>
                                                <option value="Govt/Public Property">Govt/Public Property</option>
                                                <option value="Communal Land">Communal Land</option>
-                                               <option value="12" >Others Please Specify</option>
+                                               <option value="12" >Others  </option>
                                        </select>
                                     </div>
 
 
                                     <div class="col-sm-4" style="display:none;" id="speci">
-                                        <input type="text" class="form-control" placeholder="Others Please Specify" name="home_address"  >
+                                        <input type="text" class="form-control" placeholder=" Please Specify" name="home_address"  >
 
                                     </div>
                                 </div>
