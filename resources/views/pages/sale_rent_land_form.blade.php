@@ -319,18 +319,26 @@
                             <label class="col-md-2 col-form-label text-md-right">Valid ID Card<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Valid ID Card" name="phone1" required >
+                               <select  class="country form-control form-control-sm" required name='land_acq' 
+                               onchange="optionw('id_date', this)" >
+
+                                            <option value='' hidden selected> Select Item </option>
+                                               <option value="National ID">National ID</option>
+                                               <option value="20">Driver's License</option>
+                                               <option value="Voter's Card">Voter's Card</option>
+                                               <option value="30">International Passport</option>
+                                       </select>
                             </div>
                             <label class="col-md-2 col-form-label text-md-right">ID Number<span style="color:red;">*</span></label>
                             
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="ID Number" name="phone2"  >
+                                <input type="text" class="form-control" placeholder="ID Number" name="phone2" required >
                             </div>
 
 
                         </div>
 
-
+                <div style="display:none;" id="id_date">
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Date Issued<span style="color:red;">*</span></label>
 
@@ -345,11 +353,12 @@
 
 
                         </div>
+                </div>
 
                         </div>
 
 
-                            <h2 align="center" style="font-size:27px; font-weight:bold;">Images</h2><hr/>
+                            <h2 align="center" style="font-size:27px; font-weight:bold;">Upload Pictures of the Land</h2><hr/>
 
      <div class="form-row">
                 

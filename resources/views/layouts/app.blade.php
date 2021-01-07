@@ -368,6 +368,16 @@
         </script>
 @endif
 
+
+<script>
+   function optionw(id, elementValue) {
+      document.getElementById(id).style.display = elementValue.value >= 10 ? 'block' : 'none';
+   }
+
+
+
+</script>
+
 </body>
 
 </html>

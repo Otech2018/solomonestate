@@ -59,18 +59,28 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
 
-                            <div class="col-md-7">
-                                <input type="text" class="form-control" name="name" required >
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Fristname" name="name" required >
                             </div>
+
+                              <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Middlename" name="name" required >
+                            </div>
+
+
+                              <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Lastname" name="name" required >
+                            </div>
+
                         </div>
 
 
 
                           <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Email Address <span style="color:red;">*</span></label>
+                            <label class="col-md-3 col-form-label text-md-right">Email Address </label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email" required >
+                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email"  >
                             </div>
                         </div>
 
@@ -93,41 +103,26 @@
                         </div>
 
 
+             <div style="background-color:#e0f2f1; padding:15px;">
                           <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right">Home Address <span style="color:red;">*</span></label>
 
-                            <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="kindred Village town" name="home_address" required >
+                             <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Kindred" name="name" required >
+                            </div>
+
+                              <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Village" name="name" required >
+                            </div>
+
+
+                              <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Town" name="name" required >
                             </div>
                         </div>
 
 
 
-                          <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Office Address</label>
-
-                            <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address"  >
-                            </div>
-                        </div>
-
-
-
-                        
-
-                          <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
-
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
-                            </div>
-
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Phone 2" name="phone2"  >
-                            </div>
-
-
-                        </div>
 
                           <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Country </b> <span style="color:red;">*</span></label>
@@ -175,7 +170,39 @@
                                        
                                     </div>
                                 </div>
+                </div>
 
+
+
+                        <br/>
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Office Address</label>
+
+                            <div class="col-md-7">
+                                <textarea class="form-control"  style='height:130px' name="gig_desc" placeholder="Enter full Addres Including the State and Country" ></textarea>
+
+                            </div>
+                        </div>
+
+
+
+                        
+
+                          <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
+
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Phone 2" name="phone2"  >
+                            </div>
+
+
+                        </div>
+
+                         
 
 
 
@@ -195,30 +222,39 @@
                         <div class=" row">
                             <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                                 <input class="form-check-input" type="radio" name="remember" required id="remember21">
 
-                                    <label class="form-check-label btn btn-success" for="remember21" onclick="$('#noland').fadeOut();$('#land').fadeIn();" >
-                                      <b> LANDED PROPERTY  <br/>(Selling both Land & Structure(s))</b></i>
+                                    <label class="form-check-label btn btn-success" for="remember21" onclick="$('#rent').fadeOut();$('#noland').fadeOut();$('#land').fadeIn();" >
+                                      <b> FOR SALE <br/> LANDED PROPERTY  <br/>(Selling both Land & Structure(s))</b></i>
                                     </label>
                            </div>
                           
                           
-                            <div class="col-md-4">
-                                <input class="form-check-input" type="radio" name="remember" required id="remember12" onclick="$('#land').fadeOut();$('#noland').fadeIn();" >
+                            <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" required id="remember12" onclick="$('#rent').fadeOut();$('#land').fadeOut();$('#noland').fadeIn();" >
 
                                     <label class="form-check-label btn btn-primary" for="remember12" >
-                                      <b> NON LANDED PROPERTY  <br/>(Selling Without Ownership of the Land)</b></i>
+                                      <b> FOR SALE <br/>  NON LANDED PROPERTY  <br/>(Selling only Structure(s))</b></i>
                                        
                                     </label>
                            </div>
 
 
+                    <div class="col-md-3">
+                                <input class="form-check-input" type="radio" name="remember" required id="remember121" onclick="$('#noland').fadeOut();$('#land').fadeOut();$('#rent').fadeIn();" >
+
+                                    <label class="form-check-label btn btn-danger" for="remember121" >
+                                      <b> FOR RENT </b></i>
+                                       
+                                    </label>
+                           </div>
+
                         </div><br/><br/>
 
 
 {{-- for not full selling  --}}
-<div id="noland" style="display:none;padding:20px;">
+<div id="noland" style="display:none;padding:20px; background-color: #e1f5fe;">
 
 
   <div class="form-row">
@@ -246,17 +282,27 @@
 
 
 
+              <br/><br/><div class="form-group row">
+                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell this Property?</i>) <span style="color:red;">*</span></label>
+
+                            <div class="col-md-6">
+                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
+                            </div>
+                        </div>
+
+
+
 
 </div>
 {{-- for not full selling  --}}
 
 
 {{-- for full selling land detail --}}
-<div id="land" style="display:none; background-color:#e3f2fd; padding:20px;">
+<div id="land" style="display:none; background-color:#c8e6c9; padding:20px;">
                             <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
-                                    <div class="col-sm-7">
-                                        <select  class="country form-control form-control-sm" name='land_acq' >
+                                    <label  onclick="$('#speci').fadeIn();" for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
+                                    <div class="col-sm-3">
+                                        <select  class="country form-control form-control-sm" name='land_acq' onchange="optionw('speci', this)" >
 
                                             <option value='' hidden selected> Select Item </option>
                                                <option value="Inheritance">Inheritance</option>
@@ -265,7 +311,14 @@
                                                <option value="Govt. Allocation">Govt. Allocation</option>
                                                <option value="Govt/Public Property">Govt/Public Property</option>
                                                <option value="Communal Land">Communal Land</option>
+                                               <option value="12" >Others Please Specify</option>
                                        </select>
+                                    </div>
+
+
+                                    <div class="col-sm-4" style="display:none;" id="speci">
+                                        <input type="text" class="form-control" placeholder="Others Please Specify" name="home_address"  >
+
                                     </div>
                                 </div>
 
@@ -363,20 +416,33 @@
                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
-            </div>
-            {{-- for full selling land details --}}
 
 
-
-
-
-                             <br/><br/><div class="form-group row">
+                          <br/><br/><div class="form-group row">
                             <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell this Property?</i>) <span style="color:red;">*</span></label>
 
                             <div class="col-md-6">
                                 <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
                             </div>
                         </div>
+            </div>
+            {{-- for full selling land details --}}
+
+
+
+            {{-- for renting land details --}}
+
+
+                             <br/><br/><div class="form-group row" id="rent" style="display:none; background-color:#ffccbc; padding:20px;">
+                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to Rent this Property Per Year?</i>) <span style="color:red;">*</span></label>
+
+                            <div class="col-md-6">
+                                <input type="text"  style="background-color:#fbe9e7; font-weight:bold;" class="form-control" name="name" required >
+                            </div>
+                        </div>
+
+            {{-- for renting --}}
+                 
 
                     <div style="padding:15px; background-color:#e3f2fd;">
                         
@@ -385,7 +451,15 @@
                             <label class="col-md-2 col-form-label text-md-right">Valid ID Card<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Valid ID Card" name="phone1" required >
+                               <select  class="country form-control form-control-sm" required name='land_acq' 
+                               onchange="optionw('id_date', this)" >
+
+                                            <option value='' hidden selected> Select Item </option>
+                                               <option value="National ID">National ID</option>
+                                               <option value="20">Driver's License</option>
+                                               <option value="Voter's Card">Voter's Card</option>
+                                               <option value="30">International Passport</option>
+                                       </select>
                             </div>
                             <label class="col-md-2 col-form-label text-md-right">ID Number<span style="color:red;">*</span></label>
                             
@@ -396,7 +470,7 @@
 
                         </div>
 
-
+                <div style="display:none;" id="id_date">
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Date Issued<span style="color:red;">*</span></label>
 
@@ -411,11 +485,12 @@
 
 
                         </div>
+                </div>
 
                         </div>
 
 
-                            <h2 align="center" style="font-size:27px; font-weight:bold;">Images</h2><hr/>
+                            <h2 align="center" style="font-size:27px; font-weight:bold;">Upload Pictures of the Building</h2><hr/>
 
      <div class="form-row">
                 

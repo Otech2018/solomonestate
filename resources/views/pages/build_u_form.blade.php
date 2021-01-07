@@ -86,6 +86,17 @@
 
 
 
+
+                         <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right">Building Description </label>
+
+                            <div class="col-md-7">
+                                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea>
+                            </div>
+                        </div>
+
+
+
                           <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right">Office/Home Address</label>
 
