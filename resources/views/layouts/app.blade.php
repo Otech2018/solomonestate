@@ -233,7 +233,7 @@
 			<li><a href="{{route('pay_rent')}}" class="btn btn-success" style="font-weight:normal;"  > Let's Pay Your Rent</a></li>
 			<li> .</li>
 			
-			<li><a href="#!" class="btn btn-primary" style="font-weight:normal;"  ><i class="fa fa-facebook"></i> We are on  FaceBook</a></li>
+			<li><a href="https://web.facebook.com/pg/Solomons-Ideas-Ltd-103408694762381/about/"  target="_blank" class="btn btn-primary" style="font-weight:normal;"  ><i class="fa fa-facebook"></i> We are on  FaceBook</a></li>
 		</ul>
 	</div>
 	<div class="col-md-3 footer-contact-info">

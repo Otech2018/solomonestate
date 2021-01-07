@@ -136,7 +136,7 @@
 				<p class="person-fax">
 					<i class="fa fa-user"></i> {{ $Accessment->sub_heading }}
 				</p>
-				<a href="{{ route('book_agent',$Accessment->id) }}" class='gray-btn'>Book Agent</a>
+				<a href="tel:{{$Accessment->keyword}}" class='gray-btn'>Call Agent</a>
 			</div>
 		</div>
 
