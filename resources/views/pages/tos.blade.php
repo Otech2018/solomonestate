@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Let's Bulid For You</h2>
+				<h2>Terms & Conditions</h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Let's Bulid For You</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Terms & Conditions</a>
 			</div>
 		</div>
 	</div>
@@ -456,6 +456,323 @@ By accepting these Terms and Conditions, you agree that you have received, read,
 </ol>
 
 
+
+
+
+<br/><br/><br/>
+
+<h3 style="font-size: 20px; font-weight: bold;">8.0 SPECIFIC BUSINESS TERMS & CONDITIONS </h3>
+
+<ol type="a"  style="font-size: 16px;" >
+	
+	<li><p class="tos_p">Lands For Sale: 
+		<ol type='i'>
+			<li>
+					You understand that lands or buildings we place for sale may or may not have full registration/certification from the Ministry of Lands and that only documents available shall be communicated and made available to you.
+			</li>
+
+			<li>
+					You understand that properties advertised or posted for sale on this platform may or may not have been completely verified; you agree to give us at least five to ten working days after payment for any property you buy from this platform to be given final verifications prior to issuance of deed of conveyance to you. 
+			</li>
+
+			<li>
+				Solomon’s Ideas Ltd reserves the right to refund you within ten working days if our final verification proves that the land/property you paid for is not genuine and or has been paid for prior to your own time of payment. This you understand to be in your best interest and you hold us free from any indemnity.
+			</li>
+
+
+		</ol>
+	</p></li>
+
+
+
+		<li><p class="tos_p"><span style="font-weight: bold;">Refund Policies:</span> You agree that you must have carefully taken the decision to pay for any of our properties placed for sale and that you do understand and accept to lose 15% of the funds paid into our bank account to us should you decide to cancel the deal and have a refund.</p></li>
+
+
+
+			<li><p class="tos_p">Let’s Pay Your Rent:   
+		<ol type='i'>
+			<li>
+					You agree to supply us all necessary information we may need from you and agree that funds credited into our bank account for this service cannot be refunded to you, but can only be paid directly to your landlord by us on your behalf.
+			</li>
+
+			<li>
+					You pledge to be faithful to the obligation of remitting your monthly rent to our bank account towards the end of each month from the very first month of your subscription to this service; you also agree to be charged a penalty of 15% of your exact monthly remittance should you fail to remit within each month.
+			</li>
+
+			<li>
+				You agree to forfeit the 12th month payment benefit if your remittance record proves that you skipped any month and lumped up 2 or more months remittances; in this case you accept to remit the complete 12months rent before we can transfer to your landlord.
+			</li>
+
+
+				<li>
+				You agree to make your monthly rent remittances in, before and or within the last ten days of every month.
+			</li>
+
+
+				<li>
+				You agree that any rent increment done after the first 3 months of your rent remittance shall not be binding on us; only the initial monthly remittance shall be used for your 12th month benefit, except where the increment is effected within the first 3 months of your remittance which must reflect in your subsequent remittances.
+			</li>
+
+
+				<li>
+				You hereby agree that the service is benchmarked on annual basis (every 12 months) starting from your month of subscription; it does not matter whether you pay your landlord annually or biannually or otherwise as may be captured in your tenancy agreement.
+			</li>
+
+
+				<li>
+				However, if your agreement with your Landlord stipulates that you pay your rent or lease in a lump sum for every 2, 3, or more years, you accept that we shall credit your Landlord in line with this rent/lease agreement. You are however in such a case, entitled to the benefit of your (every) 12th month rent paid by us should you play by the rules, terms and conditions stated in this service. 
+			</li>
+
+
+				<li>
+				You agree as a Civil or Public Servant who is a monthly salary earner to give Solomon’s Ideas Ltd a bank standing order to debit your account monthly and credit us with the exact amount meant for your monthly rent.
+			</li>
+
+			<li>
+				You agree that your thrift in this project of assisting you pay your rent accrues no interest to you, except for the fact that Solomon’s Ideas Ltd shall pay the 12th month of your rent if you faithfully and diligently paid for and within every month up to the 11th month of your rental year. Your rental year starts from the very first month of subscription/first monthly rent installment into our bank account.
+			</li>
+
+		</ol>
+	</p></li>
+
+
+
+	<li><p class="tos_p"><span style="font-weight: bold;">Rent/Lease Policies: </span> You agree to abide by the policies, rules and regulations guiding the general rental services of Solomon’s Ideas Ltd as available now and as may be reviewed in the future or from time to time.</p></li>
+
+
+	<li><p class="tos_p"><span style="font-weight: bold;">Building For You:  </span> Should you engage our team of engineers in any construction job, you hereby accept to provide all required funds and or materials necessary to get such structure compliant to all professional standards. You also agree that our engineers reserve the right to stop work or withdraw their services at any point funding is found wanting on your project.</p></li>
+
+
+
+
+
+
+
+			<li><p class="tos_p">Selling Your Land For You:  
+		<ol type='i'>
+			<li>
+					You confirm that lands placed for sale at your instance in our online or offline platforms are genuine and that the documents supplied are true to the best of your knowledge. You pledge to indemnify us once a counter claim is made and proven on any property posted by you or at your instance.
+			</li>
+
+			<li>
+					You agree to avail us with all necessary valid documents to prove your personal or group identity and supply us the land/property documents to prove your inalienable right of ownership of such property you so desire to dispose using us as a channel.
+			</li>
+
+			<li>
+				You agree to have us as sole sales representative to your property.
+			</li>
+
+
+				<li>
+				You agree to give us a specific amount acceptable by us which serves as your take-home or your rated value for the property you wish to dispose through us and hereby affirm that proceeds accruing from our negotiation power on such property belong to us and us alone. 
+			</li>
+
+
+				<li>
+				Solomon’s Ideas Ltd is hereby empowered/authorized by you to receive payment from buyer on your behalf and remit your said ‘Take-home’ to your bank account as provided by you. 
+			</li>
+
+
+				<li>
+				You also agree to have us deduct upfront from the ‘Take-home’ in no. ‘8.7.5’ above an agency/service fee  which remains negotiable to the maximum of 10% and minimum of 5% of the said ‘Take-Home’ sum and remit the balance into the bank account submitted to us by you for such transaction.
+			</li>
+
+
+				<li>
+				In favour of Solomon’s Ideas Ltd, you agree to sign, seal and deliver in our hands an Irrevocable (Conditional) Power of Attorney over the said land/property; the referred ‘conditional’ being that once your ‘Take Home’ is remitted into your bank account by Solomon’s Ideas Ltd or its agent, the Irrevocable Power of Attorney gains validity.
+			</li>
+
+
+				<li>
+				From the foregoing, you hereby understand that Solomon’s Ideas Ltd takes direct responsibility for any land sold to our prospective clients; to this end, you guarantee to be bonded with us in any legal suit challenging our and by extension, your inalienable right of ownership of such property. You therefore and hereby undertake to personally bear all liabilities whether financial or otherwise of ours or our lawful attorney/client who received the title from us, should it be discovered or proven that your claim of inalienable ownership of the land/property and its documents are falsified. You guarantee to pay for all damages directly or indirectly incurred by us and keep us completely indemnified. 
+			</li>
+
+		
+
+		</ol>
+	</p></li>
+
+
+
+
+
+
+
+			<li><p class="tos_p">BUYING LANDS AND OR BUILDINGS FROM US:  
+		<ol type='i'>
+			<li>
+						As a prospective client, you agree that lands advertised manually and or in our online platform may or may not have received its final verifications.
+			</li>
+
+			<li>
+					You accept that the only evidence of your payment which will enable us issue you receipt and or Power of Attorney is a confirmation of such payment in our bank account.
+			</li>
+
+			<li>
+					You understand and accept that your payment into our corporate bank account for the purchase of a land or building does not guarantee that you will be immediately issued a power of attorney. You agree that it is in your best interest and hereby accept to be patient and grant us 5 to 10 working days for all final verification on the property before issuing to you the necessary documents and Power of Attorney.
+			</li>
+
+
+				<li>
+				You agree to give us a specific amount acceptable by us which serves as your take-home or your rated value for the property you wish to dispose through us and hereby affirm that proceeds accruing from our negotiation power on such property belong to us and us alone. 
+			</li>
+
+
+				<li>
+				In event the property is proven to have any encumbrance, you agree and accept to be refunded into your provided bank account, exactly the amount you credited into our account without asking of any interest or indemnity whatsoever.
+			</li>
+
+
+				<li>
+				In event of such impending refund in No. 8.8.3 above, you agree to use your discretion to switch to any other property we placed for sale, in which case you are to balance us or vice versa if the new property (switched to) is not sold at the same amount as the former.
+			</li>
+
+
+		</ol>
+	</p></li>
+
+	</ol>
+
+
+	<br/><br/><br/>
+
+<h3 style="font-size: 20px; font-weight: bold;">9.0 AMENDMENT TO THESE TERMS</h3>
+<p style="font-size: 16px; color:black;">
+	We may change or otherwise vary these Terms and Conditions, including our charges.
+</p>
+
+
+
+
+<br/><br/><br/>
+
+<h3 style="font-size: 20px; font-weight: bold;">10.0 General Terms</h3>
+
+<ol type="a"  style="font-size: 16px;" >
+	
+	<li><p class="tos_p">
+		You agree that any instruction given to the Company in respect of your Account or transaction via the Service shall be binding and shall be given the same legal effect as your written and signed paper instruction. It shall be deemed for all purposes (i) to be "written" (ii) to have been "properly signed" (ii) to constitute an "original" when printed from electronic files or records established and maintained in the normal course of the Company's business.
+	</p></li>
+
+	<li><p class="tos_p">We may record phone calls and other communications between you and us, and use the information for any lawful purpose, at our sole discretion.
+	</p></li>
+
+	<li><p class="tos_p">
+			You authorize us to exercise a right of set-off at any time we deem fit in respect of any transaction you may have with us (irrespective of the currency involved) to settle any obligation to us.
+	</p></li>
+
+	<li><p class="tos_p">You confirm that all information provided to the Company regarding the application for the Service is complete and accurate in all respects.
+	</p></li>
+
+
+
+	<li><p class="tos_p">
+		Your application for any Service will be subject to the Company's processes and reviews, which may require you to provide further information or documents. We reserve the right to accept or reject your application.
+	</p></li>
+
+	<li><p class="tos_p">We will charge you for any loss or cost we may incur from a breach of these Terms by you.
+	</p></li>
+
+
+
+	<li>Your rights under these Terms and Conditions are personal to you and cannot be assigned.
+	</p></li>
+
+	<li><p class="tos_p">
+		These Terms and Conditions shall be governed by the Laws of the Federal Republic of Nigeria.
+	</p></li>
+
+</ol>
+
+
+
+<br/><br/><br/>
+
+
+
+				</p>
+<h3 style="font-size: 20px; font-weight: bold;">11.	ADDITIONAL TERMS AND CONDITIONS FOR FUNDS TRANSFERS</h3>
+
+<ul type="square"  style="font-size: 16px;" >
+
+	<li>
+		The following Terms and Conditions apply to any transfer of funds from or to our bank account via our online or your mobile banking service or via any other electronic means whether within or outside Nigeria.
+	</li>
+	
+
+	<li>
+		In these Terms, "we", "us" or "our" refers to Solomon’s Ideas Ltd and its successors, agents and assigns, while "you", "your" refers to a customer or client.
+	</li>
+
+	<li>
+		You understand and agree that funds transferred by you shall be subject to statutes, rules and regulations of the company's country and/or that of any other country involved in such transaction. Neither Solomon’s Ideas Ltd nor its correspondent or agents shall be liable for any delay or loss caused by or arising out of any applicable Act, Order or other governmental or regulatory provision.
+	</li>
+
+
+
+	<li>
+		In the event that the account details you stipulated in the course of your Funds Transfer do not correspond with the intended Solomon’s Ideas Ltd bank account, we shall not be held responsible for the transfer error nor for the funds recovery. We can only effect a deal or transaction once funds are confirmed to have been remitted into our corporate bank account.
+	</li>
+
+
+
+	<li>
+		For the avoidance of doubt however, you will be responsible for any liability, loss or expenses incurred by us as a result of reliance on any instruction provided by you in the course of a transfer to your account. You take responsibility for any error in the bank account details you provided for fund transfer from us. Solomon’s Ideas Ltd shall not be responsible for any charges deducted from the Transferred amount or for any charges incurred by you for the receipt of a wire transfer. These charges shall be borne by you and you agree that same may be deducted from the amount transferred.
+	</li>
+
+
+<li>
+		Solomon’s Ideas Ltd shall not be liable for any errors, neglect, defaults, acts or omission of any Intermediary/Correspondent Bank or any of their respective agents, sub-agents or employees.
+	</li>
+
+
+	<li><br/><br/><p class="tos_p"><span style="font-weight: bold;">Solomon’s Ideas Responsibility:</span> <br/><br/>We assure you of handling all financial transfers with reasonable dispatch; however, you agree that Solomon’s Ideas Ltd will not be responsible for any delay, failure or error relating to the execution of your funds transfer to or from our bank account due to circumstances beyond Solomon’s Ideas reasonable control, including without limitation, any inaccuracy, interruption, delay or failure in transmission, or any inhibitive situation caused by strike, power failures, equipment malfunctions, technological or telecommunication challenges or any act and/or omission of any Intermediary/Correspondent Bank or the Beneficiary bank.
+<br/><br/>
+
+	We do not guarantee that the Beneficiary Bank will actually receive and/or act upon your transferred funds in a timely manner or that any special instructions will be followed by a receiving institution.
+</p></li>
+
+
+
+
+	<li><br/><br/><p class="tos_p"><span style="font-weight: bold;">Foreign Exchange</span> <br/><br/>You hereby authorize Solomon’s Ideas Ltd to convert any payment made in Foreign Currency to the official exchange rate of the regulatory agency of the receiving country at the exact date and time of payment and assume such official exchange as the exact amount paid to us. Solomon’s Ideas Ltd assumes no responsibility for the rate at which the funds are purchased, the date upon which the conversion occurs or for any other situation relating to the purchase of funds on your behalf or by you.
+
+</p></li>
+
+
+
+<li><br/><br/><p class="tos_p"><span style="font-weight: bold;">Disclaimers/Indemnity</span> <br/><br/>Solomon’s Ideas Ltd disclaims any liability for any fund transfer linked with fraud or illegality. We will not be liable to you if your fund transfer is not successfully effected as a result of anything that we cannot reasonably control including network or system downtime or failures, maintenance processes, unavailability of any communication system, delays, malfunctions or any other analogous event arising from an external interface, breach or virus in the processes or payment mechanism, sabotage, unauthorized access to computer data and storage device, computer crashes, breach of security and encryption or any force majeure or other acts of God.
+<br/><br/>
+
+	Except when caused by the company’s proven intentional and fraudulent misconduct in the breach of these Terms, we shall not be responsible for any loss, injury or damage, whether direct, indirect, special or consequential, caused by facilitating your funds transfers. You shall indemnify and hold us harmless from all claims, demands, lawsuits, losses, costs, expenses and attorney's fees we suffer or incur because of your violation of these Terms.
+</p></li>
+
+
+
+	<li><br/><br/><p class="tos_p"><span style="font-weight: bold;">Amendment to these Terms </span> <br/><br/>
+		We reserve the right to change these Terms and Conditions, including our charges, with or without notice to you.
+</p></li>
+
+
+
+
+
+
+<li><br/><br/><p class="tos_p"><span style="font-weight: bold;">General Terms</span> <br/><br/>
+	Non-enforcement or delay in enforcing any right does not prevent the company from subsequently enforcing that right against you.<br/><br/>
+
+	company from subsequently enforcing that right against you.
+We may record phone calls and other communications between you and us, and use the information for any lawful purpose, at our sole discretion.<br/><br/>
+
+You authorize us to exercise a right of set-off at any time we deem fit in respect of any transaction you may have with us in whatever currency to settle any payment due to us.<br/><br/>
+
+Your rights under these Terms are personal to you and cannot be assigned.<br/><br/>
+
+These Terms are governed by the Laws of the Federal Republic of Nigeria.
+</p></li>
+
+
+</ol>
 				<div class="clearfix">
 				</div>
 			</div>
