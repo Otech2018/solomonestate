@@ -41,7 +41,15 @@ class BuildYouController extends Controller
      */
     public function create()
     {
-        //
+        ////list all pending let's build for you  request
+        if(CheckAccess::check(50)){
+            $BuildForYous = BuildForYou::where('status',2)->paginate(20);
+            $type= "Pending";
+            return view('backend.buildforyou.index',['BuildForYous'=>$BuildForYous, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -110,7 +118,11 @@ class BuildYouController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // //set lets build for you request as solved
+          $Agric = BuildForYou::find($id);
+            $Agric->status =1;
+            $Agric->save(); 
+            return redirect()->back()->with('success','Solved Successfully!');
     }
 
     /**

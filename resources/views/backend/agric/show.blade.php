@@ -43,7 +43,6 @@
             <tr><td><b> <i class="fa fa-info-circle"></i> Reg Date  :</b></td><td>  <i>{{$agrics->created_at}}</i></td></tr>
 
             </table>
-            <a href="{{route('agric.index')}}"  class="btn btn-sm btn-primary pull-left"><i class="fa fa-arrow-left"></i>Go Back </a>
 
            
         </div>
