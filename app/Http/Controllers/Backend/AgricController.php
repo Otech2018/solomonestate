@@ -19,7 +19,7 @@ class AgricController extends Controller
         $this->middleware('auth');
     }
 
-
+ 
     public function index()
     {
         //list all agric consult request

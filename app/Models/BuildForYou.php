@@ -20,8 +20,18 @@ class BuildForYou extends Model
 	        'country',
 	        'location_address',
 	        'address',
+            'budget_amount',
+            'description',
+            'status',
     ];
 
 
     use HasFactory;
+
+
+    public function country_det()
+{
+    return $this->belongsTo('App\Models\Country','country');
+}
+
 }

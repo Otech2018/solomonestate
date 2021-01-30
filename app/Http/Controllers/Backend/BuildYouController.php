@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
 use App\Models\BuildForYou;
 use Illuminate\Http\Request;
@@ -22,7 +23,15 @@ class BuildYouController extends Controller
 
     public function index()
     {
-        //
+        //  //list all Let's build for you request
+        if(CheckAccess::check(49)){
+            $BuildForYous = BuildForYou::where('status','!=',0)->paginate(20);
+             $type= "All";
+            return view('backend.buildforyou.index',['BuildForYous'=>$BuildForYous, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -56,6 +65,8 @@ class BuildYouController extends Controller
                 'country' => 'required',
                 'location_address' => 'required',
                 'address' => 'required',
+                'budget_amount' => 'required',
+                'description' => 'required',
         ]);
 
 
@@ -74,7 +85,9 @@ class BuildYouController extends Controller
      */
     public function show($id)
     {
-        //
+        // //View Details of let's build for you request
+         $agrics = BuildForYou::find($id);
+             return view('backend.buildforyou.show',['agrics'=>$agrics]);
     }
 
     /**
