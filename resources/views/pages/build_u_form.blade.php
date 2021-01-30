@@ -102,7 +102,7 @@
 
 
                           <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Office/Home Address</label>
+                            <label class="col-md-3 col-form-label text-md-right">Office/Home Address <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
                                 <input type="text" class="form-control" placeholder="" name="address" required >

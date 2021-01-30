@@ -55,6 +55,7 @@ class BuildYouController extends Controller
                 'lga1' => '',
                 'country' => 'required',
                 'location_address' => 'required',
+                'address' => 'required',
         ]);
 
 
