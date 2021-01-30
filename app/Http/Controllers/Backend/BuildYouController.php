@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BuildForYou;
 use Illuminate\Http\Request;
 
 class BuildYouController extends Controller
@@ -45,15 +46,19 @@ class BuildYouController extends Controller
         //store build for you from users end
   $data = $this->validate($request, [
                 'name' => 'required|string|max:255',
-                'email' => 'required',
-                'phone' => 'required',
-                'budget' => 'required',
-                'site_location' => 'required',
-                'why_u_need_us' => 'required',
+                'email' => '',
+                'phone1' => 'required',
+                'phone2' => '',
+                'state' => '',
+                'state1' => '',
+                'lga' => '',
+                'lga1' => '',
+                'country' => 'required',
+                'location_address' => 'required',
         ]);
 
 
-             $agric = Agric::create(array_merge(
+             $BuildForYou = BuildForYou::create(array_merge(
                         $data,
                         ['status' => 2]
                     ));
