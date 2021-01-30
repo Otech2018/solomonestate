@@ -38,6 +38,8 @@
 <!-- content-Section -->
 <div class="content-section">
 	<div class="container">
+         @include('layouts.messages1')    
+		
 			<h1 align="center" style="font-size:45px;"><b>Agric Consultancy </b></h1><br/>
 			
 		<div class="col-md-6 contact-info">
@@ -65,17 +67,44 @@
 				
 				<h4 style="font-size:18px;">Do you wish to set up your agricultural farms?
 				Hire a Consultant </h4>
-				<form class='contact-form' method="POST">
+
+
+				<form class='contact-form' method="POST" action="{{ route('agric_consult_submit') }}">
+                    @csrf
+					
 					<div class="contact-form-left">
-						<span><i class='fa fa-user'></i></span><input type="text" name='name' placeholder='Name' id='name' required>
-						<span><i class='fa fa-envelope-o'></i></span><input type="text" name='email' placeholder='e-mail' id='email'>
-						<span><i class='fa fa-phone'></i></span><input type="text" name='phone' placeholder='Phone' id='phone' required>
-						<span><i class='fa fa-money'></i></span><input type="text" name='' placeholder='Project Budget' id='phone' required>
+						<span><i class='fa fa-user'></i></span><input type="text" name='name' 
+						@guest
+						@else
+						value="{{ auth()->user()->first_name }} {{ auth()->user()->middle_name  }} {{ auth()->user()->last_name }}"
+						@endguest
+						 placeholder='Fullname *' id='name' required>
+
+
+						<span><i class='fa fa-envelope-o'></i></span><input type="text" name='email' 
+						@guest
+						@else
+						value="{{ auth()->user()->email }}"
+						@endguest
+
+						placeholder='e-mail *' id='email'>
+
+
+
+						<span><i class='fa fa-phone'></i></span><input type="text" name='phone'
+						@guest
+						@else
+						value="{{ auth()->user()->phone }}"
+						@endguest
+						 placeholder='Phone *' id='phone' required>
+
+
+						<span><i class='fa fa-money'></i></span><input type="text" name='budget' placeholder='Project Budget *' id='budget' required>
 						
 					</div>
 					<div class="contact-form-right">
-						<textarea id="message" name='message' placeholder='Full Details of Site Location' required></textarea>
-						<textarea id="message" name='message' placeholder='Why do you need a Consultant?' required></textarea>
+						<textarea id="site_location" name='site_location' placeholder='Full Details of Site Location *' required></textarea>
+						<textarea id="why_u_need_us" name='why_u_need_us' placeholder='Why do you need a Consultant? *' required></textarea>
 					</div>
 						<input type="submit" value='Hire a Consultant' id='submit-btn'>
 					

@@ -63,7 +63,7 @@
                       
 
  <br/><br/>
-<a href="#!" class='btn btn-success btn-lg'>Let's Get started </a>
+<a href="{{ route('savingform.create') }}" class='btn btn-success btn-lg'>Let's Get started </a>
 				</p>
 				<div class="clearfix">
 				</div>

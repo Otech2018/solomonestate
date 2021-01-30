@@ -1,4 +1,4 @@
-<?php $register ="";  ?>
+  <?php $register ="";  ?>
 
 @extends('layouts.app')
 
@@ -443,6 +443,15 @@
 
             {{-- for renting --}}
                  
+
+
+                          <br/><br/><div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Land Closeset Land Mark <span style="color:red;">*</span></label>
+
+                            <div class="col-md-8">
+                                <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="name" required >
+                            </div>
+                        </div>
 
                     <div style="padding:15px; background-color:#e3f2fd;">
                         

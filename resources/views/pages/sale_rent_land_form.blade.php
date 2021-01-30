@@ -48,12 +48,8 @@
                 
                 <hr/>
 				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
-
-
 					
                     @csrf
-
-                      
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
@@ -390,6 +386,15 @@
 
                             <div class="col-md-6">
                                 <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
+                            </div>
+                        </div>
+
+
+                        <br/><br/><div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Land Closeset Land Mark <span style="color:red;">*</span></label>
+
+                            <div class="col-md-8">
+                                <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="name" required >
                             </div>
                         </div>
 

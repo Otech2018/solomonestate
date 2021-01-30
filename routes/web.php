@@ -22,6 +22,7 @@ Route::get('/payment/{id}', [App\Http\Controllers\PageController::class, 'listin
 Route::get('/contact_us', [App\Http\Controllers\PageController::class, 'contact_us'])->name('contact_us');
 Route::get('/our_team', [App\Http\Controllers\PageController::class, 'our_team'])->name('our_team');
 Route::get('/agric_consult', [App\Http\Controllers\PageController::class, 'agric_consult'])->name('agric_consult');
+Route::post('/agric_consult_submit', [App\Http\Controllers\PageController::class, 'agric_consult_submit'])->name('agric_consult_submit');
 Route::get('/build_u', [App\Http\Controllers\PageController::class, 'build_u'])->name('build_u');
 Route::get('/sale_rent_property', [App\Http\Controllers\PageController::class, 'sale_rent_property'])->name('sale_rent_property');
 Route::get('/pay_rent', [App\Http\Controllers\PageController::class, 'pay_rent'])->name('pay_rent');
@@ -38,12 +39,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'index'])->name('book_agent');
 
 Route::resource('myprofile1', App\Http\Controllers\MyProfileController::class);
+Route::resource('savingform', App\Http\Controllers\SavingsFormController::class);
 	
 Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::class,'change_password'])->name('change_password2');
 	Route::get('change_password1', [App\Http\Controllers\MyProfileController::class,'change_password1'])->name('change_password11');
 	
 
- 
 
 //Admin Routes {wisdom don't touch}
 Route::prefix('sax')->group(function(){
@@ -54,6 +55,7 @@ Route::prefix('sax')->group(function(){
 	Route::resource('task', App\Http\Controllers\Backend\TaskController::class);
 	Route::resource('user_group', App\Http\Controllers\Backend\User_groupController::class);
 	Route::resource('gigs', App\Http\Controllers\Backend\gigsController::class);
+	Route::resource('agric', App\Http\Controllers\Backend\AgricController::class);
 	Route::resource('sub_gigs', App\Http\Controllers\Backend\SubCatController::class);
 	Route::resource('train', App\Http\Controllers\Backend\TrainingController::class);
 	Route::resource('accessment', App\Http\Controllers\Backend\AccessmentController::class);

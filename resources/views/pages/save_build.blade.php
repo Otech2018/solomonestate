@@ -63,7 +63,7 @@
                time to start than now! Register and make your first deposit now. 
                       
  <br/><br/>
-<a href="#!" class='btn btn-success btn-lg'>Get started </a>
+<a href="{{ route('savingform.index') }}" class='btn btn-success btn-lg'>Get started </a>
 				</p>
 				<div class="clearfix">
 				</div>

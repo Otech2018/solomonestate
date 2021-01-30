@@ -103,7 +103,7 @@
 				<a href="{{route('register')}}" class='fa fa-pencil'><span>Register</span></a>
 
 			@else
-				<a href="#!" class='fa fa-user'><span>{{auth()->user()->name}}</span></a>
+				<a href="#!" class='fa fa-user'><span>{{auth()->user()->username}}</span></a>
 
 					<a href="#!"
 				onclick="

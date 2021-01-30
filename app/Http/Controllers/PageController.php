@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accessment;
+use App\Models\Agric;
 use App\Models\Gallery;
 use App\Models\GigSubCategory;
 use Illuminate\Http\Request;
@@ -55,6 +56,27 @@ class PageController extends Controller
     public function agric_consult()
     {
         return view('pages.agric_consult');
+    }
+
+
+// status =>2 pending, stautus=>1 settled  status=>0 delete
+    public function agric_consult_submit(Request $request)
+    {
+         $data = $this->validate($request, [
+                'name' => 'required|string|max:255',
+                'email' => 'required',
+                'phone' => 'required',
+                'budget' => 'required',
+                'site_location' => 'required',
+                'why_u_need_us' => 'required',
+        ]);
+
+
+             $agric = Agric::create(array_merge(
+                        $data,
+                        ['status' => 2]
+                    ));
+                    return redirect()->back()->with('success','Form Submmited Successfully!! we will get back to you as soon as possible. Thank You!');
     }
     
     public function gallery()
