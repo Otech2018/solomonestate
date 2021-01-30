@@ -42,12 +42,16 @@
 		
             <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
+
+                @include('layouts.messages1')
+                
 				<h1><b>LETS BUILD FOR YOU FORM</b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
+
                 
                 <hr/>
-				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
+				<form  method="POST" action="{{ route('buildyou.store') }}" style="font-size:15px;">
 
 
 					
@@ -69,7 +73,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address (optional)</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email"  >
+                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email"  >
                             </div>
                         </div>
 
@@ -80,7 +84,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Budgeted Amount <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="kindred Village town" name="home_address" required >
+                                <input type="number" class="form-control" placeholder="" name="budget_amount" required >
                             </div>
                         </div>
 
@@ -91,7 +95,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Building Description </label>
 
                             <div class="col-md-7">
-                                <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea>
+                                <textarea class="form-control"  style='height:130px' name="description" required ></textarea>
                             </div>
                         </div>
 
@@ -101,7 +105,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Office/Home Address</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address"  >
+                                <input type="text" class="form-control" placeholder="" name="address" required >
                             </div>
                         </div>
 
@@ -129,7 +133,7 @@
                           <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Country </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select  class="country form-control form-control-sm" name='country_id' required>
+                                        <select  class="country form-control form-control-sm" name='country' required>
 
                                             <option value='' hidden selected> Select country </option>
                                              @foreach($countries as $country)
@@ -146,14 +150,14 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-adjust'></i>  State </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state_id' required >
+                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state'  >
                                             <option value='' hidden selected> Select State *</option>
                                              @foreach($states as $state)
                                                 <option value='{{$state->id}}'> {{$state->name}} </option>
                                             @endforeach
                                         </select>
                                         <input type="text" class="form-control form-control-sm" id="state" readonly placeholder='Select Country First'>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state_f" placeholder='Enter Your State'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state1" placeholder='Enter Your State'>
                                     </div>
                                 </div>  
 
@@ -161,13 +165,13 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flash'></i>  LGA </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga_id' required>
+                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga' >
                                             <option value='' hidden selected> Select LGA *</option>
                                              @foreach($lgas as $lga)
                                                 <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
                                             @endforeach
                                         </select>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga_f" placeholder='Enter Your LGA'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga1" placeholder='Enter Your LGA'>
                                         <input type="text" class="form-control form-control-sm" id="lga" readonly placeholder='Select Country First'>
                                        
                                     </div>
@@ -179,7 +183,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Location Address <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="home_address" required >
+                                <input type="text" class="form-control" placeholder="" name="location_address" required >
                             </div>
                         </div>
 
@@ -187,7 +191,7 @@
 
                             <br/><br/>
                            <div class="col-md-12">
-                                    <input class="form-check-input" type="checkbox" name="saswddw" id="remember11">
+                                    <input class="form-check-input" type="checkbox"  required="required" name="saswddw" id="remember11">
 
                                     <label class="form-check-label" for="remember11" >
                                        Accept Our   

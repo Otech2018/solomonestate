@@ -2,36 +2,26 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
-use App\Models\Agric;
 use Illuminate\Http\Request;
 
-class AgricController extends Controller
+class BuildYouController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
+
+    public function __construct()
     {
-        $this->middleware('auth');
-    }
+        $this->middleware('auth',['except'=>['store']]);
+    } 
 
 
     public function index()
     {
-        //list all agric consult request
-        if(CheckAccess::check(46)){
-            $agrics = Agric::where('status','!=',0)->paginate(20);
-             $type= "All";
-            return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
- 
-        }else{
-            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
-        }
-       
+        //
     }
 
     /**
@@ -41,15 +31,7 @@ class AgricController extends Controller
      */
     public function create()
     {
-        //list all pending agric consult request
-        if(CheckAccess::check(47)){
-            $agrics = Agric::where('status',2)->paginate(20);
-            $type= "Pending";
-            return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
- 
-        }else{
-            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
-        }
+        //
     }
 
     /**
@@ -60,7 +42,22 @@ class AgricController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //store build for you from users end
+  $data = $this->validate($request, [
+                'name' => 'required|string|max:255',
+                'email' => 'required',
+                'phone' => 'required',
+                'budget' => 'required',
+                'site_location' => 'required',
+                'why_u_need_us' => 'required',
+        ]);
+
+
+             $agric = Agric::create(array_merge(
+                        $data,
+                        ['status' => 2]
+                    ));
+                    return redirect()->back()->with('success','Form Submmited Successfully!! we will get back to you as soon as possible. Thank You!');
     }
 
     /**
@@ -71,9 +68,7 @@ class AgricController extends Controller
      */
     public function show($id)
     {
-        //View Details of agric consultancy request
-         $agrics = Agric::find($id);
-             return view('backend.agric.show',['agrics'=>$agrics]);
+        //
     }
 
     /**
@@ -96,11 +91,7 @@ class AgricController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //set agric request as solved
-          $Agric = Agric::find($id);
-            $Agric->status =1;
-            $Agric->save(); 
-            return redirect()->back()->with('success','Solved Successfully!');
+        //
     }
 
     /**
