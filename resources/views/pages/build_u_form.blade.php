@@ -63,7 +63,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="name" required >
+                                <input type="text" class="form-control" name="name" required @guest
+                        @else
+                        value="{{ auth()->user()->first_name }} {{ auth()->user()->middle_name  }} {{ auth()->user()->last_name }}"
+                        @endguest >
                             </div>
                         </div>
 
@@ -73,7 +76,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address (optional)</label>
 
                             <div class="col-md-7">
-                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email"  >
+                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email" @guest
+                        @else
+                        value="{{ auth()->user()->email }}"
+                        @endguest >
                             </div>
                         </div>
 
@@ -117,7 +123,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required  @guest
+                        @else
+                        value="{{ auth()->user()->phone }}"
+                        @endguest >
                             </div>
 
                             <div class="col-md-3">

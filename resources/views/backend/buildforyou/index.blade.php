@@ -53,7 +53,7 @@
                                    
                                  </td>
                                 <td>
-                                  @if($BuildForYou->status==1) <span class="badge badge-success">Active</span> 
+                                  @if($BuildForYou->status==1) <span class="badge badge-success">Solved</span> 
                                   @elseif($BuildForYou->status==2) <span class="badge badge-danger">Pending</span>   
                                   @endif
                                 </td>

@@ -20,7 +20,7 @@
        <div class="col-md-10">
       <div class="card shadow-lg">
         <div class="card-body">
-            <h2 align='center' class="card-title">Let's Build for you Request Details</h2><hr/>
+            <h2 align='center' class="card-title">Let's Build for you - Request Details</h2><hr/>
 
          @include('layouts.messages')    
 		         
@@ -32,7 +32,7 @@
             <tr><td><b> <i class="fa fa-phone"></i> Phone 1:</b></td><td>  <i>{{$agrics->phone1}}</i></td></tr>
             <tr><td><b> <i class="fa fa-phone"></i> Phone 2 :</b></td><td>  <i>{{$agrics->phone2}}</i></td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <i>{{$agrics->email}}</i></td></tr>
-            <tr><td><b> <i class="fa fa-envelope"></i>  Address  :</b></td><td>  <i>{{$agrics->address}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-map-marker"></i>  Address  :</b></td><td>  <i>{{$agrics->address}}</i></td></tr>
             <tr><td><b> <i class="fa fa-map-marker"></i>  Country  :</b></td><td>  <i>{{$agrics->country_det->name}}</i></td></tr>
             <tr><td><b> <i class="fa fa-map-marker"></i>  State  :</b></td><td>  <i>@if($agrics->country == 162 ) {{$agrics->state_det->name }}  @else {{$agrics->lga1 }}  @endif</i></td></tr>
             <tr><td><b> <i class="fa fa-map-marker"></i>  Lga  :</b></td><td>  <i>@if($agrics->country == 162 ) {{$agrics->lga_det->name }}  @else {{$agrics->lga1 }}  @endif</i></td></tr>

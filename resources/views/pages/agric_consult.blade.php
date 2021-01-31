@@ -72,7 +72,7 @@
 				<form class='contact-form' method="POST" action="{{ route('agric_consult_submit') }}">
                     @csrf
 					
-					<div class="contact-form-left">
+					<div class="contact-form-left"> 
 						<span><i class='fa fa-user'></i></span><input type="text" name='name' 
 						@guest
 						@else
