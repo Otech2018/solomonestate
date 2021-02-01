@@ -256,6 +256,19 @@
 
 
   <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right"> Next of kin FullName: <span style="color:red;">*</span></label>
+
+                              <div class="col-md-7">
+                                <input type="text" class="form-control" placeholder="" name="name" required >
+                            </div>
+
+                        
+
+
+                        </div> 
+
+
+  <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right"> Next of kin relationship?: <span style="color:red;">*</span></label>
 
                               <div class="col-md-4">
@@ -263,7 +276,7 @@
                             </div>
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Next of kin name" name="name" required >
+                                <input type="text" class="form-control" placeholder="Next of kin Phone Number" name="name" required >
                             </div>
 
                         
@@ -285,7 +298,7 @@
                                 <select class="form-control" required onchange="optionw('id_date', this)">
                                     <option hidden value="">Select Purpose</option>
                                     <option value="Male">To Buy A Land</option>
-                                    <option value="Male">To Buy A Property</option>
+                                    <option value="Male">To Buy A House</option>
                                     <option value="Male">To Build a House</option>
                                     <option value="20">Others</option>
                                 </select>

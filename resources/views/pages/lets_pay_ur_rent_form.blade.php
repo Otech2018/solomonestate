@@ -234,7 +234,7 @@
 
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Closeset Land Mark <span style="color:red;">*</span></label>
+                            <label class="col-md-3 col-form-label text-md-right">Closeset LandMark <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
                                 <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="name" required >
@@ -247,7 +247,7 @@
 
 
                               <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Land Full name </label>
+                            <label class="col-md-3 col-form-label text-md-right">Landlord Full name </label>
 
                             <div class="col-md-7">
                                 <input type="text" class="form-control" placeholder="" name="email"  >
@@ -288,14 +288,25 @@
 
 
   <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right"> Which Date do you want to start?: <span style="color:red;">*</span></label>
+                            <label class="col-md-3 col-form-label text-md-right"> Which Date do you want to start?: <span style="color:red;">*</span></label>
 
                               <div class="col-md-3">
                                 <input type="date" class="form-control" placeholder="Which Date do you want to start?" name="name" required >
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <input type="number" class="form-control" onkeyup="rent_amt_f();" placeholder="House Rent Amount in One Year" name="name" id='rent_amt' required >
+                            </div>
+
+                            <div class="col-md-3">
+                                <select class="form-control" required>
+                                    <option value="sss" selected >Select Rent paid Interval</option>
+                                    <option value="1">Every Year </option>
+                                    <option value="2">Every 2 years</option>
+                                    <option value="3">Every 3 years</option>
+                                    <option value="4">Every 4 years</option>
+                                    <option value="5">Every 5 years</option>
+                                </select>
                             </div>
 
                             
@@ -316,7 +327,7 @@
                                 </div>
                             
 
-<i style="color:red">NOTE: Failure to pay as at when due will attract a penalty of 20%</i><br/>
+<i style="color:red">NOTE: Failure to pay as at when due will attract a penalty of 20% of  the supposed monthly payment</i><br/>
                         
                        <button type="submit" class="btn btn-lg btn-success">
                                   Send
@@ -344,7 +355,7 @@
        var month_rent1 = amt/12;
        var  month_rent = Math.round(month_rent1);
 
-       document.getElementById('rent_display').innerHTML = "You will be paying  <i style='font-size:22px;'>N"+ month_rent + " </i> every month as your Monthly Rent for 11 Months While we pay the last month for you! ";
+       document.getElementById('rent_display').innerHTML = "You will be paying  <i style='font-size:22px;'>N"+ month_rent + " </i> every month as your Monthly Rent, While we pay the last month for you! ";
     }
 
 
