@@ -20,6 +20,7 @@ class CreateLandSalesTable extends Migration
              $table->string('lname')->nullable();
             $table->string('email')->nullable();
             $table->string('dob')->nullable();
+            $table->string('gender')->nullable();
             $table->string('kindred')->nullable();
             $table->string('village')->nullable();
             $table->string('town')->nullable();
@@ -33,13 +34,16 @@ class CreateLandSalesTable extends Migration
             $table->string('phone2')->nullable();
             $table->string('passport')->nullable();
             $table->string('land_acquired_by')->nullable();
+            $table->string('land_acquired_by_2')->nullable();
             $table->string('land_surveyed')->nullable();
+            $table->string('land_location')->nullable();
             $table->string('plan_number')->nullable();
             $table->string('beacon_number')->nullable();
             $table->string('surveyor')->nullable();
             $table->string('surveyor_address')->nullable();
             $table->string('no_of_plots')->nullable();
-            $table->string('sie_in_sq_meters')->nullable();
+            $table->string('size_in_sq_meters')->nullable();
+            $table->string('land_Shape')->nullable();
             $table->string('land_doc_avaliable')->nullable();
             $table->string('property_mode')->nullable();
             $table->string('sell_price')->nullable();

@@ -42,12 +42,14 @@
 		
             <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
+                @include('layouts.messages1')
+
 				<h1><b>LANDS SALES/RENT REGISTRATION FORM</b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
                 
                 <hr/>
-				<form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
+				<form  method="POST" action="{{ route('landsale.store') }}" style="font-size:15px;" enctype="multipart/form-data">
 					
                     @csrf
 
@@ -55,16 +57,16 @@
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Fristname" name="name" required >
+                                <input type="text" class="form-control" name="fname" placeholder="First Name" required >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Middlename" name="name" required >
+                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Lastname" name="name" required >
+                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required >
                             </div>
                         </div>
 
@@ -88,7 +90,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <select class="form-control" required>
+                                <select class="form-control" name="gender" required>
                                     <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -105,16 +107,16 @@
                             <label class="col-md-3 col-form-label text-md-right">Home Address <span style="color:red;">*</span></label>
 
                              <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Kindred" name="name" required >
+                                <input type="text" class="form-control" placeholder="Kindred" name="kindred" required >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Village" name="name" required >
+                                <input type="text" class="form-control" placeholder="Village" name="village" required >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Town" name="name" required >
+                                <input type="text" class="form-control" placeholder="Town" name="town" required >
                             </div>
                         </div>
 
@@ -124,7 +126,7 @@
                           <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Country </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select  class="country form-control form-control-sm" name='country_id' required>
+                                        <select  class="country form-control form-control-sm" name='country' required>
 
                                             <option value='' hidden selected> Select country </option>
                                              @foreach($countries as $country)
@@ -141,14 +143,14 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-adjust'></i>  State </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state_id' required >
+                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state'  >
                                             <option value='' hidden selected> Select State *</option>
                                              @foreach($states as $state)
                                                 <option value='{{$state->id}}'> {{$state->name}} </option>
                                             @endforeach
                                         </select>
                                         <input type="text" class="form-control form-control-sm" id="state" readonly placeholder='Select Country First'>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state_f" placeholder='Enter Your State'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state1" placeholder='Enter Your State'>
                                     </div>
                                 </div>
 
@@ -156,13 +158,13 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flash'></i>  LGA </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga_id' required>
+                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga' >
                                             <option value='' hidden selected> Select LGA *</option>
                                              @foreach($lgas as $lga)
                                                 <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
                                             @endforeach
                                         </select>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga_f" placeholder='Enter Your LGA'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga1" placeholder='Enter Your LGA'>
                                         <input type="text" class="form-control form-control-sm" id="lga" readonly placeholder='Select Country First'>
                                        
                                     </div>
@@ -179,7 +181,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Office Address</label>
 
                             <div class="col-md-7">
-                                <textarea class="form-control"  style='height:130px' name="gig_desc" placeholder="Enter full Addres Including the State and Country" ></textarea>
+                                <textarea class="form-control"  style='height:130px' name="office_address" placeholder="Enter full Addres Including the State and Country" ></textarea>
 
                             </div>
                         </div>
@@ -212,7 +214,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Upload Passport <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                               <input  name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                               <input  name="passport" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                             </div>
                         </div>
 
@@ -222,7 +224,7 @@
                                   <div class="form-group row">
                                     <label  onclick="$('#speci').fadeIn();" for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Land Acquired By: </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-3">
-                                        <select  class="country form-control form-control-sm" name='land_acq' onchange="optionw('speci', this)" >
+                                        <select required class="country form-control form-control-sm" name='land_acquired_by' onchange="optionw('speci', this)" >
 
                                             <option value='' hidden selected> Select Item </option>
                                                <option value="Inheritance">Inheritance</option>
@@ -237,7 +239,7 @@
 
 
                                     <div class="col-sm-4" style="display:none;" id="speci">
-                                        <input type="text" class="form-control" placeholder=" Please Specify" name="home_address"  >
+                                        <input type="text" class="form-control" placeholder=" Please Specify" name="land_acquired_by_2"  >
 
                                     </div>
                                 </div>
@@ -248,7 +250,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Land Location</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address" required >
+                                <input type="text" class="form-control" placeholder="" name="land_location" required >
                             </div>
                         </div>
 
@@ -257,7 +259,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Is the Land Surveyed?:<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" id="remember2">
+                                <input class="form-check-input" type="radio" required name="land_surveyed"  value="YES" id="remember2">
 
                                     <label class="form-check-label btn btn-success" for="remember2" onclick="$('#suv').fadeIn();" >
                                        Yes  
@@ -266,9 +268,9 @@
 
 
                            <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" id="remember3">
+                                <input class="form-check-input" type="radio" required name="land_surveyed" id="remember3">
 
-                                    <label class="form-check-label btn btn-danger" for="remember3" onclick="$('#suv').fadeOut();" >
+                                    <label class="form-check-label btn btn-danger" for="remember3"  value="NO"  onclick="$('#suv').fadeOut();" >
                                        No   
                                     </label>
                            </div>
@@ -279,11 +281,11 @@
                             <label class="col-md-3 col-form-label text-md-right">Plan Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Plan No" name="phone1"  >
+                                <input type="text" class="form-control" placeholder="Plan No" name="plan_number"  >
                             </div>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Beacon No" name="phone2"  >
+                                <input type="text" class="form-control" placeholder="Beacon No" name="beacon_number"  >
                             </div>
 
 
@@ -294,7 +296,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Surveyor <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="home_address"  >
+                                <input type="text" class="form-control" placeholder="" name="surveyor"  >
                             </div>
                         </div>
 
@@ -304,7 +306,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Surveyor's Address</label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="office_address"  >
+                                <input type="text" class="form-control" placeholder="" name="surveyor_address"  >
                             </div>
                         </div>
 
@@ -317,11 +319,11 @@
                             <label class="col-md-3 col-form-label text-md-right">Number of Plots <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="No of Plots" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="No of Plots" name="no_of_plots" required >
                             </div>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Size In Sq. Meters" name="phone2"  >
+                                <input type="text" class="form-control" placeholder="Size In Sq. Meters" name="size_in_sq_meters"  >
                             </div>
 
 
@@ -332,7 +334,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Land Shape <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="land Shape" required >
+                                <input type="text" class="form-control" placeholder="" name="land_Shape" required >
                             </div>
                         </div>
 
@@ -340,7 +342,7 @@
                             <label class="col-md-3 col-form-label text-md-right">List Land Document Available <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                 <textarea class="form-control" id="exampleFormControlTextarea1" required rows="3" name="land_doc_avaliable"></textarea>
                             </div>
                         </div>
 
@@ -352,7 +354,7 @@
                           
 
                     <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" required id="remember21" onclick="$('#rent').fadeOut();$('#sale').fadeIn();" >
+                                <input class="form-check-input" type="radio" name="property_mode"  value="FOR SALE" required id="remember21" onclick="$('#rent').fadeOut();$('#sale').fadeIn();" >
 
                                     <label class="form-check-label btn btn-danger" for="remember21" >
                                       <b> FOR SALE </b></i>
@@ -361,7 +363,7 @@
                            </div>
 
                     <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="remember" required id="remember121" onclick="$('#sale').fadeOut();$('#rent').fadeIn();" >
+                                <input class="form-check-input" type="radio" name="property_mode"  value="RENT" required id="remember121" onclick="$('#sale').fadeOut();$('#rent').fadeIn();" >
 
                                     <label class="form-check-label btn btn-danger" for="remember121" >
                                       <b> FOR RENT </b></i>
@@ -375,7 +377,7 @@
                             <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to sell your Land?</i>) <span style="color:red;">*</span></label>
 
                             <div class="col-md-6">
-                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
+                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="sell_price"  >
                             </div>
                         </div>
 
@@ -385,16 +387,16 @@
                             <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to rent your Land Per Year?</i>) <span style="color:red;">*</span></label>
 
                             <div class="col-md-6">
-                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="name" required >
+                                <input type="text"  style="background-color:#fccfcf; font-weight:bold;" class="form-control" name="rent_price"  >
                             </div>
                         </div>
 
 
                         <br/><br/><div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">Land Closeset Land Mark <span style="color:red;">*</span></label>
+                            <label class="col-md-4 col-form-label text-md-right">Land Closeset Landmark <span style="color:red;">*</span></label>
 
                             <div class="col-md-8">
-                                <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="name" required >
+                                <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="landmark" required >
                             </div>
                         </div>
 
@@ -405,7 +407,7 @@
                             <label class="col-md-2 col-form-label text-md-right">Valid ID Card<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                               <select  class="country form-control form-control-sm" required name='land_acq' 
+                               <select  class="country form-control form-control-sm" required name='id_card' 
                                onchange="optionw('id_date', this)" >
 
                                             <option value='' hidden selected> Select Item </option>
@@ -418,7 +420,7 @@
                             <label class="col-md-2 col-form-label text-md-right">ID Number<span style="color:red;">*</span></label>
                             
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="ID Number" name="phone2" required >
+                                <input type="text" class="form-control" placeholder="ID Number" name="id_card_no" required >
                             </div>
 
 
@@ -429,12 +431,12 @@
                             <label class="col-md-2 col-form-label text-md-right">Date Issued<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="date" class="form-control" placeholder="Date Issued" name="phone1" required >
+                                <input type="date" class="form-control" placeholder="Date Issued" name="id_card_issued_date"  >
                             </div>
                             <label class="col-md-2 col-form-label text-md-right">Expiry Date<span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="date" class="form-control" placeholder="Expiry Date" name="phone2"  >
+                                <input type="date" class="form-control" placeholder="Expiry Date" name="id_card_exp_date"  >
                             </div>
 
 
@@ -459,7 +461,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 1<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image1" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -467,7 +469,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 2<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image2" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -483,14 +485,14 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 3<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image3" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
 
                 <div class="form-group col-md-3">
                       <label> Image 4<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image4" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -498,7 +500,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 5<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image5" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
@@ -506,7 +508,7 @@
 
                 <div class="form-group col-md-3">
                       <label> Image 6<span class="text-danger">*</label>
-                          <input style='font-size:5px !important;' name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                          <input style='font-size:5px !important;' name="image6" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                       
                 </div>
 
