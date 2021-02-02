@@ -37,7 +37,7 @@
 			<div >
 				<div class="clearfix">
 				</div>
-			</div>
+			</div> 
 		</div>
 		
             <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
@@ -57,16 +57,27 @@
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" name="fname" placeholder="First Name" required >
+                                <input type="text" class="form-control" name="fname" placeholder="First Name"
+                             @guest   @else
+                        value="{{ auth()->user()->first_name }}"
+                        @endguest 
+
+                         required >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required >
+                                <input type="text" class="form-control" name="mname" placeholder="Middle Name" required 
+                             @guest   @else
+                        value="{{ auth()->user()->middle_name  }} "
+                        @endguest >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required >
+                                <input type="text" class="form-control" name="lname" placeholder="Last Name" required 
+                           @guest     @else
+                        value=" {{ auth()->user()->last_name }}"
+                        @endguest >
                             </div>
                         </div>
 
@@ -76,7 +87,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address </label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email"  >
+                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email" 
+                                 @guest     @else
+                        value=" {{ auth()->user()->email }}"
+                        @endguest  >
                             </div>
                         </div>
 
@@ -194,7 +208,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required 
+                                 @guest     @else
+                        value=" {{ auth()->user()->phone }}"
+                        @endguest  >
                             </div>
 
                             <div class="col-md-3">

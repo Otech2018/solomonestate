@@ -163,7 +163,7 @@
 							<li><a href="{{route('listing')}}"> Lands/Buildings For Sale/Lease </a></li>
 							<li><a href="{{route('our_team')}}">Book Our Agent</a></li>
 							<li><a href="{{route('build_u')}}">Let's Build for you</a></li>
-							<li><a href="{{route('sale_rent_property')}}">Let's Sale/Rent Your Property For You  Within Days</a></li>
+							<li><a href="{{route('sale_rent_property')}}">Let's Sale/Rent Your Building For You  Within Days</a></li>
 							<li><a href="{{route('sale_rent_land')}}">Let's Sale Your Land For You  Within Days</a></li>
 							<li><a href="{{route('save_build')}}">Save To Build/Buy Land or Some Stuff </a></li>
 							<li><a href="{{route('save_build')}}">Auto Mobile Savings</a></li>

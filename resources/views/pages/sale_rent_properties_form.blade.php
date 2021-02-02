@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Sale Property </h2>
+				<h2>Sale Building </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Sale Property</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Sale Building</a>
 			</div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 		
             <div class="col-md-12 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
-				<h1><b>PROPERTY SALES/RENT REGISTRATION FORM</b></h1>
+				<h1><b>BUILDING SALES/RENT REGISTRATION FORM</b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
 
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
@@ -433,12 +433,26 @@
             {{-- for renting land details --}}
 
 
-                             <br/><br/><div class="form-group row" id="rent" style="display:none; background-color:#ffccbc; padding:20px;">
-                            <label class="col-md-5 col-form-label text-md-right">Price (<i>How Much do you want to Rent this Property Per Year?</i>) <span style="color:red;">*</span></label>
+                             <br/><br/><div id="rent" style="display:none; background-color:#ffccbc; padding:20px;">
+                          <div class="form-group row">
+
+                            <label class="col-md-4 col-form-label text-md-right">Price (<i>How Much do you want to Rent this Property Per Year?</i>) <span style="color:red;">*</span></label>
 
                             <div class="col-md-6">
                                 <input type="text"  style="background-color:#fbe9e7; font-weight:bold;" class="form-control" name="name" required >
                             </div>
+                            </div>
+
+
+                            <br/>
+                          <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">House Description</label>
+
+                            <div class="col-md-6">
+                                <textarea class="form-control"  style='height:130px' name="gig_desc" placeholder="Please Describe what the building has, eg number of shops, rooms and flats, including toilet and kitchen if any" ></textarea>
+
+                            </div>
+                        </div>
                         </div>
 
             {{-- for renting --}}
