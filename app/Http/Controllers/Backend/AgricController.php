@@ -24,7 +24,7 @@ class AgricController extends Controller
     {
         //list all agric consult request
         if(CheckAccess::check(46)){
-            $agrics = Agric::where('status','!=',0)->paginate(20);
+            $agrics = Agric::where('status','!=',0)->paginate(150);
              $type= "All";
             return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
  
@@ -43,7 +43,7 @@ class AgricController extends Controller
     {
         //list all pending agric consult request
         if(CheckAccess::check(47)){
-            $agrics = Agric::where('status',2)->paginate(20);
+            $agrics = Agric::where('status',2)->paginate(150);
             $type= "Pending";
             return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
  

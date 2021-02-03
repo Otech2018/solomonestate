@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User as Admin;
 use App\Models\User_group;
-use App\Http\Controllers\Backend\Customs\CheckAccess;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -104,6 +105,8 @@ class AdminAdminController extends Controller
          $Admin->user_type= $request->input('user_type');
          $Admin->username= $request->input('username');
          $Admin->email= $request->input('email');
+         $Admin->password= Hash::make('password');
+
          if($request->hasFile('cover_image')){
             $Admin->pic= $fileNameToStore;
         }

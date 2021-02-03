@@ -43,7 +43,7 @@
             <div class="col-md-12 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
                 @include('layouts.messages1')
-        
+
 				<h1><b>BUILDING SALES/RENT REGISTRATION FORM</b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
 
@@ -62,16 +62,25 @@
                             <label class="col-md-3 col-form-label text-md-right">Full Name <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Fristname" name="fname" required >
+                                <input type="text" class="form-control" placeholder="First Name" name="fname" required 
+                                @guest   @else
+                        value="{{ auth()->user()->first_name }}"
+                        @endguest >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Middlename" name="mname" required >
+                                <input type="text" class="form-control" placeholder="Middle name" name="mname" required 
+                                  @guest   @else
+                        value="{{ auth()->user()->middle_name  }} "
+                        @endguest >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Lastname" name="lname" required >
+                                <input type="text" class="form-control" placeholder="Last name" name="lname" required 
+                                @guest     @else
+                        value=" {{ auth()->user()->last_name }}"
+                        @endguest >
                             </div>
 
                         </div>
@@ -82,7 +91,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address </label>
 
                             <div class="col-md-7">
-                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email"  >
+                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email"  
+                                @guest     @else
+                        value=" {{ auth()->user()->email }}"
+                        @endguest  >
                             </div>
                         </div>
 
@@ -194,7 +206,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required 
+                                @guest     @else
+                        value=" {{ auth()->user()->phone }}"
+                        @endguest  >
                             </div>
 
                             <div class="col-md-3">

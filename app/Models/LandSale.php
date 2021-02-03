@@ -58,4 +58,25 @@ class LandSale extends Model
 
              ];
     use HasFactory;
+
+
+    
+    public function lga_det()
+{
+    return $this->belongsTo('App\Models\Lga','lga');
+}
+
+
+   public function state_det()
+{
+    return $this->belongsTo('App\Models\State','state');
+}
+
+
+    public function country_det()
+{
+    return $this->belongsTo('App\Models\Country','country');
+}
+
+
 }

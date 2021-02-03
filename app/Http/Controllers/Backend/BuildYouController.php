@@ -25,7 +25,7 @@ class BuildYouController extends Controller
     {
         //  //list all Let's build for you request
         if(CheckAccess::check(49)){
-            $BuildForYous = BuildForYou::where('status','!=',0)->paginate(20);
+            $BuildForYous = BuildForYou::where('status','!=',0)->paginate(150);
              $type= "All";
             return view('backend.buildforyou.index',['BuildForYous'=>$BuildForYous, 'type'=>$type]);
  
@@ -43,7 +43,7 @@ class BuildYouController extends Controller
     {
         ////list all pending let's build for you  request
         if(CheckAccess::check(50)){
-            $BuildForYous = BuildForYou::where('status',2)->paginate(20);
+            $BuildForYous = BuildForYou::where('status',2)->paginate(150);
             $type= "Pending";
             return view('backend.buildforyou.index',['BuildForYous'=>$BuildForYous, 'type'=>$type]);
  

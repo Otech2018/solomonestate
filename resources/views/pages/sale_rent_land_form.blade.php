@@ -287,7 +287,7 @@
                            <div class="col-md-3">
                                 <input class="form-check-input" type="radio" required name="land_surveyed" id="remember3">
 
-                                    <label class="form-check-label btn btn-danger" for="remember3"  value="NO"  onclick="$('#suv').fadeOut();" >
+                                    <label class="form-check-label btn btn-danger" for="remember3"  value="NO"  onclick="$('#suv').fadeOut();" > 
                                        No   
                                     </label>
                            </div>

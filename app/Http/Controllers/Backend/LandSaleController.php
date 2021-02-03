@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
 use App\Models\LandSale;
 use Illuminate\Http\Request;
@@ -22,7 +23,15 @@ class LandSaleController extends Controller
 
     public function index()
     {
-        //
+        //  //list all land sale and rent request
+        if(CheckAccess::check(51)){
+            $LandSales = LandSale::where('status','!=',0)->paginate(150);
+             $type= "All";
+            return view('backend.land_sale.index',['LandSales'=>$LandSales, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -32,7 +41,15 @@ class LandSaleController extends Controller
      */
     public function create()
     {
-        //
+        // //list all pending land sale and rent request
+        if(CheckAccess::check(52)){
+            $LandSales = LandSale::where('status',2)->paginate(150);
+            $type= "Pending";
+            return view('backend.land_sale.index',['LandSales'=>$LandSales, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -62,7 +79,7 @@ class LandSaleController extends Controller
                     'lga'=>'',
                     'lga1'=>'',
                     'office_address'=>'',
-                    'phone1'=>'',
+                    'phone1'=>'', 
                     'phone2'=>'',
                     'land_acquired_by'=>'',
                     'land_acquired_by_2'=>'',
@@ -156,7 +173,9 @@ class LandSaleController extends Controller
      */
     public function show($id)
     {
-        //
+        // //View Details of land sale and rent request
+         $LandSales = LandSale::find($id);
+             return view('backend.land_sale.show',['LandSales'=>$LandSales]);
     }
 
     /**
@@ -179,7 +198,11 @@ class LandSaleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        ///set land sale request as solved
+          $LandSale = LandSale::find($id);
+            $LandSale->status =1;
+            $LandSale->save(); 
+            return redirect()->back()->with('success','Solved Successfully!');
     }
 
     /**
