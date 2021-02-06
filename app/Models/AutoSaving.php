@@ -45,7 +45,7 @@ class AutoSaving extends Model
             'saving_start_date',
             'saving_interval_amt',
 
-            'buy_for_us',
+            'buy_for_u',
             'status',
     ];
 

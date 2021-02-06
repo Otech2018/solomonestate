@@ -52,7 +52,7 @@ class CreateAutoSavingsTable extends Migration
             $table->string('saving_start_date')->nullable();
             $table->string('saving_interval_amt')->nullable();
 
-            $table->string('buy_for_us')->nullable();
+            $table->string('buy_for_u')->nullable();
             $table->string('status')->nullable();
 
 

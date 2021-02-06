@@ -54,16 +54,16 @@
                             <label class="col-md-3 col-form-label text-md-right">  Name: <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Fristname" name="name" required >
+                                <input type="text" class="form-control" placeholder="Fristname" name="fname" required >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Middlename" name="name" required >
+                                <input type="text" class="form-control" placeholder="Middlename" name="mname" required >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Lastname" name="name" required >
+                                <input type="text" class="form-control" placeholder="Lastname" name="lname" required >
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <select class="form-control" required>
+                                <select class="form-control" required name="gender">
                                     <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -104,16 +104,16 @@
                             <label class="col-md-3 col-form-label text-md-right">Home Address <span style="color:red;">*</span></label>
 
                              <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Kindred" name="name" required >
+                                <input type="text" class="form-control" placeholder="Kindred" name="kindred" required >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Village" name="name" required >
+                                <input type="text" class="form-control" placeholder="Village" name="village" required >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Town" name="name" required >
+                                <input type="text" class="form-control" placeholder="Town" name="town" required >
                             </div>
                         </div>
 
@@ -123,7 +123,7 @@
                           <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flag'></i>  Country </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select  class="country form-control form-control-sm" name='country_id' required>
+                                        <select  class="country form-control form-control-sm" name='country' required>
 
                                             <option value='' hidden selected> Select country </option>
                                              @foreach($countries as $country)
@@ -140,14 +140,14 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-adjust'></i>  State </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state_id' required >
+                                        <select id="state-list" style='display:none;' class="state form-control form-control-sm" name='state'  >
                                             <option value='' hidden selected> Select State *</option>
                                              @foreach($states as $state)
                                                 <option value='{{$state->id}}'> {{$state->name}} </option>
                                             @endforeach
                                         </select>
                                         <input type="text" class="form-control form-control-sm" id="state" readonly placeholder='Select Country First'>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state_f" placeholder='Enter Your State'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="state-text"  name="state1" placeholder='Enter Your State'>
                                     </div>
                                 </div>
 
@@ -155,13 +155,13 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-3 col-form-label"><b>  <i class='fa fa-flash'></i>  LGA </b> <span style="color:red;">*</span></label>
                                     <div class="col-sm-7">
-                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga_id' required>
+                                        <select id="lga-list" style='display:none;' class="lgaa form-control form-control-sm" name='lga'>
                                             <option value='' hidden selected> Select LGA *</option>
                                              @foreach($lgas as $lga)
                                                 <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->id}}' style='display:none;' disabled> {{$lga->name}} </option>
                                             @endforeach
                                         </select>
-                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga_f" placeholder='Enter Your LGA'>
+                                        <input type="text" style='display:none;' class="form-control form-control-sm" id="lga-text"  name="lga1" placeholder='Enter Your LGA'>
                                         <input type="text" class="form-control form-control-sm" id="lga" readonly placeholder='Select Country First'>
                                        
                                     </div>
@@ -178,7 +178,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Office Address</label>
 
                             <div class="col-md-7">
-                                <textarea class="form-control"  style='height:130px' name="gig_desc" placeholder="Enter full Addres Including the State and Country" ></textarea>
+                                <textarea class="form-control"  style='height:130px' name="office_address" placeholder="Enter full Addres Including the State and Country" required></textarea>
 
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Upload Passport <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
-                               <input  name="cover_image" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
+                               <input  name="passport" accept='.gif, .jpg,.png' type="file" id="input-file-now" required class="dropify" data-max-file-size="1M"/>
                             </div>
                         </div>
 
@@ -228,11 +228,11 @@
                             <label class="col-md-3 col-form-label text-md-right"> Bank Account Detail: <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Account Number" name="name" required >
+                                <input type="text" class="form-control" placeholder="Account Number" name="acc_num" required >
                             </div>
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Bank Name" name="name" required >
+                                <input type="text" class="form-control" placeholder="Bank Name" name="acc_bank_name" required >
                             </div>
 
 
@@ -244,7 +244,7 @@
                             <label class="col-md-3 col-form-label text-md-right"> Exact Bank Account Name </label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="email"  >
+                                <input type="text" class="form-control" placeholder="" name="acc_name" required >
                             </div>
                         </div>
 
@@ -259,7 +259,7 @@
                             <label class="col-md-3 col-form-label text-md-right"> Next of kin FullName: <span style="color:red;">*</span></label>
 
                               <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="name" required >
+                                <input type="text" class="form-control" placeholder="" name="next_of_kin_name" required >
                             </div>
 
                         
@@ -272,11 +272,11 @@
                             <label class="col-md-3 col-form-label text-md-right"> Next of kin relationship?: <span style="color:red;">*</span></label>
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="e.g. Brother" name="name" required >
+                                <input type="text" class="form-control" placeholder="e.g. Brother" name="next_of_kin_reln" required >
                             </div>
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Next of kin Phone Number" name="name" required >
+                                <input type="text" class="form-control" placeholder="Next of kin Phone Number" name="next_of_kin_phone" required >
                             </div>
 
                         
@@ -295,7 +295,7 @@
                             <label class="col-md-3 col-form-label text-md-right"> Why do you want to Save?: <span style="color:red;">*</span></label>
 
                               <div class="col-md-4">
-                                <select class="form-control" required onchange="optionw('id_date', this)">
+                                <select class="form-control" name="saving_purpose" required onchange="optionw('id_date', this)">
                                     <option hidden value="">Select Purpose</option>
                                     <option value="Male">To Buy A Land</option>
                                     <option value="Male">To Buy A House</option>
@@ -305,7 +305,7 @@
                             </div>
 
                               <div class="col-md-4" style="display:none;" id="id_date" >
-                                <input type="text" class="form-control" placeholder="Please Specify" name="name" required >
+                                <input type="text" class="form-control" placeholder="Please Specify" name="saving_purpose1" >
                             </div>
 </div>
 
@@ -315,7 +315,7 @@
                         
 
                               <div class="col-md-4">
-                                <input type="date" class="form-control"  name="name" required >
+                                <input type="date" class="form-control"  name="saving_start_date" required >
                             </div>
 </div>
 
@@ -325,7 +325,7 @@
                         
 
                               <div class="col-md-4">
-                                <input type="number" class="form-control"  onkeyup="rent_amt_f()"  id="budget" placeholder="Total Budget Amount" name="name" required >
+                                <input type="number" class="form-control"  onkeyup="rent_amt_f()"  id="budget" placeholder="Total Budget Amount" name="saving_budget" required >
                             </div>
 </div>
 
@@ -334,8 +334,8 @@
                             <label class="col-md-3 col-form-label text-md-right"> On what Interval can you easily save?: <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <select class="form-control" id="interval" required>
-                                  <option hidden value="sss">Select Interval</option>
+                                <select class="form-control" id="interval" name="saving_interval" required>
+                                  <option hidden value="">Select Interval</option>
                                     <option value="day">daily</option>
                                     <option value="week">Weekly</option>
                                     <option value="month">Monthly</option>
@@ -344,7 +344,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="number" id="interval_no" onkeyup="rent_amt_f()" class="form-control" placeholder="Interval Number?" name="name" required >
+                                <input type="number" id="interval_no" onkeyup="rent_amt_f()" class="form-control" placeholder="Interval Number?" name="saving_interval_no" required >
                             </div>
 
                             
