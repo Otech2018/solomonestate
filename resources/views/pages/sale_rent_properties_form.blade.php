@@ -240,7 +240,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Property Mode:<span style="color:red;">*</span></label>
 
                           <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="property_mode" value="For Sale -  Landed Property" required id="remember21">
+                                <input class="form-check-input" type="radio" name="property_mode" value="1" required id="remember21">
 
                                     <label class="form-check-label btn btn-success" for="remember21" onclick="$('#rent').fadeOut();$('#noland').fadeOut();$('#land').fadeIn();" >
                                       <b> FOR SALE <br/> LANDED PROPERTY  <br/>(Selling both Land & Structure(s))</b></i>
@@ -249,7 +249,7 @@
                           
                           
                             <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="property_mode" value="For Sale - Non Landed Property" required id="remember12" onclick="$('#rent').fadeOut();$('#land').fadeOut();$('#noland').fadeIn();" >
+                                <input class="form-check-input" type="radio" name="property_mode" value="2" required id="remember12" onclick="$('#rent').fadeOut();$('#land').fadeOut();$('#noland').fadeIn();" >
 
                                     <label class="form-check-label btn btn-primary" for="remember12" >
                                       <b> FOR SALE <br/>  NON LANDED PROPERTY  <br/>(Selling only Structure(s))</b></i>
@@ -259,7 +259,7 @@
 
 
                     <div class="col-md-3">
-                                <input class="form-check-input" type="radio" name="property_mode" value="For Rent" required id="remember121" onclick="$('#noland').fadeOut();$('#land').fadeOut();$('#rent').fadeIn();" >
+                                <input class="form-check-input" type="radio" name="property_mode" value="3" required id="remember121" onclick="$('#noland').fadeOut();$('#land').fadeOut();$('#rent').fadeIn();" >
 
                                     <label class="form-check-label btn btn-danger" for="remember121" >
                                       <b> FOR RENT </b></i>
@@ -477,13 +477,21 @@
 
 
                           <br/><br/><div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Property Location <span style="color:red;">*</span></label>
+
+                            <div class="col-md-8">
+                                <input type="text" placeholder="House Location"  style="font-weight:bold;" class="form-control" name='land_location' required >
+                            </div>
+                        </div>
+
+
+ <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right">Land Closeset Land Mark <span style="color:red;">*</span></label>
 
                             <div class="col-md-8">
                                 <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="landmark" required >
                             </div>
                         </div>
-
                     <div style="padding:15px; background-color:#e3f2fd;">
                         
 

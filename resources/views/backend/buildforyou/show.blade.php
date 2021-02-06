@@ -43,7 +43,7 @@
             <tr><td><b> <i class="fa fa-info-circle"></i> Description  :</b></td><td>  <i>{{$agrics->description}}</i></td></tr>
             <tr><td><b> <i class="fa fa-info-circle"></i> Status:</b></td><td>  
 
-               @if($agrics->status==1) <span class="badge badge-success">Active</span> 
+               @if($agrics->status==1) <span class="badge badge-success">Solved</span> 
                                   @elseif($agrics->status==2) <span class="badge badge-danger">Pending</span>   
                                   @endif
             </td></tr>

@@ -44,6 +44,7 @@ class SaleHouse extends Model
             'sell_price',
             'rent_price',
             'landmark',
+            'land_location',
             'id_card',
             'id_card_no',
             'id_card_issued_date',

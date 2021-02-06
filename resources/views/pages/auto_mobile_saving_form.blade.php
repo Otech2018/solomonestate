@@ -309,6 +309,15 @@
                             </div>
 </div>
 
+ <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right"> When do you want to start?: <span style="color:red;">*</span></label>
+
+                        
+
+                              <div class="col-md-4">
+                                <input type="date" class="form-control"  name="name" required >
+                            </div>
+</div>
 
   <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right"> What is the Budget Amount?: <span style="color:red;">*</span></label>
@@ -316,7 +325,7 @@
                         
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control"  onkeyup="rent_amt_f()"  id="budget" placeholder="Total Budget Amount" name="name" required >
+                                <input type="number" class="form-control"  onkeyup="rent_amt_f()"  id="budget" placeholder="Total Budget Amount" name="name" required >
                             </div>
 </div>
 
@@ -355,7 +364,31 @@
             <h4 align="center" id="rent_display" style="background-color: red; color:white; padding:10px; font-weight:bold; font-size:17px;"> Savings Information  is needed </h4>
       
 
-                            <br/><br/><br/>
+                            <br/>
+                            <div class="col-md-12">
+                                After Saving, do you want us to buy the stuff for you? 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <input class="form-check-input" type="radio" name="buy_for_u" value="yes" required id="wer">
+
+                                    <label class="form-check-label" for="wer" >
+                                        Yes  
+                                    </label>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                                      <input class="form-check-input" type="radio" name="buy_for_u" value="no" required id="remember1e1">
+
+                                    <label class="form-check-label" for="remember1e1" >
+                                        No  
+                                    </label>
+
+                                </div>
+                            
+
+
+                             <br/><br/><br/>
                             <div class="col-md-12">
                                     <input class="form-check-input" type="checkbox" name="rtfvd" required id="remember11">
 
@@ -363,7 +396,6 @@
                                        Accept Our   
                                     </label><a href="{{route('tos')}}" target="_blank" style="color:green;"> Terms and Conditions</a>
                                 </div>
-                            
 
                         
                        <button type="submit" class="btn btn-lg btn-success">

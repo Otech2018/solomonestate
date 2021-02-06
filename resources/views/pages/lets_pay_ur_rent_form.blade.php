@@ -306,6 +306,11 @@
                                     <option value="3">Every 3 years</option>
                                     <option value="4">Every 4 years</option>
                                     <option value="5">Every 5 years</option>
+                                    <option value="6">Every 6 years</option>
+                                    <option value="7">Every 7 years</option>
+                                    <option value="8">Every 8 years</option>
+                                    <option value="9">Every 9 years</option>
+                                    <option value="10">Every 10 years</option>
                                 </select>
                             </div>
 

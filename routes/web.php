@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('homepage');
 Route::get('/listing', [App\Http\Controllers\PageController::class, 'listing'])->name('listing');
+Route::get('/Searchlisting', [App\Http\Controllers\PageController::class, 'Searchlisting'])->name('Searchlisting');
 Route::get('/listing_details/{id}', [App\Http\Controllers\PageController::class, 'listing_details'])->name('listing_details');
-Route::get('/payment/{id}', [App\Http\Controllers\PageController::class, 'listing_details'])->name('payment');
+Route::get('/payment/{id}', [App\Http\Controllers\PageController::class, 'payment_details'])->name('payment');
 Route::get('/contact_us', [App\Http\Controllers\PageController::class, 'contact_us'])->name('contact_us');
 Route::get('/our_team', [App\Http\Controllers\PageController::class, 'our_team'])->name('our_team');
 Route::get('/agric_consult', [App\Http\Controllers\PageController::class, 'agric_consult'])->name('agric_consult');
@@ -66,7 +67,7 @@ Route::prefix('sax')->group(function(){
 	Route::resource('gallery', App\Http\Controllers\Backend\galleriesController::class);
 	Route::resource('buildyou', App\Http\Controllers\Backend\BuildYouController::class);
 	Route::resource('landsale', App\Http\Controllers\Backend\LandSaleController::class);
-	Route::resource('salehouse', App\Http\Controllers\Backend\HouseSaleController::class);
+	Route::resource('salehouse', App\Http\Controllers\Backend\HouseSaleController::class); 
 	Route::resource('UserAsessment', App\Http\Controllers\Backend\UserAsessmentController::class);
 	Route::post('change_password/{id}', [App\Http\Controllers\Backend\MyProfileController::class,'change_password'])->name('change_password');
 	Route::get('change_password1', [App\Http\Controllers\Backend\MyProfileController::class,'change_password1'])->name('change_password1');

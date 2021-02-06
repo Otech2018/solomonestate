@@ -26,7 +26,54 @@ class PageController extends Controller
 
     public function listing()
     {
-        $properties = GigSubCategory::where('status','=','1')->paginate(20);
+        $properties = GigSubCategory::where('status','=','1')->paginate(120);
+        return view('pages.listing',['properties'=>$properties]);
+    }
+
+
+       public function Searchlisting(Request $request)
+    { 
+
+        $sale_mode= $request->input('sale_mode');
+            $property_type= $request->input('property_type');
+            $state_id= $request->input('state_id');
+            $lga_id= $request->input('lga_id');
+
+
+        if( $request->input('sale_mode') == 'any'){
+            $sale_mode = " '!=', 333333 ";
+        }
+
+
+        if( $request->input('sale_mode') == 'any2'){
+            $sale_mode = " '!=', 2 ";
+        }
+
+
+
+        if( $request->input('property_type') == 'all'){
+           $property_type = " '!=', 3333 ";
+        }
+
+
+        if( $request->input('state_id') == 'all'){
+           $state_id = " '!=', 33333 ";
+        }
+
+
+
+        if( $request->input('lga_id') == 'all'){
+           $lga_id = " '!=', 2333 ";
+        }
+
+            
+
+        $properties = GigSubCategory::where('status','=','1')
+        ->where('sale_mode',$sale_mode)
+        ->where('property_type',$property_type)
+        ->where('state_id',$state_id)
+        ->where('lga_id',$lga_id)
+        ->paginate(70);
         return view('pages.listing',['properties'=>$properties]);
     }
  
@@ -38,7 +85,15 @@ class PageController extends Controller
         return view('pages.listing_details',['property'=>$property,'properties'=>$properties]);
     }
 
+
+ public function payment_details($id)
+    {
+        $properties = GigSubCategory::where('status','=','1')->where('featured','=','1')->get();
+         $property = GigSubCategory::find($id);
+        return view('pages.payment_details',['property'=>$property,'properties'=>$properties]);
+    }
     
+
     public function contact_us()
     {
         return view('pages.contact_us');

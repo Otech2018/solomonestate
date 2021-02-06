@@ -25,7 +25,7 @@ class TaskController extends Controller
     public function index()
     {
         if(auth()->user()->user_type ==1){
-            $task = Task::where('id','>','0')->paginate(20);
+            $task = Task::where('id','>','0')->paginate(120);
             
             return view('backend.Task.index',['tasks'=>$task]);
         }

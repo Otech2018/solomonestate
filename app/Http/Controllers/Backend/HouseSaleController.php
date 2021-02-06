@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
 use App\Models\SaleHouse;
 use Illuminate\Http\Request;
@@ -13,9 +14,24 @@ class HouseSaleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+      public function __construct()
+    {
+        $this->middleware('auth',['except'=>['store']]);
+    } 
+    
     public function index()
     {
-        //
+        // //  //list all land sale and rent request
+        if(CheckAccess::check(53)){
+            $SaleHouses = SaleHouse::where('status','!=',0)->paginate(150);
+             $type= "All";
+            return view('backend.house_sales.index',['SaleHouses'=>$SaleHouses, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -25,7 +41,15 @@ class HouseSaleController extends Controller
      */
     public function create()
     {
-        //
+        // // //list all pending land sale and rent request
+        if(CheckAccess::check(54)){
+            $SaleHouses = SaleHouse::where('status',2)->paginate(150);
+            $type= "Pending";
+            return view('backend.house_sales.index',['SaleHouses'=>$SaleHouses, 'type'=>$type]);
+ 
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -62,6 +86,7 @@ class HouseSaleController extends Controller
            'land_surveyed'=>'',
            'plan_number'=>'',
            'beacon_number'=>'',
+           'land_location'=>'',
            'surveyor'=>'',
            'surveyor_address'=>'',
            'no_of_plots'=>'',
@@ -90,7 +115,7 @@ class HouseSaleController extends Controller
                     'image6'=>'image|required|max:1999',
                     'purchase_recipt'=>'image|max:1999',
                     'allocation_paper'=>'image|max:1999',
-                    
+                     
             ]);
 
                       
@@ -137,7 +162,7 @@ class HouseSaleController extends Controller
                
                         $purchase_recipt =    ['purchase_recipt'=>$fileNameToStore7];   
                         }else{
-                            $purchase_recipt = null;
+                            $purchase_recipt = ['purchase_recipt'=>''];
                         }
 
 
@@ -149,7 +174,7 @@ class HouseSaleController extends Controller
                
                         $allocation_paper =     ['allocation_paper'=>$fileNameToStore8];  
                         }else{
-                            $allocation_paper = null;
+                            $allocation_paper =     ['allocation_paper'=>''];   
                         }
 
 
@@ -179,7 +204,9 @@ class HouseSaleController extends Controller
      */
     public function show($id)
     {
-        //
+        //  // //View Details of land sale and rent request
+         $LandSales = SaleHouse::find($id);
+             return view('backend.house_sales.show',['LandSales'=>$LandSales]);
     }
 
     /**
@@ -202,7 +229,11 @@ class HouseSaleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // ///set land sale request as solved
+          $SaleHouse = SaleHouse::find($id);
+            $SaleHouse->status =1;
+            $SaleHouse->save(); 
+            return redirect()->back()->with('success','Solved Successfully!');
     }
 
     /**

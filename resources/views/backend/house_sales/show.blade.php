@@ -28,7 +28,7 @@
          <div>   
             <br/><br/>
           <center>
-            <img src="{{ asset('storage/sale_land_images/'.$LandSales->passport)}}"  width="250px" height="250px"/>
+            <img src="{{ asset('storage/sale_house_images/'.$LandSales->passport)}}"  width="250px" height="250px"/>
           </center>
        
 <br/><br/>
@@ -75,13 +75,15 @@
             </table>
 
 
-            <h1 align="center" style="font-size: 22px; font-weight:bold;"><br/><br/> LAND DETAILS</h1><hr/>
+            <h1 align="center" style="font-size: 22px; font-weight:bold;"><br/><br/> HOUSE DETAILS</h1><hr/>
+
+@if( $LandSales->property_mode  == 1)
 
                 <table class="table table-sm table-bordered table-striped text-primary"> 
-            <tr><td><b> <i class="fa fa-cogs"></i> LAND MODE  :</b></td><td>  <i>{{$LandSales->property_mode}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i>  MODE  :</b></td><td>  <i>For Sale -  Landed Property </i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i>  SELLING PRICE  :</b></td><td>  <i>{{$LandSales->full_sell_price}}</i></td></tr>
             <tr><td><b> <i class="fa fa-cogs"></i> ACQUIRED BY: </b></td><td>  <i>@if( $LandSales->land_acquired_by == '12') {{$LandSales->land_acquired_by_2}}   @else {{$LandSales->land_acquired_by}} @endif</i></td></tr>
-            <tr><td><b> <i class="fa fa-cogs"></i> @if( $LandSales->property_mode == 'RENT') RENTING PRICE  @else SELLING PRICE @endif </b></td><td>  <i>@if( $LandSales->property_mode == 'RENT') {{$LandSales->rent_price}}   @else {{$LandSales->sell_price}} @endif</i></td></tr>
-            <tr><td><b> <i class="fa fa-cogs"></i> LAND LOCATION  :</b></td><td>  <i>{{$LandSales->land_location}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> HOUSE LOCATION  :</b></td><td>  <i>{{$LandSales->land_location}}</i></td></tr>
             <tr><td><b> <i class="fa fa-cogs"></i> NUMBER OF PLOTS  :</b></td><td>  <i>{{$LandSales->no_of_plots}}   </i></td></tr>
             <tr><td><b> <i class="fa fa-cogs"></i> SIZE IN SQ. METERS  :</b></td><td>  <i>{{$LandSales->size_in_sq_meters}}</i></td></tr>
             <tr><td><b> <i class="fa fa-cogs"></i> LAND SHAPE  :</b></td><td>  <i>{{$LandSales->land_Shape}}</i></td></tr>
@@ -100,49 +102,75 @@
             </table>
 
 
+@elseif( $LandSales->property_mode  == 3)
 
 
+                <table class="table table-sm table-bordered table-striped text-primary"> 
+            <tr><td><b> <i class="fa fa-cogs"></i>  MODE  :</b></td><td>  <i>FOR Rent </i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> RENTING PRICE  :</b></td><td>  <i>{{$LandSales->rent_price}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> HOUSE LOCATION  :</b></td><td>  <i>{{$LandSales->land_location}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> LANDMARK  :</b></td><td>  <i>{{$LandSales->landmark}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> HOUSE DESCRIPTION  :</b></td><td>  <i>{{$LandSales->house_description}}   </i></td></tr>
+            </table>
 
+@elseif( $LandSales->property_mode  == 2)
+
+
+ <table class="table table-sm table-bordered table-striped text-primary"> 
+            <tr><td><b> <i class="fa fa-cogs"></i>  MODE  :</b></td><td>  <i>For Sale -  Non-Landed Property</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> HOUSE LOCATION  :</b></td><td>  <i>{{$LandSales->land_location}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> LANDMARK  :</b></td><td>  <i>{{$LandSales->landmark}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-cogs"></i> RENTING PRICE  :</b></td><td>  <i>{{$LandSales->sell_price}}</i></td></tr>
+
+            <tr>
+              <td><b>  <img src="{{ asset('storage/sale_house_images/'.$LandSales->purchase_recipt)}}"  width="100%" /> 
+                <br/>Purchase Reciept  </b></td>
+
+              <td>   <img src="{{ asset('storage/sale_house_images/'.$LandSales->allocation_paper)}}"  width="100%" /> 
+                <br/> <b>Allocation Papers</b></td></tr>
+            </table>
+
+@endif
            
         </div>
 <br/><br/>
-<h1 align="center" style="font-size: 22px; font-weight:bold;">Land Images</h1><hr/>
+<h1 align="center" style="font-size: 22px; font-weight:bold;">House Images</h1><hr/>
           <div class="row justify-content-center">
               <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->cover_image)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->cover_image)}}"  width="100%" />
          <h2>Cover Image </h2><br/><br/>
        </div>
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image1)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image1)}}"  width="100%" />
          <h2>Image 1</h2><br/><br/>
        </div>
 
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image2)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image2)}}"  width="100%" />
          <h2>Image 2</h2><br/><br/>
        </div>
 
 
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image3)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image3)}}"  width="100%" />
          <h2>Image 3</h2><br/><br/>
        </div>
 
 
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image4)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image4)}}"  width="100%" />
          <h2>Image 4</h2><br/><br/>
        </div>
 
 
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image5)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image5)}}"  width="100%" />
          <h2>Image 5</h2><br/><br/>
        </div>
 
 
        <div class="col-md-4">
-         <img src="{{ asset('storage/sale_land_images/'.$LandSales->image6)}}"  width="100%" />
+         <img src="{{ asset('storage/sale_house_images/'.$LandSales->image6)}}"  width="100%" />
          <h2>Image 6</h2><br/><br/>
        </div>
 

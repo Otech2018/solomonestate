@@ -27,7 +27,7 @@ class User_groupController extends Controller
     public function index()
     {
         if(auth()->user()->user_type ==2){
-            $User_groups = User_group::where('status','=','1')->paginate(20);
+            $User_groups = User_group::where('status','=','1')->paginate(150);
            return view('backend.user_grp.index',['User_groups'=>$User_groups]);
         }
         return redirect(route('home'))->with('error','Unauthorized Page. Access Denied!!!');
@@ -151,7 +151,7 @@ class User_groupController extends Controller
     {
         
          if(auth()->user()->user_type ==2){
-            $admins = Admin::where('status','=','1')->paginate(20);
+            $admins = Admin::where('status','=','1')->paginate(120);
             $User_groups = User_group::where('status','=','1')->get();
            return view('backend.user_grp.addAdiminToUserGrp',['admins'=>$admins, 'User_groups'=>$User_groups]);
         }
@@ -183,7 +183,7 @@ class User_groupController extends Controller
     {
         
          if(auth()->user()->user_type ==2){
-            $admins = Admin::where('status','=','1')->where('user_type','=',$id)->paginate(20);
+            $admins = Admin::where('status','=','1')->where('user_type','=',$id)->paginate(120);
             $User_groups = User_group::where('status','=','1')->get();
             $User_group1 = User_group::find($id);
            return view('backend.user_grp.addAdiminToUserGrp1',['admins'=>$admins, 'User_groups'=>$User_groups, 'User_group1'=>$User_group1]);
@@ -198,7 +198,7 @@ class User_groupController extends Controller
     {
         
          if(auth()->user()->user_type ==2){
-            $Perform_Tasks = Perform_Task::where('user_group_id','=',$id)->paginate(20);
+            $Perform_Tasks = Perform_Task::where('user_group_id','=',$id)->paginate(120);
             $User_group1 = User_group::find($id);
            return view('backend.user_grp.setTask',['Perform_Tasks'=>$Perform_Tasks,  'User_group1'=>$User_group1]);
         }
