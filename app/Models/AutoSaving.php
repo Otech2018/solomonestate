@@ -45,10 +45,38 @@ class AutoSaving extends Model
             'saving_start_date',
             'saving_interval_amt',
 
+            'user_id',
             'buy_for_u',
             'status',
     ];
 
     
     use HasFactory;
+
+
+       public function lga_det()
+{
+    return $this->belongsTo('App\Models\Lga','lga');
+}
+
+
+   public function state_det()
+{
+    return $this->belongsTo('App\Models\State','state');
+}
+
+
+    public function country_det()
+{
+    return $this->belongsTo('App\Models\Country','country');
+}
+
+
+    public function payments()
+{
+    return $this->hasMany('App\Models\Payments','flw_ref');
+}
+
+
+
 }

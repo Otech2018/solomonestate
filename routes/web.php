@@ -44,6 +44,8 @@ Route::resource('savingform', App\Http\Controllers\SavingsFormController::class)
 	
 Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::class,'change_password'])->name('change_password2');
 	Route::get('change_password1', [App\Http\Controllers\MyProfileController::class,'change_password1'])->name('change_password11');
+	Route::get('mysaving_payments', [App\Http\Controllers\MysavingsController::class,'mysaving_payments'])->name('mysaving_payments');
+	Route::resource('mysavings', App\Http\Controllers\MysavingsController::class);
 	
 
 
@@ -66,6 +68,8 @@ Route::prefix('sax')->group(function(){
 	Route::resource('admin_admin', App\Http\Controllers\Backend\AdminAdminController::class);
 	Route::resource('gallery', App\Http\Controllers\Backend\galleriesController::class);
 	Route::resource('buildyou', App\Http\Controllers\Backend\BuildYouController::class);
+	Route::resource('autosave', App\Http\Controllers\Backend\AutoSavingController::class);
+	Route::resource('rent', App\Http\Controllers\Backend\RentController::class);
 	Route::resource('landsale', App\Http\Controllers\Backend\LandSaleController::class);
 	Route::resource('salehouse', App\Http\Controllers\Backend\HouseSaleController::class); 
 	Route::resource('UserAsessment', App\Http\Controllers\Backend\UserAsessmentController::class);

@@ -42,11 +42,14 @@
         
             <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
             <div class="inner-wrapper">
+
+                @include('layouts.messages1')
+
                 <h1><b>Let's save for you Form</b></h1>
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
                 
                 <hr/>
-                <form  method="POST" action="{{ route('form.store') }}" style="font-size:15px;">
+                <form  method="POST" action="{{ route('autosave.store') }}" style="font-size:15px;" enctype="multipart/form-data">
                     
                     @csrf
 
@@ -54,16 +57,25 @@
                             <label class="col-md-3 col-form-label text-md-right">  Name: <span style="color:red;">*</span></label>
 
                             <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Fristname" name="fname" required >
+                                <input type="text" class="form-control" placeholder="Fristname" name="fname" required 
+                                 @guest   @else
+                        value="{{ auth()->user()->first_name }}"
+                        @endguest >
                             </div>
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Middlename" name="mname" required >
+                                <input type="text" class="form-control" placeholder="Middlename" name="mname" required 
+                                 @guest   @else
+                        value="{{ auth()->user()->middle_name  }} "
+                        @endguest >
                             </div>
 
 
                               <div class="col-md-2">
-                                <input type="text" class="form-control" placeholder="Lastname" name="lname" required >
+                                <input type="text" class="form-control" placeholder="Lastname" name="lname" required 
+                                 @guest     @else
+                        value=" {{ auth()->user()->last_name }}"
+                        @endguest >
                             </div>
                         </div>
 
@@ -73,7 +85,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Email Address </label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email"  >
+                                <input type="text" class="form-control" placeholder="example@gmail.com" name="email"  
+                                @guest     @else
+                        value=" {{ auth()->user()->email }}"
+                        @endguest  >
                             </div>
                         </div>
 
@@ -191,7 +206,10 @@
                             <label class="col-md-3 col-form-label text-md-right">Phone Number <span style="color:red;">*</span></label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required >
+                                <input type="text" class="form-control" placeholder="Phone 1" name="phone1" required 
+                                  @guest     @else
+                        value=" {{ auth()->user()->phone }}"
+                        @endguest  >
                             </div>
 
                             <div class="col-md-3">
@@ -396,6 +414,7 @@
                                        Accept Our   
                                     </label><a href="{{route('tos')}}" target="_blank" style="color:green;"> Terms and Conditions</a>
                                 </div>
+<i style="color:red">NOTE: Failure to pay as at when due will attract a penalty of 20% of  the supposed  payment</i><br/>
 
                         
                        <button type="submit" class="btn btn-lg btn-success">

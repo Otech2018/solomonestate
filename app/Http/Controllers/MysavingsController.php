@@ -1,37 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Backend\Customs\CheckAccess;
-use App\Http\Controllers\Controller;
-use App\Models\Agric;
+use App\Models\AutoSaving;
+use App\Models\Payments;
 use Illuminate\Http\Request;
 
-class AgricController extends Controller
+class MysavingsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
+
+
+      public function __construct()
     {
         $this->middleware('auth');
     }
 
-  
+
     public function index()
     {
-        //list all agric consult request
-        if(CheckAccess::check(46)){
-            $agrics = Agric::where('status','!=',0)->paginate(150);
-             $type= "All";
-            return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
- 
-        }else{
-            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
-        }
-       
+        // //List of all automobile savings
+         $mysavings = AutoSaving::where('user_id',auth()->user()->id)->get();
+            return view('mysavings.index',['mysavings'=>$mysavings]);
     }
 
     /**
@@ -41,15 +35,7 @@ class AgricController extends Controller
      */
     public function create()
     {
-        //list all pending agric consult request
-        if(CheckAccess::check(47)){
-            $agrics = Agric::where('status',2)->paginate(150);
-            $type= "Pending";
-            return view('backend.agric.index',['agrics'=>$agrics, 'type'=>$type]);
- 
-        }else{
-            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
-        }
+        //
     }
 
     /**
@@ -63,6 +49,36 @@ class AgricController extends Controller
         //
     }
 
+
+
+
+      public function mysaving_payments(Request $request)
+    {
+        //Submmkited payments
+
+
+             $data =    $this->validate($request, [
+                'amount'=>'',
+                'currency'=>'',
+                'cus_name'=>'',
+                'cus_email'=>'',
+                'cus_phone_number'=>'',
+                'flw_ref'=>'',
+                'status'=>'',
+                'tx_ref'=>'',
+                'transaction_id'=>'',
+            ]);
+
+
+                Payments::create( array_merge(
+                    $data,    
+                   
+                ));
+                return redirect()->back()->with('success','Payment was Successfully!');
+    }
+
+
+
     /**
      * Display the specified resource.
      *
@@ -71,9 +87,7 @@ class AgricController extends Controller
      */
     public function show($id)
     {
-        //View Details of agric consultancy request
-         $agrics = Agric::find($id);
-             return view('backend.agric.show',['agrics'=>$agrics]);
+        //
     }
 
     /**
@@ -96,11 +110,13 @@ class AgricController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //set agric request as solved
-          $Agric = Agric::find($id);
-            $Agric->status =1;
-            $Agric->save(); 
-            return redirect()->back()->with('success','Solved Successfully!');
+        //
+    }
+
+
+      public function payment_transaction(Request $request, $id)
+    {
+        //
     }
 
     /**
