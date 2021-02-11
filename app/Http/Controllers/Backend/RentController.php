@@ -86,7 +86,7 @@ $extension = $request->file('passport')->getClientOriginalExtension();
                         $fileNameToStorea = time().'a.'.$extension;
                         $pathp = $request->file('passport')->storeAs('public/rent_images', $fileNameToStorea);
 
-              $rent_interval_amt =   $request->input('rent_amt')  /  $request->input('rent_interval');
+              $rent_interval_amt =   $request->input('rent_amt')  /  ( $request->input('rent_interval')  * 12 );
              $Rent = Rent::create(array_merge(
                         $data,
                         ['passport'=>$fileNameToStorea],

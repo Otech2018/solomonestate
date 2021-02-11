@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AutoSaving;
-use App\Models\Payments;
+use App\Models\Payment_r;
+use App\Models\Rent;
 use Illuminate\Http\Request;
 
-class MysavingsController extends Controller
+class MyRentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class MysavingsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
-      public function __construct()
+        public function __construct()
     {
         $this->middleware('auth');
     }
@@ -23,9 +22,9 @@ class MysavingsController extends Controller
 
     public function index()
     {
-        // //List of all automobile savings
-         $mysavings = AutoSaving::where('user_id',auth()->user()->id)->get();
-            return view('mysavings.index',['mysavings'=>$mysavings]);
+        // //List of all rents savings
+         $myrents = Rent::where('user_id',auth()->user()->id)->get();
+            return view('myrents.index',['myrents'=>$myrents]);
     }
 
     /**
@@ -49,36 +48,6 @@ class MysavingsController extends Controller
         //
     }
 
-
-
-
-      public function mysaving_payments(Request $request)
-    {
-        //Submmkited payments
-
-
-             $data =    $this->validate($request, [
-                'amount'=>'',
-                'currency'=>'',
-                'cus_name'=>'',
-                'cus_email'=>'',
-                'cus_phone_number'=>'',
-                'flw_ref'=>'',
-                'status'=>'',
-                'tx_ref'=>'',
-                'transaction_id'=>'',
-            ]);
-
-
-                Payments::create( array_merge(
-                    $data    
-                   
-                ));
-                return redirect()->route('mysavings.index')->with('success','Payment was Successfully!');
-    }
-
-
-
     /**
      * Display the specified resource.
      *
@@ -101,6 +70,33 @@ class MysavingsController extends Controller
         //
     }
 
+
+
+      public function myrent_payments(Request $request)
+    {
+        //Submmkited payments
+
+
+             $data =    $this->validate($request, [
+                'amount'=>'',
+                'currency'=>'',
+                'cus_name'=>'',
+                'cus_email'=>'',
+                'cus_phone_number'=>'',
+                'flw_ref'=>'',
+                'status'=>'',
+                'tx_ref'=>'',
+                'transaction_id'=>'',
+            ]);
+
+
+                Payment_r::create( array_merge(
+                    $data
+                   
+                ));
+                return redirect()->route('myrents.index')->with('success','Payment was Successfully!');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -109,12 +105,6 @@ class MysavingsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-      public function payment_transaction(Request $request, $id)
     {
         //
     }

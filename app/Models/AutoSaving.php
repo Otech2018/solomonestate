@@ -74,7 +74,7 @@ class AutoSaving extends Model
 
     public function payments()
 {
-    return $this->hasMany('App\Models\Payments','flw_ref');
+    return $this->hasMany('App\Models\Payments','tx_ref');
 }
 
 

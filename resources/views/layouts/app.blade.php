@@ -176,7 +176,7 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user'></i> {{auth()->user()->username}}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#"> <i class='fa fa-home'></i> My House Rent</a></li>
+							<li><a href="{{route('myrents.index')}}"> <i class='fa fa-home'></i> My House Rent</a></li>
 							<li><a href="{{route('mysavings.index')}}"> <i class='fa fa-money'></i> My Savings</a></li>
 								<li><a href="{{route('myprofile1.index')}}"> <i class='fa fa-user'></i> My Profile</a></li>
                 			<li><a href="{{route('change_password11')}}"><i class='fa fa-key'></i>  Change Password</a></li>

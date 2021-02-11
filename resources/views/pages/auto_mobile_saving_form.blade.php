@@ -414,7 +414,6 @@
                                        Accept Our   
                                     </label><a href="{{route('tos')}}" target="_blank" style="color:green;"> Terms and Conditions</a>
                                 </div>
-<i style="color:red">NOTE: Failure to pay as at when due will attract a penalty of 20% of  the supposed  payment</i><br/>
 
                         
                        <button type="submit" class="btn btn-lg btn-success">

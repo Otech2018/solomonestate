@@ -45,7 +45,9 @@ Route::resource('savingform', App\Http\Controllers\SavingsFormController::class)
 Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::class,'change_password'])->name('change_password2');
 	Route::get('change_password1', [App\Http\Controllers\MyProfileController::class,'change_password1'])->name('change_password11');
 	Route::get('mysaving_payments', [App\Http\Controllers\MysavingsController::class,'mysaving_payments'])->name('mysaving_payments');
+	Route::get('myrent_payments', [App\Http\Controllers\MyRentsController::class,'myrent_payments'])->name('myrent_payments');
 	Route::resource('mysavings', App\Http\Controllers\MysavingsController::class);
+	Route::resource('myrents', App\Http\Controllers\MyRentsController::class);
 	
 
 
