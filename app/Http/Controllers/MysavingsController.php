@@ -22,7 +22,7 @@ class MysavingsController extends Controller
 
 
     public function index()
-    {
+    { 
         // //List of all automobile savings
          $mysavings = AutoSaving::where('user_id',auth()->user()->id)->get();
             return view('mysavings.index',['mysavings'=>$mysavings]);

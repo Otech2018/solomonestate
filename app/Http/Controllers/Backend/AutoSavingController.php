@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
 use App\Models\AutoSaving;
 use Illuminate\Http\Request;
@@ -22,7 +23,14 @@ class AutoSavingController extends Controller
 
     public function index()
     {  
-        //
+
+            //  //list all auto mobile savings
+        if(CheckAccess::check(55)){
+             $mysavings = AutoSaving::all();
+            return view('backend.auto_saving.index',['mysavings'=>$mysavings]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**

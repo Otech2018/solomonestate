@@ -315,9 +315,9 @@
                               <div class="col-md-4">
                                 <select class="form-control" name="saving_purpose" required onchange="optionw('id_date', this)">
                                     <option hidden value="">Select Purpose</option>
-                                    <option value="Male">To Buy A Land</option>
-                                    <option value="Male">To Buy A House</option>
-                                    <option value="Male">To Build a House</option>
+                                    <option value="To Buy A Land">To Buy A Land</option>
+                                    <option value="To Buy A House">To Buy A House</option>
+                                    <option value="To Build a House">To Build a House</option>
                                     <option value="20">Others</option>
                                 </select>
                             </div>

@@ -62,7 +62,7 @@
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
       <span style="color:green; font-size:22px;">  Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b> 
-         @if( $mysaving->status == 0 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>
+         @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
     <td> Budget :</td>
@@ -125,7 +125,7 @@
  $pay_amt = $mysaving->saving_interval_amt ;
 {{-- $pay_amt = 1.15  *  $mysaving->saving_interval_amt;   --}}
      ?>   
-  @if( $mysaving->status == 0 ) <span style="color:red;"> (Paid)</span> 
+  @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> 
   @elseif( $num_of_transactions >= $mysaving->saving_interval_no  ) 
    <span style="color:red;"> ( Saving Completed ) </span>
 
