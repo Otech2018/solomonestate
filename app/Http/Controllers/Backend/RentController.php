@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Backend\Customs\CheckAccess;
 use App\Http\Controllers\Controller;
 use App\Models\Rent;
 use Illuminate\Http\Request;
@@ -23,7 +24,14 @@ class RentController extends Controller
     } 
     public function index()
     {
-        //
+        //// //  //list all rent  mobile savings
+        if(CheckAccess::check(58)){
+             $myrents = Rent::where('status','!=',0)->paginate(100);
+             $title = "All";
+            return view('backend.user_rent.index',['myrents'=>$myrents,'title'=>$title]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -33,7 +41,14 @@ class RentController extends Controller
      */
     public function create()
     {
-        //
+        // //// //  //list paid paid savings
+        if(CheckAccess::check(59)){
+             $myrents = Rent::where('status',1)->paginate(100);
+             $title = "Paid";
+            return view('backend.user_rent.index',['myrents'=>$myrents,'title'=>$title]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -106,7 +121,14 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function show($id)
     {
-        //
+        // //// //  //list not paid rent  mobile savings
+        if(CheckAccess::check(60)){
+             $myrents = Rent::where('status','!=',1)->paginate(100);
+             $title = "Not Paid";
+            return view('backend.user_rent.index',['myrents'=>$myrents,'title'=>$title]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -129,7 +151,11 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function update(Request $request, $id)
     {
-        //
+        ////set auto saving as Paid
+          $AutoSaving = Rent::find($id);
+            $AutoSaving->status =1;
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','Set As Saved Successfully!');
     }
 
     /**

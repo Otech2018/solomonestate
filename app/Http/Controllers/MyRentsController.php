@@ -23,7 +23,7 @@ class MyRentsController extends Controller
     public function index()
     {
         // //List of all rents savings
-         $myrents = Rent::where('user_id',auth()->user()->id)->get();
+         $myrents = Rent::where('user_id',auth()->user()->id)->orderBy('id', 'desc') ->paginate(100);
             return view('myrents.index',['myrents'=>$myrents]);
     }
 

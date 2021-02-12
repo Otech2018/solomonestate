@@ -1,49 +1,27 @@
-<?php $register ="";  ?>
+<?php use App\Http\Controllers\Backend\Customs\CheckAccess; ?>
 
-@extends('layouts.app')
+
+@extends('layouts.admin')
 
 @section('content')
 
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
 
 
+   @include('backend.inc.top_nav')
+     
+     
 
+      <div class="container-fluid">
+      <br/><br/><br/>
+      <div class="row justify-content-center">
+       <div class="col-md-12">
+      <div class="card shadow-lg">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $title }} House Rent Savings  </h5>
 
-
-
-
-
-
-
-
-
-    <div class="page-title-section">
-        <div class="container">
-            <div class="pull-left page-title">
-                <a href="#">
-                <h2>My House Rent Savings </h2>
-                </a>
-            </div>
-            <div class="pull-right breadcrumb">
-                <a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> My House Rent Savings </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-        <div class="col-md-3 contact-info">
-            <div >
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-        
-            <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
-            <div class="inner-wrapper">
-
-                @include('layouts.messages1')
+    @include('layouts.messages')
 
                 <h1><b>My House Rent Savings</b></h1>
                 <i style="color:red; font-size:14px;"><b>(Click on each of the box for Details)</b></i>
@@ -65,7 +43,9 @@
   <div class="card " style="margin-bottom:27px;">
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
-      <span style="color:green; font-size:22px;"> <b>{{ $no }}</b>   <b>My House Rent savings for Landlord ( {{ $myrent->landlord_name }}  ) </b> 
+           <span style="color:green; font-size:22px;"><b>{{ $no }}</b>   Fullname :
+        <b> {{ $myrent->fname }}  {{ $myrent->mname }} {{ $myrent->lname }} </b></span><br/>
+      <span">    <b>My House Rent savings for Landlord ( {{ $myrent->landlord_name }}  ) </b> 
          @if( $myrent->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $real_rent_interval  )  <span style="color:red;"> ( Rent Savings Completed ) </span>  @endif </span> <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
@@ -141,86 +121,42 @@
   @elseif( $num_of_transactions >= $real_rent_interval  ) 
    <span style="color:red;"> ( Rent Payment Completed ) </span>
 
+   <br/>
+  <a href="#!" class="btn-success btn-sm" title="Set as Paid"
+                                 onclick="
+                                    if( confirm('Are you sure you want to set  This  House Rent as Paid?')){
+                                        event.preventDefault();
+                                      document.getElementById('act{{$myrent->id}}').submit();
+                                    }
+                                  "><i class="fa fa-check"></i></a>
+
 @else
   <?php echo date('D jS F Y',strtotime($myrent->start_date. " + $num_of_transactions Months ") );  
-
-{{-- echo "<br/> Late Payment Attracts 15% of the supposed monthly amount so you are going pay  &#8358;". number_format($pay_amt); --}}
-  ?>
- <form>
-  <script src="https://checkout.flutterwave.com/v3.js"></script>
-  <button type="button" class="btn btn-sm btn-success" onClick="makePayment()">Make Payment</button>
-</form>
+ ?>
+ 
+ <br/>
+  <a href="#!" class="btn-success btn-sm" title="Set as Paid"
+                                 onclick="
+                                    if( confirm('Are you sure you want to set  This  House Rent as Paid?')){
+                                        event.preventDefault();
+                                      document.getElementById('act{{$myrent->id}}').submit();
+                                    }
+                                  "><i class="fa fa-check"></i></a>
    
     @endif  
+
+
+    <form id="act{{$myrent->id}}" action="{{ route('rent.update',$myrent->id ) }}" method="POST" class="d-none">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="put">
+
+                                </form>
 
 </b>
      
      
       
    
-
-<script>
-  function makePayment() {
-    FlutterwaveCheckout({
-      //public_key: "FLWPUBK-254f7a40d0e8ee4374a1f25bac2484c2-X",
-
-      public_key: "FLWPUBK-41dfff8fb4217ca88d19a5a052c039cd-X",  //your public key
-      tx_ref: "{{ $myrent->id }}",  //txn created by you
-      amount: {{ $pay_amt }},    //amt to be paid
-      currency: "NGN",   //cureency accepting
-      payment_options: "card",   
-      customer: {
-        email: "support@solomonsideas.ltd",   //cus email
-        phonenumber: "{{ $myrent->phone1 }}",  //cus phone number
-        name: "{{ $myrent->fname }}   {{ $myrent->mname }} {{ $myrent->lname }}",
-      },
-      callback: function (data) { // specified callback function
-        var amount = data.amount;
-        var currency = data.currency;
-
-        var cus_name = data.customer.name;
-        var cus_email = data.customer.email;
-        var cus_phone_number = data.customer.phone_number;
-        
-        var flw_ref = data.flw_ref; //txn id from flw
-        var status = data.status;  //status (successful)
-        var tx_ref = data.tx_ref;  //txn id created by you
-        var transaction_id = data.transaction_id;  //txn id created flw for verification
-       var page_link = '/myrent_payments';  //enter the page link here
-       if(status =='successful'){
-            window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
-
-       }else{
-            alert('There Was An Error, Tansaction Was Not Successful, Please Try Again!!');
-            window.location.href='/myrents';
-       }
-
-      },
-      customizations: {
-        title: "Solomon's Ideas LTD",
-        description: "Powered By Solomon's Ideas",
-        logo: "https://www.solomonsideas.ltd/img/logo1.png",
-      },
-    });
-  }
-
-
-    // var amount = "data.amount";
-    //     var currency = "data.currency";
-    //     var cus_name = "data.customer.name";
-    //     var cus_email = "data.customer.email";
-    //     var cus_phone_number = "data.customer.phone_number";
-    //     var flw_ref = "data.flw_ref"; //txn id from flw
-    //     var status = "data.status";  //status (successful)
-    //     var tx_ref = "data.tx_ref";  //txn id created by you
-    //     var transaction_id = "data.transaction_id";  //txn id created flw for verification
-    //    var page_link = '/myrent_payments';  //enter the page link here
-    //         window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
-</script>
-
-
-
-
 
 
 
@@ -475,9 +411,7 @@
       </div>
     </div>
   </div>
-
 <?php $no++; ?>
-
 
 @endforeach
 
@@ -486,29 +420,25 @@
 
 @else
 
-<h1>You have no House rent Savings with Us!</h1>
+<h1>No rent Savings Found!</h1>
 @endif
+
+
 
 
 
                     {{$myrents->links()}}
 
 
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
 </div>
 
 
 
-
-
-
+           
+        </div>
+        </div>
+        </div>
+        </div>
 
 
 
