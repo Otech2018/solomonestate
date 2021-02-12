@@ -1,51 +1,32 @@
-<?php $register ="";  ?>
 
-@extends('layouts.app')
+
+<?php use App\Http\Controllers\Backend\Customs\CheckAccess; ?>
+
+
+@extends('layouts.admin')
 
 @section('content')
 
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
 
 
+   @include('backend.inc.top_nav')
+     
+     
+
+      <div class="container-fluid">
+      <br/><br/><br/>
+      <div class="row justify-content-center">
+       <div class="col-md-12">
+      <div class="card shadow-lg">
+        <div class="card-body">
+            <h5 class="card-title"> {{ $title }} Auto Savings  </h5>
+
+    @include('layouts.messages')
 
 
-
-
-
-
-
-
-
-
-    <div class="page-title-section">
-        <div class="container">
-            <div class="pull-left page-title">
-                <a href="#">
-                <h2>All Auto Savings </h2>
-                </a>
-            </div>
-            <div class="pull-right breadcrumb">
-                <a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> All Auto Savings </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-        <div class="col-md-3 contact-info">
-            <div >
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-        
-            <div class="col-md-11 contact-form-wrapper" style="padding:40px;">
-            <div class="inner-wrapper">
-
-                @include('layouts.messages1')
-
-                <h1><b> All Auto Savings </b></h1>
+                <h1><b> {{ $title }} Auto Savings </b></h1>
                 <i style="color:red; font-size:14px;"><b>(Click on each of the box for Details)</b></i>
                 
                 <hr/>
@@ -53,7 +34,7 @@
 @if( count($mysavings)  >=1 )
 
 <div class="accordion" id="accordionExample" style="font-size:15px;">
-
+<?php $no = 1; ?>
 @foreach( $mysavings as $mysaving )
 
  <?php $num_of_transactions = count($mysaving->payments);  ?>
@@ -61,10 +42,10 @@
   <div class="card " style="margin-bottom:27px;">
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
-       <span style="color:green; font-size:22px;">   Fullname :
+       <span style="color:green; font-size:22px;"><b>{{ $no }}</b>   Fullname :
         <b> {{ $mysaving->fname }}  {{ $mysaving->mname }} {{ $mysaving->lname }} </b></span><br/>
    <span>    Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b> 
-     <br/><br/>    @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>
+    @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>  <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
     <td> Budget :</td>
@@ -407,6 +388,7 @@
     </div>
   </div>
 
+<?php $no++; ?>
 @endforeach
 
 
@@ -420,34 +402,47 @@
 
 
 
-
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
+                    {{$mysavings->links()}}
 
 
-
-    </div>
 </div>
 
 
 
+           
+        </div>
+        </div>
+        </div>
+        </div>
+      
+      
+      
+      
+      
+      
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+    
+
+  </div>
+  <!-- /#wrapper -->
 
 
 
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-
-
-
-
-
-
-
-
+ 
 
 @endsection
+
+
+
+
 
 
 

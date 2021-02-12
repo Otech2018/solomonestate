@@ -26,8 +26,9 @@ class AutoSavingController extends Controller
 
             //  //list all auto mobile savings
         if(CheckAccess::check(55)){
-             $mysavings = AutoSaving::all();
-            return view('backend.auto_saving.index',['mysavings'=>$mysavings]);
+             $mysavings = AutoSaving::where('status','!=',0)->paginate(100);
+             $title = "All";
+            return view('backend.auto_saving.index',['mysavings'=>$mysavings,'title'=>$title]);
         }else{
             return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
         }
@@ -40,7 +41,15 @@ class AutoSavingController extends Controller
      */
     public function create()
     {
-        //
+        
+            //  //list paid auto mobile savings
+        if(CheckAccess::check(56)){
+             $mysavings = AutoSaving::where('status',1)->paginate(100);
+             $title = "Paid";
+            return view('backend.auto_saving.index',['mysavings'=>$mysavings,'title'=>$title]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -112,7 +121,14 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function show($id)
     {
-        //
+        // //  //list not paid auto mobile savings
+        if(CheckAccess::check(57)){
+             $mysavings = AutoSaving::where('status','!=',1)->paginate(100);
+             $title = "Not Paid";
+            return view('backend.auto_saving.index',['mysavings'=>$mysavings,'title'=>$title]);
+        }else{
+            return redirect(route('admin.dashboard'))->with('error','Unauthorized Page. Access Denied!!!');
+        }
     }
 
     /**
@@ -135,7 +151,11 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function update(Request $request, $id)
     {
-        //
+        //set auto saving as Paid
+          $AutoSaving = AutoSaving::find($id);
+            $AutoSaving->status =1;
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','Set As Saved Successfully!');
     }
 
     /**
@@ -146,6 +166,6 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function destroy($id)
     {
-        //
+       //
     }
 }

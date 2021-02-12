@@ -29,7 +29,7 @@ class AdminAdminController extends Controller
     public function index()
     {
         if(CheckAccess::check(36)){
-            $Admins = Admin::where('status','!=',0)->where('user_type','!=',0)->paginate(20);
+            $Admins = Admin::where('status','!=',0)->where('user_type','!=',0)->paginate(100);
              return view('backend.admin_admin.index',['Admins'=>$Admins]);
  
         }else{

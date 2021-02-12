@@ -53,15 +53,14 @@
 @if( count($mysavings)  >=1 )
 
 <div class="accordion" id="accordionExample" style="font-size:15px;">
-
+<?php $no = 1; ?>
 @foreach( $mysavings as $mysaving )
-
  <?php $num_of_transactions = count($mysaving->payments);  ?>
  
   <div class="card " style="margin-bottom:27px;">
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
-      <span style="color:green; font-size:22px;">  Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b> 
+      <span style="color:green; font-size:22px;"><b>{{ $no }}</b>  Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b> 
          @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
@@ -450,7 +449,7 @@
       </div>
     </div>
   </div>
-
+<?php $no++; ?>
 @endforeach
 
 
