@@ -21,7 +21,7 @@ class AutoSavingController extends Controller
 
 
     public function index()
-    {
+    {  
         //
     }
 
