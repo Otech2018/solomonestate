@@ -76,7 +76,7 @@
 							@endif
 						</ul>
 						<div class="buttons-wrapper">
-							<a href="#" class="btn btn-danger">N{{ $property->property_price }}</a>
+							<a href="#!" class="btn btn-danger">N{{ $property->property_price }}</a>
 							<a href="{{route('payment', $property->id)}}" class="btn btn-success">Pay</a>
 							<a href="{{route('listing_details', $property->id)}}" class="btn btn-primary"><span class="fa fa-file-text-o"></span>Details</a>
 						</div>
@@ -167,7 +167,7 @@
 
 			<div class="single-agent">
 				<div class="image-box">
-					<img src="img/agents/a12.jpg"  alt="agent">
+					<img src="img/agents/land_agent.jpg"  alt="agent">
 					<a  href="{{route('register')}}"  class="btn social-icons">
 						Get Started
 					</a>
@@ -175,10 +175,12 @@
 				<div class="desc-box">
 					<h4>Become Our Free Agent </h4>
 					<p class="person-number">
-						 waiting for the write up waiting for the write up
-						 waiting for the write up waiting for the write up
-						 waiting for the write up waiting for the write up
-						 waiting for the write up waiting for the write up
+						 "You can now make millions from the comfort of your home, office or workplace. <br/>
+
+It's EASY & SIMPLE! Get someone to buy any of our lands posted here and get 50% of the Agency Fee accruing from your contacted client/Buyer. <br/>
+
+
+
 					</p>
 					
 				</div>
@@ -188,7 +190,7 @@
 			<div class="single-agent">
 				<div class="image-box">
 					<img src="img/agents/a12.jpg"  alt="agent">
-					<a  href="{{route('register')}}"  class="btn social-icons">
+					<a  href="{{route('listing')}}"  class="btn social-icons">
 						Get Started
 					</a>
 				</div>
@@ -203,22 +205,7 @@
 				</div>
 			</div>
 
-			<div class="single-agent">
-				<div class="image-box">
-					<img src="img/agents/shop.png" alt="agent">
-					<a  href="{{route('register')}}" class="btn social-icons">
-						Get Started
-					</a>
-				</div>
-				<div class="desc-box">
-					<h4>Online Shop</h4>
-					<p class="person-number">
-						 Our Online Shop is uniquely designed to give you a stress-free purchase of all kinds of 
-						 building materials and homestead goods and gadgets. 
-					</p>
-					
-				</div>
-			</div>
+			
 
 
 			<div class="single-agent">
@@ -230,7 +217,7 @@
 				</div>
 				<div class="desc-box">
 					<h4>Agric Consultancy</h4>
-					<p href="{{route('register')}}"  class="person-number">
+					<p href="{{route('agric_consult')}}"  class="person-number">
 						If you have been thinking of how to run a livestock farm, and 
 						or even plant hybrid seedlings of crops and fruits, then you’ve 
 						just hit the right channel. With our team of professional agriculturists,
@@ -251,7 +238,7 @@
 				</div>
 				<div class="desc-box">
 					<h4>Let's Build For You</h4>
-					<p href="{{route('register')}}"  class="person-number">
+					<p href="{{route('build_u')}}"  class="person-number">
 						It just doesn’t require your presence. With little or no supervision,
 						 we have built hundreds of small, average and mighty structures. Our 
 						 team of civil and building engineers has always done their jobs like 
@@ -272,7 +259,7 @@
 				</div>
 				<div class="desc-box">
 					<h4>Let's Save Money For You</h4>
-					<p href="{{route('register')}}"  class="person-number">
+					<p href="{{route('save_build')}}"  class="person-number">
 						We can Help You Save money to 
 						 Pay your House Rent, Buy A Land, Build Your Dream Home and 
 						 Buy homestead/Workspace Appliances.
@@ -282,7 +269,22 @@
 			</div>
 			
 
-
+<div class="single-agent">
+				<div class="image-box">
+					<img src="img/agents/shop.png" alt="agent">
+					<a  href="#!" class="btn social-icons">
+						Get Started
+					</a>
+				</div>
+				<div class="desc-box">
+					<h4>Online Shop</h4>
+					<p class="person-number">
+						 Our Online Shop is uniquely designed to give you a stress-free purchase of all kinds of 
+						 building materials and homestead goods and gadgets. 
+					</p>
+					
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

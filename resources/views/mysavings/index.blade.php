@@ -46,10 +46,15 @@
                 @include('layouts.messages1')
 
                 <h1><b>My Savings</b></h1>
+
+
                 <i style="color:red; font-size:14px;"><b>(Click on each of the box for Details)</b></i>
-                
+                <br/><br/>
+                <a href="{{ route('savingform.index') }}" class=' btn btn-success btn-sm'>Create New Savings </a>
+
                 <hr/>
                
+
 @if( count($mysavings)  >=1 )
 
 <div class="accordion" id="accordionExample" style="font-size:15px;">
@@ -122,7 +127,6 @@
      <?php
      
  $pay_amt = $mysaving->saving_interval_amt ;
-{{-- $pay_amt = 1.15  *  $mysaving->saving_interval_amt;   --}}
      ?>   
   @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> 
   @elseif( $num_of_transactions >= $mysaving->saving_interval_no  ) 
@@ -131,11 +135,10 @@
 @else
   <?php echo date('D jS F Y',strtotime($mysaving->saving_start_date. " + $num_of_transactions $mysaving->saving_interval s") );  
 
-{{-- echo "<br/> Late Payment Attracts 20% of the supposed amount you will pay  &#8358;". number_format($pay_amt); --}}
   ?>
  <form>
   <script src="https://checkout.flutterwave.com/v3.js"></script>
-  <button type="button" class="btn btn-sm btn-success" onClick="makePayment()">Make Payment</button>
+  <button type="button" class="btn btn-sm btn-success" onClick="makePayment({{ $pay_amt }})">Make Payment</button>
 </form>
    
     @endif  
@@ -145,66 +148,6 @@
      
       
    
-
-<script>
-  function makePayment() {
-    FlutterwaveCheckout({
-      //public_key: "FLWPUBK-254f7a40d0e8ee4374a1f25bac2484c2-X",
-
-      public_key: "FLWPUBK-41dfff8fb4217ca88d19a5a052c039cd-X",  //your public key
-      tx_ref: "{{ $mysaving->id }}",  //txn created by you
-      amount: {{ $pay_amt }},    //amt to be paid
-      currency: "NGN",   //cureency accepting
-      payment_options: "card",   
-      customer: {
-        email: "support@solomonsideas.ltd",   //cus email
-        phonenumber: "{{ $mysaving->phone1 }}",  //cus phone number
-        name: "{{ $mysaving->fname }}   {{ $mysaving->mname }} {{ $mysaving->lname }}",
-      },
-      callback: function (data) { // specified callback function
-        var amount = data.amount;
-        var currency = data.currency;
-
-        var cus_name = data.customer.name;
-        var cus_email = data.customer.email;
-        var cus_phone_number = data.customer.phone_number;
-        
-        var flw_ref = data.flw_ref; //txn id from flw
-        var status = data.status;  //status (successful)
-        var tx_ref = data.tx_ref;  //txn id created by you
-        var transaction_id = data.transaction_id;  //txn id created flw for verification
-       var page_link = '/mysaving_payments';  //enter the page link here
-       if(status =='successful'){
-            window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
-
-       }else{
-            alert('There Was An Error, Tansaction Was Not Successful, Please Try Again!!');
-            window.location.href='/mysavings';
-       }
-
-      },
-      customizations: {
-        title: "Solomon's Ideas LTD",
-        description: "Powered By Solomon's Ideas",
-        logo: "https://www.solomonsideas.ltd/img/logo1.png",
-      },
-    });
-  }
-
-
-    // var amount = "data.amount";
-    //     var currency = "data.currency";
-    //     var cus_name = "data.customer.name";
-    //     var cus_email = "data.customer.email";
-    //     var cus_phone_number = "data.customer.phone_number";
-    //     var flw_ref = "data.flw_ref"; //txn id from flw
-    //     var status = "data.status";  //status (successful)
-    //     var tx_ref = "data.tx_ref";  //txn id created by you
-    //     var transaction_id = "data.transaction_id";  //txn id created flw for verification
-    //    var page_link = '/mysaving_payments';  //enter the page link here
-    //         window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
-</script>
-
 
 
 
@@ -484,6 +427,66 @@
 
 
 
+
+
+<script>
+  function makePayment(amt) {
+    FlutterwaveCheckout({
+      //public_key: "FLWPUBK-254f7a40d0e8ee4374a1f25bac2484c2-X",
+
+      public_key: "FLWPUBK-41dfff8fb4217ca88d19a5a052c039cd-X",  //your public key
+      tx_ref: "{{ $mysaving->id }}",  //txn created by you
+      amount: amt,    //amt to be paid
+      currency: "NGN",   //cureency accepting
+      payment_options: "card",   
+      customer: {
+        email: "support@solomonsideas.ltd",   //cus email
+        phonenumber: "{{ $mysaving->phone1 }}",  //cus phone number
+        name: "{{ $mysaving->fname }}   {{ $mysaving->mname }} {{ $mysaving->lname }}",
+      },
+      callback: function (data) { // specified callback function
+        var amount = data.amount;
+        var currency = data.currency;
+
+        var cus_name = data.customer.name;
+        var cus_email = data.customer.email;
+        var cus_phone_number = data.customer.phone_number;
+        
+        var flw_ref = data.flw_ref; //txn id from flw
+        var status = data.status;  //status (successful)
+        var tx_ref = data.tx_ref;  //txn id created by you
+        var transaction_id = data.transaction_id;  //txn id created flw for verification
+       var page_link = '/mysaving_payments';  //enter the page link here
+       if(status =='successful'){
+            window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
+
+       }else{
+            alert('There Was An Error, Tansaction Was Not Successful, Please Try Again!!');
+            window.location.href='/mysavings';
+       }
+
+      },
+      customizations: {
+        title: "Solomon's Ideas LTD",
+        description: "Powered By Solomon's Ideas",
+        logo: "https://www.solomonsideas.ltd/img/logo1.png",
+      },
+    });
+  }
+
+
+    // var amount = "data.amount";
+    //     var currency = "data.currency";
+    //     var cus_name = "data.customer.name";
+    //     var cus_email = "data.customer.email";
+    //     var cus_phone_number = "data.customer.phone_number";
+    //     var flw_ref = "data.flw_ref"; //txn id from flw
+    //     var status = "data.status";  //status (successful)
+    //     var tx_ref = "data.tx_ref";  //txn id created by you
+    //     var transaction_id = "data.transaction_id";  //txn id created flw for verification
+    //    var page_link = '/mysaving_payments';  //enter the page link here
+    //         window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
+</script>
 
 
 

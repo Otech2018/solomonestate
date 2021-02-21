@@ -13,18 +13,18 @@
 
 
 
-
+ 
 
 
 	<div class="page-title-section">
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Let's Sale/Rent Your Property For You</h2>
+				<h2>Let's Manage your  property and your tenants </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> Let's Sale/Rent Your Property For You </a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> Let's Manage your  property and your tenants  </a>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 <!-- content-Section -->
 <div class="content-section">
 	<div class="container">
-			<h1 align="center" style="font-size:45px;"><b> Let's Sale/Rent Your Property For You Within Days</b></h1><br/>
+			<h1 align="center" style="font-size:45px;"><b> Let's Manage your  property and your tenants </b></h1><br/>
 			
 		<div class="col-md-6 contact-info">
 			<div class="">

@@ -38,6 +38,7 @@
              <div class="col-lg-7">
              <table class="table table-sm table-bordered table-striped text-primary"> 
             <tr><td><b> <i class="fa fa-user"></i> Userame :</b></td><td>  <i>{{$User->username}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-eye"></i> Agent ID :</b></td><td>  <i>{{$User->id * 9194}}</i></td></tr>
             <tr><td><b> <i class="fa fa-user"></i> First Name :</b></td><td>  <i>{{$User->first_name}}</i></td></tr>
             <tr><td><b><i class="fa fa-user"></i>  Middle Name :</b></td><td>  <i>{{$User->middle_name}}</i></td></tr>
             <tr><td><b> <i class="fa fa-user"></i> Last Name :</b></td><td>  <i>{{$User->last_name}}</i></td></tr>

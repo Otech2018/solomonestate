@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Sale Building </h2>
+				<h2>Property Management Form </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Sale Building</a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#">Property Manaement Form</a>
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 			<div class="inner-wrapper">
                 @include('layouts.messages1')
 
-				<h1><b>BUILDING SALES/RENT REGISTRATION FORM</b></h1>
+				<h1><b> Property Manaement Form </b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
 
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>

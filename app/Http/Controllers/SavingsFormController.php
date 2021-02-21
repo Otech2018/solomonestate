@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AutoSaving;
 use App\Models\Country;
 use App\Models\Lga;
+use App\Models\Rent;
 use App\Models\State;
 use Illuminate\Http\Request;
 
@@ -27,8 +29,8 @@ class SavingsFormController extends Controller
         $Countries = Country::all();
         $states = State::all();
         $lgas = Lga::all();
-        
-        return view('pages.auto_mobile_saving_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
+         $mysavings = AutoSaving::where('user_id',auth()->user()->id)->get();
+        return view('pages.auto_mobile_saving_form',['mysavings'=>$mysavings,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**
@@ -42,8 +44,8 @@ class SavingsFormController extends Controller
         $Countries = Country::all();
         $states = State::all();
         $lgas = Lga::all();
-        
-        return view('pages.lets_pay_ur_rent_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
+        $pay_rent = Rent::where('user_id',auth()->user()->id)->get();
+        return view('pages.lets_pay_ur_rent_form',['pay_rent'=>$pay_rent,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**

@@ -35,7 +35,9 @@
 				<h1 style="font-size:40px;"><b><i class="fa fa-home"></i> DASHBOARD</b></h1><hr/>
 				
 
-                Hello, <i class='fa fa-user'></i> {{auth()->user()->name}} You're Logged In!.
+               <h3> Hello, <i class='fa fa-user'></i> {{auth()->user()->username}} You're Logged In!.  </h3>
+
+               <h3>You Agent ID is <span style="color:green; font-weight: bold; font-size: 20px;">{{ auth()->user()->id * 9194 }}</span>  </h3>
 				<div class="clearfix">
 				</div>
 			</div>

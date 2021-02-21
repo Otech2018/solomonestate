@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+ 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('homepage');
 Route::get('/listing', [App\Http\Controllers\PageController::class, 'listing'])->name('listing');
+Route::get('/listing_r', [App\Http\Controllers\PageController::class, 'listing_r'])->name('listing_r');
 Route::get('/Searchlisting', [App\Http\Controllers\PageController::class, 'Searchlisting'])->name('Searchlisting');
 Route::get('/listing_details/{id}', [App\Http\Controllers\PageController::class, 'listing_details'])->name('listing_details');
 Route::get('/payment/{id}', [App\Http\Controllers\PageController::class, 'payment_details'])->name('payment');

@@ -20,11 +20,11 @@
 		<div class="container">
 			<div class="pull-left page-title">
 				<a href="#">
-				<h2>Save To Build/Buy Land or Some Stuff</h2>
+				<h2> Save for a project </h2>
 				</a>
 			</div>
 			<div class="pull-right breadcrumb">
-				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> Save To Build/Buy Land or Some Stuff </a>
+				<a href="#">home</a><span class="fa fa-arrow-circle-right sep"></span><a href="#"> Save for a project </a>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 <!-- content-Section -->
 <div class="content-section">
 	<div class="container">
-			<h1 align="center" style="font-size:45px;"><b> Save To Build/Buy Land or Some Stuff</b></h1><br/>
+			<h1 align="center" style="font-size:45px;"><b> Save for a project</b></h1><br/>
 			
 		<div class="col-md-6 contact-info">
 			<div class="">

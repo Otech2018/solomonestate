@@ -81,7 +81,7 @@
 						
 
 						<div class="buttons-wrapper">
-							<a href="#" class="btn btn-danger">N{{ $property->property_price }}</a>
+							<a href="#!" class="btn btn-danger">N{{ $property->property_price }}</a>
 							<a href="{{route('payment', $property->id)}}" class="btn btn-success">Pay</a>
 							<a href="{{route('listing_details', $property->id)}}" class="btn btn-primary"><span class="fa fa-file-text-o"></span>Details</a>
 						</div>

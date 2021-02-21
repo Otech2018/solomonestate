@@ -26,7 +26,17 @@ class PageController extends Controller
 
     public function listing()
     {
-        $properties = GigSubCategory::where('status','=','1')->paginate(120);
+        $properties = GigSubCategory::where('status','1')->where('sale_mode','!=','2')->paginate(120);
+        return view('pages.listing',['properties'=>$properties]);
+    }
+
+
+
+
+
+    public function listing_r()
+    {
+        $properties = GigSubCategory::where('status','1')->where('sale_mode','2')->paginate(120);
         return view('pages.listing',['properties'=>$properties]);
     }
 

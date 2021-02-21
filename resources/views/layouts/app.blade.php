@@ -144,7 +144,7 @@
 						<li class="@if(isset($homepage)) active @endif"><a href="{{route('homepage')}}">Home</a></li>
 
 					@endguest
-						<li class="@if(isset($listing)) active @endif" ><a href="{{route('listing')}}">Listings</a></li>
+						{{-- <li class="@if(isset($listing)) active @endif" ><a href="{{route('listing')}}">Listings</a></li> --}}
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -155,18 +155,18 @@
 							<li><a href="{{route('gallery')}}">Our Gallery</a></li>
 						</ul>
 						</li>
-
+ 
 
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Real Estate<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="{{route('listing')}}"> Lands/Buildings For Sale/Lease </a></li>
+							<li><a href="{{route('listing')}}"> Lands/Buildings For Sale </a></li>
+							<li><a href="{{route('listing_r')}}"> Lands/Buildings For Rent </a></li>
 							<li><a href="{{route('our_team')}}">Book Our Agent</a></li>
 							<li><a href="{{route('build_u')}}">Let's Build for you</a></li>
-							<li><a href="{{route('sale_rent_property')}}">Let's Sale/Rent Your Building For You  Within Days</a></li>
+							<li><a href="{{route('sale_rent_property')}}">Let's Manage your  property and your tenants </a></li>
 							<li><a href="{{route('sale_rent_land')}}">Let's Sale Your Land For You  Within Days</a></li>
-							<li><a href="{{route('save_build')}}">Save To Build/Buy Land or Some Stuff </a></li>
-							<li><a href="{{route('save_build')}}">Auto Mobile Savings</a></li>
+							<li><a href="{{route('save_build')}}">Save for a project </a></li>
 							<li><a href="{{route('pay_rent')}}">Let's Pay your House Rent</a></li>
 						</ul>
 						</li>
@@ -176,6 +176,7 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user'></i> {{auth()->user()->username}}<b class="caret"></b></a>
 						<ul class="dropdown-menu">
+							<li><a href="{{route('home')}}"> <i class='fa fa-dashboard'></i> My Dashboard</a></li>
 							<li><a href="{{route('myrents.index')}}"> <i class='fa fa-home'></i> My House Rent</a></li>
 							<li><a href="{{route('mysavings.index')}}"> <i class='fa fa-money'></i> My Savings</a></li>
 								<li><a href="{{route('myprofile1.index')}}"> <i class='fa fa-user'></i> My Profile</a></li>
