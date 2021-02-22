@@ -30,7 +30,8 @@ class SavingsFormController extends Controller
         $states = State::all();
         $lgas = Lga::all();
          $mysavings = AutoSaving::where('user_id',auth()->user()->id)->get();
-        return view('pages.auto_mobile_saving_form',['mysavings'=>$mysavings,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
+         $mysaving1 = AutoSaving::where('user_id',auth()->user()->id)->orderBy('id', 'DESC')->first();
+        return view('pages.auto_mobile_saving_form',['mysaving1'=>$mysaving1,'mysavings'=>$mysavings,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**
@@ -45,7 +46,8 @@ class SavingsFormController extends Controller
         $states = State::all();
         $lgas = Lga::all();
         $pay_rent = Rent::where('user_id',auth()->user()->id)->get();
-        return view('pages.lets_pay_ur_rent_form',['pay_rent'=>$pay_rent,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
+        $pay_rent1 = Rent::where('user_id',auth()->user()->id)->orderBy('id', 'DESC')->first();
+        return view('pages.lets_pay_ur_rent_form',['pay_rent1'=>$pay_rent1,'pay_rent'=>$pay_rent,'countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
     }
 
     /**
@@ -67,7 +69,9 @@ class SavingsFormController extends Controller
      */
     public function show($id)
     {
-        //
+        // 
+          $AutoSaving = AutoSaving::find($id);
+            return view('pages.lets_pay_ur_rent_form',['mysaving1'=>$mysaving1]);
     }
 
     /**

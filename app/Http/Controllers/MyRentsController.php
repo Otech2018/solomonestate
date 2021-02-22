@@ -23,7 +23,7 @@ class MyRentsController extends Controller
     public function index()
     {
         // //List of all rents savings
-         $myrents = Rent::where('user_id',auth()->user()->id)->orderBy('id', 'desc') ->paginate(100);
+         $myrents = Rent::where('user_id',auth()->user()->id)->where('status','!=', 0)->orderBy('id', 'desc') ->paginate(100);
             return view('myrents.index',['myrents'=>$myrents]);
     }
 
@@ -67,7 +67,9 @@ class MyRentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // //user edit rents savings
+         $myrent = Rent::find($id);
+            return view('myrents.edit',['myrent'=>$myrent]);
     }
 
 
@@ -106,7 +108,32 @@ class MyRentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+       'phone1'=> '',
+       'phone2'=> '',
+       'resident_address'=> '',
+       'landmark'=> '',
+
+       'landlord_name'=> '',
+       'landlord_acc_name'=> '',
+       'landlord_acc_num'=> '',
+       'landlord_bank'=> '',
+       'landlord_phone'=> '',
+        ]);
+        // /user edit rent savings
+          $AutoSaving = Rent::find($id);
+            $AutoSaving->phone1 =$request->input('phone1');
+            $AutoSaving->phone2 =$request->input('phone2');
+            $AutoSaving->resident_address =$request->input('resident_address');
+            $AutoSaving->landmark =$request->input('landmark');
+            $AutoSaving->landlord_name =$request->input('landlord_name');
+            $AutoSaving->landlord_acc_name =$request->input('landlord_acc_name');
+            $AutoSaving->landlord_acc_num =$request->input('landlord_acc_num');
+            $AutoSaving->landlord_bank =$request->input('landlord_bank');
+            $AutoSaving->landlord_phone =$request->input('landlord_phone');
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','Edited Successfully!');
     }
 
     /**

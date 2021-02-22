@@ -95,12 +95,17 @@ class AutoSavingController extends Controller
             'saving_interval_no' => '',
             'saving_start_date' => '',
             'buy_for_u' => '',
-            'passport'=>'image|required|max:1999',
+            'type'=>'required|max:1999',
         ]);
 
-$extension = $request->file('passport')->getClientOriginalExtension();
+if($request->input('type') == 1){
+    $extension = $request->file('passport')->getClientOriginalExtension();
                         $fileNameToStorea = time().'a.'.$extension;
                         $pathp = $request->file('passport')->storeAs('public/autosave_images', $fileNameToStorea);
+}else{
+                        $fileNameToStorea = $request->input('passport');
+}
+
 
               $saving_interval_amt =   $request->input('saving_budget')  /  $request->input('saving_interval_no');
              $AutoSave = AutoSaving::create(array_merge(
@@ -123,7 +128,7 @@ $extension = $request->file('passport')->getClientOriginalExtension();
     {
         // //  //list not paid auto mobile savings
         if(CheckAccess::check(57)){
-             $mysavings = AutoSaving::where('status','!=',1)->paginate(100);
+             $mysavings = AutoSaving::where('status',3)->paginate(100);
              $title = "Not Paid";
             return view('backend.auto_saving.index',['mysavings'=>$mysavings,'title'=>$title]);
         }else{
@@ -166,6 +171,10 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function destroy($id)
     {
-       //
+       // ////set auto saving as Delete from user
+          $AutoSaving = AutoSaving::find($id);
+            $AutoSaving->status =0;
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','Savings Deleted Successfully!');
     }
 }

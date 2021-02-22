@@ -92,14 +92,17 @@ class RentController extends Controller
        'start_date'=> '',
        'rent_amt'=> '',
        'rent_interval'=> '',
-
-
-            'passport'=>'image|required|max:1999',
+       'type'=>'required|max:1999',
         ]);
 
-$extension = $request->file('passport')->getClientOriginalExtension();
-                        $fileNameToStorea = time().'a.'.$extension;
-                        $pathp = $request->file('passport')->storeAs('public/rent_images', $fileNameToStorea);
+if($request->input('type') == 1){
+    $extension = $request->file('passport')->getClientOriginalExtension();
+    $fileNameToStorea = time().'a.'.$extension;
+    $pathp = $request->file('passport')->storeAs('public/rent_images', $fileNameToStorea);
+}else{
+    $fileNameToStorea = $request->input('passport');
+}
+
 
               $rent_interval_amt =   $request->input('rent_amt')  /  ( $request->input('rent_interval')  * 12 );
              $Rent = Rent::create(array_merge(
@@ -123,7 +126,7 @@ $extension = $request->file('passport')->getClientOriginalExtension();
     {
         // //// //  //list not paid rent  mobile savings
         if(CheckAccess::check(60)){
-             $myrents = Rent::where('status','!=',1)->paginate(100);
+             $myrents = Rent::where('status',3)->paginate(100);
              $title = "Not Paid";
             return view('backend.user_rent.index',['myrents'=>$myrents,'title'=>$title]);
         }else{
@@ -166,6 +169,10 @@ $extension = $request->file('passport')->getClientOriginalExtension();
      */
     public function destroy($id)
     {
-        //
+        //////delete rent from user
+          $AutoSaving = Rent::find($id);
+            $AutoSaving->status =0;
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','Rent Deleted Successfully!');
     }
 }

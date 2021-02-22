@@ -50,7 +50,7 @@
 
                 <i style="color:red; font-size:14px;"><b>(Click on each of the box for Details)</b></i>
                 <br/><br/>
-                <a href="{{ route('savingform.index') }}" class=' btn btn-success btn-sm'>Create New Savings </a>
+                <a href="{{ route('savingform.index') }}" class=' btn btn-success btn-sm' > <i class="fa fa-plus"></i> Create New Savings </a>
 
                 <hr/>
                
@@ -65,7 +65,24 @@
   <div class="card " style="margin-bottom:27px;">
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
-      <span style="color:green; font-size:22px;"><b>{{ $no }}</b>  Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b> 
+      <span style="color:green; font-size:22px;"><b>{{ $no }}</b>  Saving Purspose: <b>@if( $mysaving->saving_purpose == 20 )  {{ $mysaving->saving_purpose1 }} @else   {{ $mysaving->saving_purpose }}  @endif </b>  <br/>
+        <a href="{{ route('mysavings.edit', $mysaving->id) }}" class="btn btn-sm btn-primary"><i class='fa fa-edit'></i> Edit</a>
+        @if( $num_of_transactions == 0)
+        <a href="#!" class="btn btn-sm btn-danger"
+         onclick=" if( confirm('Are you sure you want to delete this savings?')){
+                                        event.preventDefault();
+                                      document.getElementById('act{{$mysaving->id}}').submit();
+                                    }
+                                  "><i class='fa fa-trash'></i> Delete</a>
+
+
+                                   <form id="act{{$mysaving->id}}" action="{{ route('autosave.destroy',$mysaving->id ) }}" method="POST" class="d-none">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="delete">
+
+                                </form>
+        @endif
+
          @if( $mysaving->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $mysaving->saving_interval_no  )  <span style="color:red;"> ( Saving Completed ) </span>  @endif </span> <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
@@ -398,29 +415,6 @@
 
 </div>
 
-@else
-
-<h1>You have no savings with Us!</h1>
-@endif
-
-
-
-                    {{$mysavings->links()}}
-
-
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-</div>
-
-
-
-
 
 
 
@@ -487,6 +481,37 @@
     //    var page_link = '/mysaving_payments';  //enter the page link here
     //         window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
 </script>
+
+
+
+@else
+
+<h1>You have no savings with Us!</h1>
+@endif
+
+
+
+                    {{$mysavings->links()}}
+
+
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 

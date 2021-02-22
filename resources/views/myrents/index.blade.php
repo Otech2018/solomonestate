@@ -67,7 +67,23 @@
   <div class="card " style="margin-bottom:27px;">
     <div class="card-header " id="headingTwo" style="border:2px solid #ccc; padding:7px; ">
       <h3 class="mb-0">
-      <span style="color:green; font-size:22px;"> <b>{{ $no }}</b>   <b>My House Rent savings for Landlord ( {{ $myrent->landlord_name }}  ) </b> 
+      <span style="color:green; font-size:22px;"> <b>{{ $no }}</b>   <b>My House Rent savings for Landlord ( {{ $myrent->landlord_name }}  ) </b> <br/>
+        <a href="{{ route('myrents.edit', $myrent->id ) }}" class="btn btn-sm btn-primary"><i class='fa fa-edit'></i> Edit</a>
+          @if( $num_of_transactions == 0)
+        <a href="#!" class="btn btn-sm btn-danger"
+         onclick=" if( confirm('Are you sure you want to delete this Rent savings?')){
+                                        event.preventDefault();
+                                      document.getElementById('act{{$myrent->id}}').submit();
+                                    }
+                                  "><i class='fa fa-trash'></i> Delete</a>
+
+
+                                   <form id="act{{$myrent->id}}" action="{{ route('rent.destroy',$myrent->id ) }}" method="POST" class="d-none">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="delete">
+
+                                </form>
+            @endif
          @if( $myrent->status == 1 ) <span style="color:red;"> (Paid)</span> @elseif( $num_of_transactions >= $real_rent_interval  )  <span style="color:red;"> ( Rent Savings Completed ) </span>  @endif </span> <br/>
 <table class="table table-sm table-stripped table-bordered">
   <tr>
@@ -425,31 +441,6 @@
 
 </div>
 
-@else
-
-<h1>You have no House rent Savings with Us!</h1>
-@endif
-
-
-
-                    {{$myrents->links()}}
-
-
-                <div class="clearfix">
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-</div>
-
-
-
-
-
-
 
 
 
@@ -516,6 +507,38 @@
     //    var page_link = '/myrent_payments';  //enter the page link here
     //         window.location.href=page_link+'?amount='+amount+'&currency='+currency+'&cus_name='+cus_name+'&cus_email='+cus_email+'&cus_phone_number='+cus_phone_number+'&flw_ref='+flw_ref+'&status='+status+'&tx_ref='+tx_ref+'&transaction_id='+transaction_id;
 </script>
+
+@else
+
+<h1>You have no House rent Savings with Us!</h1>
+@endif
+
+
+
+                    {{$myrents->links()}}
+
+
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

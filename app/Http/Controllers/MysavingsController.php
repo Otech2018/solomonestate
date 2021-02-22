@@ -24,7 +24,7 @@ class MysavingsController extends Controller
     public function index()
     {  
         // //List of all automobile savings
-         $mysavings = AutoSaving::where('user_id',auth()->user()->id)->orderBy('id', 'desc')->paginate(100);
+         $mysavings = AutoSaving::where('user_id',auth()->user()->id)->where('status','!=', 0)->orderBy('id', 'desc')->paginate(100);
             return view('mysavings.index',['mysavings'=>$mysavings]);
     }
 
@@ -87,7 +87,7 @@ class MysavingsController extends Controller
      */
     public function show($id)
     {
-        //
+         // 
     }
 
     /**
@@ -98,7 +98,9 @@ class MysavingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        ////edit automobile savings
+         $mysaving = AutoSaving::find($id);
+            return view('mysavings.edit',['mysaving'=>$mysaving]);
     }
 
     /**
@@ -110,7 +112,34 @@ class MysavingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+             //        //store auto saving from users end
+   $this->validate($request, [
+             
+            'phone1' => '',
+            'phone2' => '',
+            'acc_num' => '',
+            'acc_name' => '',
+            'acc_bank_name' => '',
+            'next_of_kin_name' => '',
+            'next_of_kin_reln' => '',
+            'next_of_kin_phone' => '',
+            'buy_for_u' => '',
+        ]);
+        //set auto saving as Paid
+          $AutoSaving = AutoSaving::find($id);
+            $AutoSaving->phone1 =  $request->input('phone1');
+            $AutoSaving->phone2 =  $request->input('phone2');
+            $AutoSaving->acc_num =  $request->input('acc_num');
+            $AutoSaving->acc_name =  $request->input('acc_name');
+            $AutoSaving->acc_bank_name =  $request->input('acc_bank_name');
+            $AutoSaving->next_of_kin_name =  $request->input('next_of_kin_name');
+            $AutoSaving->next_of_kin_reln =  $request->input('next_of_kin_reln');
+            $AutoSaving->next_of_kin_phone =  $request->input('next_of_kin_phone');
+            $AutoSaving->buy_for_u =  $request->input('buy_for_u');
+            $AutoSaving->save(); 
+            return redirect()->back()->with('success','My Savings Updated Successfully!');
     }
 
 

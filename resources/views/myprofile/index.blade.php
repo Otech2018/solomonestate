@@ -52,7 +52,7 @@
              <div class="col-lg-4"> 
              <center>
              @if(auth()->user()->pic ==null)
-             <img src="{{ asset('img/logo1.png')}}" height='220px' width="220" style="border-radius:250px; border:5px solid blue;" />
+             <img src="{{ asset('img/pro.jpg')}}" height='220px' width="220" style="border-radius:250px; border:5px solid blue;" />
              @else
              <img src="{{ _('../storage/profile_img/'.auth()->user()->pic)}}" height='220px' width="220" style="border-radius:250px; border:5px solid blue;" />
             @endif
