@@ -140,7 +140,7 @@
 
 
 
-
+<div style="display:none;">
                         <br/><br/>    <h2 align="center" style="font-size:27px; font-weight:bold;">Bank Account Information </h2><hr/>
 
 
@@ -172,6 +172,7 @@
                         </div>
 
 
+</div>
 
   <br/><br/>    <h2 align="center" style="font-size:27px; font-weight:bold;">Next of kin Information </h2><hr/>
         

@@ -96,7 +96,7 @@
 			<li><a href="#" class="fa fa-facebook"></a></li>
 		</ul>
 		<div id="login-box" class='pull-right'>
-			<a href="#" class='btn btn-success'><span>Online Shop</span></a>
+			<a href="/shop" class='btn btn-success'><span>Online Shop</span></a>
 							
 			@guest
 				<a href="{{route('login')}}" class='fa fa-user'><span>Login</span></a>
