@@ -159,8 +159,7 @@ class LandSaleController extends Controller
                     ['image4'=>$fileNameToStore4],
                     ['image5'=>$fileNameToStore5],
                     ['image6'=>$fileNameToStore6],    
-                    ['status'=>2],    
-                   
+                    ['status'=>2]   
                 ));
                 return redirect()->back()->with('success','Submitted Successfully!, We will contact you as soon as possible');
     }

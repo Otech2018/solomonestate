@@ -23,7 +23,7 @@ class LandSale extends Model
             'state1',
             'lga',
             'lga1',
-            'full_sell_price'
+            'full_sell_price',
             'office_address',
             'phone1',
             'phone2',

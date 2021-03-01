@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{ asset('css/owl.theme.css')}}">
 <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css"/>
- <link rel="shortcut icon" href="img/logo1.png" />
+ <link rel="shortcut icon" href="{{ asset('mob/img/logo1.png')}}" />
 <link rel="stylesheet" href="{{asset('dropify/dist/css/dropify.min.css')}}"> 
 
 
