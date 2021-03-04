@@ -8,6 +8,7 @@ use App\Models\User_group;
 use App\Models\User as Admin;
 use App\Models\Perform_Task;
 use App\Models\Task;
+use App\Models\User;
 
 class User_groupController extends Controller
 {
@@ -144,14 +145,14 @@ class User_groupController extends Controller
         //
     }
 
-
+ 
 
 
     public function addAdiminToUserGrp()
     {
         
          if(auth()->user()->user_type ==2){
-            $admins = Admin::where('status','=','1')->paginate(120);
+            $admins = User::where('status','=','1')->where('user_type','!=', 0)->paginate(120);
             $User_groups = User_group::where('status','=','1')->get();
            return view('backend.user_grp.addAdiminToUserGrp',['admins'=>$admins, 'User_groups'=>$User_groups]);
         }

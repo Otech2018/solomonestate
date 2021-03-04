@@ -42,7 +42,7 @@
 			
 @foreach($properties as $property )
 
-<div class="col-md-4 listing-single-item">
+<div class="col-md-4 listing-single-item container" style="border:2px solid #ccc;">
 				<div class="item-inner">
 					<div class="image-wrapper">
 						<img src="storage/admin_property_images/{{ $property->cover_image }}" height="240px" alt="gallery">
@@ -76,7 +76,7 @@
 							@endif
 						</ul>
 						<div class="buttons-wrapper">
-							<a href="#!" class="btn btn-danger">N{{ $property->property_price }}</a>
+							<a href="{{route('payment', $property->id)}}" class="btn btn-danger">N{{ $property->property_price }}</a>
 							<a href="{{route('payment', $property->id)}}" class="btn btn-success">Pay</a>
 							<a href="{{route('listing_details', $property->id)}}" class="btn btn-primary"><span class="fa fa-file-text-o"></span>Details</a>
 						</div>

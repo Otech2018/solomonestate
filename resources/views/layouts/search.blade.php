@@ -7,22 +7,20 @@
   <div class="form-row">
   	<div class="form-group col-md-1"></div>
                 
-                <div class="form-group col-md-2">
+                {{-- <div class="form-group col-md-2">
                       <label style="font-size:15px;">Mode <span class="text-danger">*</span></label>
                           <select class='form-control form-control-sm' name="sale_mode" >
-							<option value="any">any</option>
 							<option value="2">For Rent</option>
-							<option value="any2">For Sale</option>
+							<option value="3">For Sale</option>
 						</select>
                       
-                </div>
+                </div> --}}
 
-
+  
 
                  <div class="form-group col-md-2">
                       <label style="font-size:15px;">Property type <span class="text-danger">*</span></label>
                           <select class=" form-control form-control-sm" name='property_type' required >
-              <option value="all">All</option>
 
                          @foreach($property_type1 as $property_type)
                             <option value='{{$property_type->property_type}}'> 
@@ -38,7 +36,6 @@
                  <div class="form-group col-md-2">
                       <label style="font-size:15px;">State  <span class="text-danger">*</span></label>
                          <select id="state-list" class="state form-control form-control-sm" name='state_id' required >
-							<option value="all">All</option>
 
 		                     @foreach($states1 as $state)
 		                        <option value='{{$state->state_id}}'> {{$state->state->name}} </option>
@@ -53,7 +50,6 @@
                       <label style="font-size:15px;">Lga  <span class="text-danger">*</span></label>
                          <select id="lga-list" class="lgaa form-control form-control-sm" name='lga_id' required>
                             <option value='' hidden selected> Select LGA *</option>
-                            <option value="all">All</option>
                              @foreach($lgas1 as $lga)
                                 <option class="{{'lgaClass'.$lga->state_id}} lga" value='{{$lga->lga_id}}' style='display:none;' disabled> {{$lga->lga->name}} </option>
                             @endforeach

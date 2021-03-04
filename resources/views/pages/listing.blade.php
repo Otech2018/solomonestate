@@ -41,7 +41,7 @@
 
 @foreach($properties as $property )
 
-<div class="col-md-4 listing-single-item">
+<div class="col-md-4 listing-single-item container" style="border:2px solid #ccc;">
 				<div class="item-inner">
 					<div class="image-wrapper">
 						<img src="storage/admin_property_images/{{ $property->cover_image }}" height="240px" alt="gallery">

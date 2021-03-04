@@ -250,7 +250,7 @@
             
 
         <div class="form-group">
-                <label > Embed Video fron Youtube (optional) </label>
+                <label > Youtube Video Code (optional) </label>
                 <textarea class="form-control"  style='height:130px' name="youtube_video" ></textarea >
             </div>
 
@@ -559,7 +559,7 @@
 
 
         <div class="form-group">
-                <label > Embed Video fron Youtube (optional) </label>
+                <label > Youtube Video Code (optional) </label>
                 <textarea class="form-control"  style='height:130px' name="youtube_video" ></textarea >
             </div>
 

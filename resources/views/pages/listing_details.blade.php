@@ -135,13 +135,15 @@
 						</div>
 					</div>
 					<div class="property-desc">
+						<h1>N{{ $property->property_price }}</h1>
 						<h3> {{ $property->sub_category_name }} </h3>
 						 <h4 style="color:green;font-size:17px;">
 							 <span class="fa fa-map-marker"></span> {{ $property->lga->name }}
-							 In {{ $property->state->name }}
+							 In {{ $property->state->name }}  
+							<a href="{{route('payment', $property->id)}}" class="btn btn-success">Pay</a>
 							 </h4>
 						<ul class="slide-item-features item-features">
-								<li><span class="fa fa-arrows-alt"></span>{{ $property->land_size }} Sq Ft</li>
+								<li><span class="fa fa-arrows-alt"></span>{{ $property->land_size }} </li>
 							@if($property->property_type == 2 ) 
 								<li><span class="fa fa-male"></span>{{ $property->no_bathrooms }} bathrooms</li>
 								<li><span class="fa fa-inbox"></span>{{ $property->no_bedrooms }} bedrooms</li>
@@ -171,13 +173,19 @@
 
 
 
+                            @if($property->youtube_video != null)
 						
 						<div class="property-location">
 							<h3>Video</h3>
 							<div id="property-location-map">
-                            {{ $property->youtube_video }}
+							<iframe width="100%" height="300" src="https://www.youtube.com/embed/{!! $property->youtube_video !!}" frameborder="0" allow="accelerometer;
+							 autoplay; clipboard-write; encrypted-media; gyroscope;
+							 picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
+
+						@endif
+
 					</div>
 				</div>
 			</div>

@@ -125,8 +125,8 @@
 	<div class="footer">
 		<div class="container">
 			<div class="about-us-foot">
-				<h6>BAITUN</h6>
-				<p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
+				<h6>Solomon's Ideas LTD</h6>
+				<p>A company you can always and firmly rely on any day, anytime when it comes to Real Estate matters</p>
 			</div>
 			<div class="social-media">
 				<a href="#"><i class="fa fa-facebook"></i></a>
@@ -136,7 +136,7 @@
 				<a href="#"><i class="fa fa-instagram"></i></a>
 			</div>
 			<div class="copyright">
-				<span>© All Right Reserved</span>
+				<span>© 2021 All Right Reserved</span>
 			</div>
 		</div>
 	</div>

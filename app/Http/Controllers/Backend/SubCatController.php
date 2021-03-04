@@ -83,7 +83,6 @@ class SubCatController extends Controller
                     'no_bedrooms' => 'max:255',
                     'no_bathrooms' => 'max:255',
                     'land_size' => 'max:255',
-                    'youtube_video' => 'max:9999',
                     'cover_image'=>'image|required|max:1999',
                     'cover_image1'=>'image|required|max:1999',
                     'cover_image2'=>'image|required|max:1999',
@@ -93,7 +92,7 @@ class SubCatController extends Controller
                     'cover_image6'=>'image|required|max:1999',
                     
             ]);
-
+                $youtube_video = $request->input('youtube_video');
                         $extension = $request->file('cover_image')->getClientOriginalExtension();
                         $fileNameToStore = time().'.'.$extension;
                         $path = $request->file('cover_image')->storeAs('public/admin_property_images', $fileNameToStore);
@@ -141,6 +140,7 @@ class SubCatController extends Controller
                     ['cover_image4'=>$fileNameToStore4],
                     ['cover_image5'=>$fileNameToStore5],
                     ['cover_image6'=>$fileNameToStore6],    
+                    ['youtube_video'=>$youtube_video],    
                     ['feature'=>$featur],    
                     ['user_id'=>auth()->user()->id]   
 

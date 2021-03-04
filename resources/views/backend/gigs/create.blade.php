@@ -39,8 +39,8 @@
                         
 
                         <div class="form-group">
-                            <label > Description  </label>
-                            <textarea class="form-control"  style='height:130px' name="gig_desc" ></textarea >
+                            <label > Description  <span style="color:red;">*</span></label>
+                            <textarea class="form-control"  required style='height:130px' name="gig_desc" ></textarea >
                         </div>
             <br/>
             <button class="btn btn-success float-right" type="submit">Add</button>

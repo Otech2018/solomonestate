@@ -55,7 +55,7 @@
 <div class="section real-estate bg-second">
 	<div class="container">
 		<div class="section-head">
-			<h4>NEW PROPERTIES</h4>
+			<h4> PROPERTIES</h4>
 			<div class="underline"></div>
 			<div class="underline2"></div>
 		</div>
@@ -132,17 +132,85 @@
 			<div class="underline"></div>
 			<div class="underline2"></div>
 		</div>
-		<div style="margin:-150px;">
+		<div style="margin-top:-110px; margin-bottom:20px; ">
 		<div class="carousel">
-			<a class="carousel-item" href="#one!"><img src="{{ asset('mob/img/team1.jpg')}}"></a>
-			<a class="carousel-item" href="#two!"><img src="{{ asset('mob/img/team2.jpg')}}"></a>
-			<a class="carousel-item" href="#three!"><img src="{{ asset('mob/img/team1.jpg')}}"></a>
-			<a class="carousel-item" href="#four!"><img src="{{ asset('mob/img/team2.jpg')}}"></a>
-			<a class="carousel-item" href="#five!"><img src="{{ asset('mob/img/team3.jpg')}}"></a>
+		
+			<div class="carousel-item card" >
+				<img src="{{ asset('mob/img/team1.jpg')}}">
+			<center>
+				<h4> <i class="fa fa-user"></i> Sam Paul</h4>
+				<p> <b><i class="fa fa-info-circle"></i> Sales Agent </b></p>
+			<a href="tel:07068085045"> <b><u><i class="fa fa-phone"></i> 07068085036 </u></b></a> <br/>
+			<a href="mailto:werty@gmail.com"> <b> <i class="fa fa-envelope"></i> werty@gmail.com </b></a>
+
+			</center>
+		</div>
+
+
+
+		<div class="carousel-item card" >
+			<img src="{{ asset('mob/img/team2.jpg')}}">
+		<center>
+			<h4> <i class="fa fa-user"></i> Okoro Timothy</h4>
+			<p> <b><i class="fa fa-info-circle"></i> Sales Agent </b></p>
+		<a href="tel:07023085036"> <b><u><i class="fa fa-phone"></i> 07023085036 </u></b></a> <br/>
+		<a href="mailto:werdfffty@gmail.com"> <b> <i class="fa fa-envelope"></i> werdfffty@gmail.com </b></a>
+
+		</center>
+	</div>
+
+
+
+
+
+	<div class="carousel-item card" >
+		<img src="{{ asset('mob/img/team3.jpg')}}">
+	<center>
+		<h4> <i class="fa fa-user"></i> Peter Raul</h4>
+		<p> <b><i class="fa fa-info-circle"></i> Sales Agent </b></p>
+	<a href="tel:07023085036"> <b><u><i class="fa fa-phone"></i> 07023085036 </u></b></a> <br/>
+	<a href="mailto:werdfffty@gmail.com"> <b> <i class="fa fa-envelope"></i> werdfffty@gmail.com </b></a>
+
+	</center>
+</div>
+
+
+
+
+
+<div class="carousel-item card" >
+	<img src="{{ asset('mob/img/team4.jpg')}}">
+<center>
+	<h4> <i class="fa fa-user"></i> Okoro Timothy</h4>
+	<p> <b><i class="fa fa-info-circle"></i> Sales Agent </b></p>
+<a href="tel:07023085036"> <b><u><i class="fa fa-phone"></i> 07023085036 </u></b></a> <br/>
+<a href="mailto:werdfffty@gmail.com"> <b> <i class="fa fa-envelope"></i> werdfffty@gmail.com </b></a>
+
+</center>
+</div>
+
+
+
+<div class="carousel-item card">
+	<img src="{{ asset('mob/img/team3.jpg')}}">
+<center>
+	<h4> <i class="fa fa-user"></i> Okoro Mark</h4>
+	<p> <b><i class="fa fa-info-circle"></i> Sales Agent </b></p>
+<a href="tel:07023085036"> <b><u><i class="fa fa-phone"></i> 07023085036 </u></b></a> <br/>
+<a href="mailto:werdfffty@gmail.com"> <b> <i class="fa fa-envelope"></i> werdfffty@gmail.com </b></a>
+
+</center>
+</div>
+
+
+
+
+			
+			
 		  </div>
 		</div>
 		<center>
-		<a href="/mob/agents" class="btn green"> View All</a>
+		<a href="/mob/agents" class="btn green"><b> View All Agents </b> </a>
 		</center>
 
 	</div>
@@ -212,5 +280,115 @@
 	</div>
 </div>
 <!-- end wHY CHOOSE US -->
+
+
+
+
+	
+	<!-- team -->
+	<div class="pages section">
+		<div class="container">
+			<div class="pages-head">
+				<h3>OUR SERVICES</h3>
+			</div>
+			<div class="row">
+				<div class="col m12">
+					<div class="page-team">
+					<img src="{{ asset('img/agents/land_agent.jpg')}}"  alt="agent">
+						<div class="team-details">
+					<h4>Become Our Free Agent </h4>
+					<p>
+						"You can now make millions from the comfort of your home, office or workplace. <br/>
+
+It's EASY & SIMPLE! Get someone to buy any of our lands posted here and get 50% of the Agency Fee accruing from your contacted client/Buyer. <br/>
+					</p>
+						<a href="#!" class="btn green">Get Started</a>
+						</div>
+					</div>
+				</div>
+				<div class="col m12">
+					<div class="page-team">
+						<img src="{{ asset('img/agents/a12.jpg')}}"  alt="agent">
+							<div class="team-details">
+					<h4>Real Estate</h4>
+						<p>
+							We help you buy lands, buy buildings, rent, lease,
+							manage and or build that super 
+							edifice your heart so desires
+						</p>
+							<a href="#!" class="btn green">Get Started</a>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col m12">
+					<div class="page-team">
+						<img src="{{ asset('img/agents/agric.jpeg')}}"  alt="">
+						<div class="team-details">
+					<h4>Agric Consultancy</h4>
+
+							<p>
+								If you have been thinking of how to run a livestock farm, and 
+								or even plant hybrid seedlings of crops and fruits, then you’ve 
+								just hit the right channel. With our team of professional agriculturists,
+								 we guarantee a bountiful harvest on your investment.
+
+							</p>
+							<a href="#!" class="btn green">Get Started</a>
+						
+						</div>
+					</div>
+				</div>
+				
+				<div class="col m12">
+					<div class="page-team">
+						<img src="{{ asset('img/agents/build.jpg')}}"  alt="">
+						<div class="team-details">
+					<h4>Let's Build For You</h4>
+
+							<p>
+								It just doesn’t require your presence. With little or no supervision,
+						 we have built hundreds of small, average and mighty structures. Our 
+						 team of civil and building engineers has always done their jobs like 
+						 they’re born to do it. 
+
+							</p>
+							<a href="#!" class="btn green">Get Started</a>
+						
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="col m12">
+					<div class="page-team">
+						<img src="{{ asset('img/agents/build.jpg')}}"  alt="">
+						<div class="team-details">
+					<h4>Let's Save Money For You</h4>
+
+							<p>
+								We can Help You Save money to 
+								Pay your House Rent, Buy A Land, Build Your Dream Home and 
+								Buy homestead/Workspace Appliances.
+
+							</p>
+							<a href="#!" class="btn green">Get Started</a>
+						
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+	<!-- end team -->
 
 @endsection

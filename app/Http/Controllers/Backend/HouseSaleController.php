@@ -190,7 +190,7 @@ class HouseSaleController extends Controller
                     ['image6'=>$fileNameToStore6], 
                     $purchase_recipt,   
                     $allocation_paper,
-                    ['status'=>2],    
+                    ['status'=>2]    
                    
                 ));
                 return redirect()->back()->with('success','Submitted Successfully!, We will contact you as soon as possible');
