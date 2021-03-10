@@ -136,7 +136,7 @@
 				<a href="#"><i class="fa fa-instagram"></i></a>
 			</div>
 			<div class="copyright">
-				<span>© 2021 All Right Reserved</span>
+				<span>© <?=date('Y');?> All Right Reserved</span>
 			</div>
 		</div>
 	</div>
@@ -155,6 +155,43 @@
       $('.carousel').carousel();
       
     });
+
+
+$(document).ready(function(){
+	$("select.country").change(function(){
+		var selectedCountry = $(this).children("option:selected").val();
+	   // alert("You have selected the country - " + selectedCountry);
+	   if(selectedCountry == 162 ){
+		  $('#lga').hide(); $('#state').hide(); $('#state-list').show();$('#state-text').hide(); $('#lga-list').show();$('#lga-text').hide();
+			//
+			 $('.state').attr('required','required'); 
+			 $('.lgaa').attr('required','required');  
+			
+	   }else{
+		 $('#lga').hide(); $('#state').hide(); $('#state-list').hide();$('#state-text').show(); $('#lga-list').hide();$('#lga-text').show();
+		  //
+		  $('.lgaa').removeAttr('required');
+		 $('.state').removeAttr('required');
+		}
+	});
+});
+
+
+
+$(document).ready(function(){
+	$("select.state").change(function(){
+		$('.lgaa').prop('selectedIndex', 0);
+		var selectedState = $(this).children("option:selected").val();
+
+	
+		$('.lga').attr('disabled','disabled');  $('.lga').hide();
+		$('.lgaClass'+selectedState).removeAttr('disabled'); 
+		 $('.lgaClass'+selectedState).show(); 
+		
+	});
+});
+
+
 </script>
 </body>
 

@@ -96,7 +96,7 @@
 			<li><a href="#" class="fa fa-facebook"></a></li>
 		</ul>
 		<div id="login-box" class='pull-right'>
-			<a href="/shop" class='btn btn-success'><span>Online Shop</span></a>
+			<a href="{{route('myshop')}}" class='btn btn-success'><span>Online Shop</span></a>
 							
 			@guest
 				<a href="{{route('login')}}" class='fa fa-user'><span>Login</span></a>
@@ -285,7 +285,7 @@
 			</ul>
 		</div>
 	</div>
-</div>
+</div> 
 <!-- Javascript -->
 <script type="text/javascript" src="{{ asset('js/jquery-2.1.0.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>

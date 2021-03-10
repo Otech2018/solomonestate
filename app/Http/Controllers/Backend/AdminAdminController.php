@@ -71,8 +71,8 @@ class AdminAdminController extends Controller
         $this->validate($request, [
             'user_type' => 'required|string|max:255',
            'username' => 'required|string|max:955',
-           'email' => 'required|email|unique:admins|max:955',
-           'phone' => 'required|string|unique:admins|max:955',
+           'email' => 'required|email|unique:users|max:955',
+           'phone' => 'required|string|unique:users|max:955',
            'gender' => 'required|string|max:955',
             ]);
 

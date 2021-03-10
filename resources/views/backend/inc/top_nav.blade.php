@@ -1,9 +1,9 @@
 
 <?php
 if(auth()->user()->status ==2){
-    die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear Admin you Account is Suspended please Contact the Super Admin</h3>");
+    die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear Admin your Account is Suspended please Contact the Super Admin</h3>");
 }else if(auth()->user()->status ==0){
-         die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear Admin you Account is Deleted please Contact the Super Admin</h3>");
+         die("<br/><br/><br/><h3 align='center' style='color:red;'>Dear Admin your Account is Deleted please Contact the Super Admin</h3>");
 
 }
 

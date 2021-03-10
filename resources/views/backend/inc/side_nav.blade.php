@@ -50,7 +50,7 @@
 @elseif(auth()->user()->user_type ==2)
 
 <li  data-toggle="collapse" data-target="#products1" class="collapsed ">
-                  <a href="#"><i class="fa fa-cogs fa-lg"></i> Super Admin Settings <span class="arrow"></span></a>
+                  <a href="#"><i class="fa fa-cogs fa-lg"></i> SuperAdmin <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products1">
                     <li class="<?php if( isset($User_grp_add)){ echo "active";}?>"><a href="{{route('user_group.create')}}">Create A User Group</a></li>

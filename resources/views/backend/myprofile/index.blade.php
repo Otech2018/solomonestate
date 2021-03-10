@@ -44,6 +44,7 @@
             <tr><td><b> <i class="fa fa-phone"></i> Phone :</b></td><td>  <i>{{auth()->user()->phone}}</i></td></tr>
             <tr><td><b> <i class="fa fa-user"></i> Gender :</b></td><td>  <i>{{auth()->user()->gender}}</i></td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <i>{{auth()->user()->email}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-info-circle"></i> User Group  :</b></td><td>  <i>{{auth()->user()->user_group->name}}</i></td></tr>
 
             </table>
             <a href="{{route('myprofile.edit', 1)}}"  class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i>Edit Profile</a>

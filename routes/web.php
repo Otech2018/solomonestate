@@ -49,6 +49,7 @@ Route::post('change_password/{id}', [App\Http\Controllers\MyProfileController::c
 	Route::get('myrent_payments', [App\Http\Controllers\MyRentsController::class,'myrent_payments'])->name('myrent_payments');
 	Route::resource('mysavings', App\Http\Controllers\MysavingsController::class);
 	Route::resource('myrents', App\Http\Controllers\MyRentsController::class);
+	Route::resource('myshop', App\Http\Controllers\MyShopController::class);
 	
 
 
