@@ -27,9 +27,13 @@ class UserFormController extends Controller
     
     public function index()
     {
-        //
-    }
-
+         //air space
+         $Countries = Country::all();
+         $states = State::all();
+         $lgas = Lga::all();
+         
+         return view('pages.air_space_form',['countries'=>$Countries,'states'=>$states,'lgas'=>$lgas]);
+     }
     /**
      * Show the form for creating a new resource.
      *

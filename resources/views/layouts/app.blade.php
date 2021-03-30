@@ -96,7 +96,7 @@
 			<li><a href="#" class="fa fa-facebook"></a></li>
 		</ul>
 		<div id="login-box" class='pull-right'>
-			<a href="{{route('myshop')}}" class='btn btn-success'><span>Online Shop</span></a>
+			{{-- <a href="{{route('myshop.index')}}" class='btn btn-success'><span>Online Shop</span></a> --}}
 							
 			@guest
 				<a href="{{route('login')}}" class='fa fa-user'><span>Login</span></a>
@@ -168,6 +168,7 @@
 							<li><a href="{{route('sale_rent_land')}}">Let's Sale Your Land For You  Within Days</a></li>
 							<li><a href="{{route('save_build')}}">Save for a project </a></li>
 							<li><a href="{{route('pay_rent')}}">Let's Pay your House Rent</a></li>
+							<li><a href="{{route('air_space')}}">Air Space Purchase</a></li>
 						</ul>
 						</li>
 						<li class="@if(isset($agric)) active @endif"><a href="{{route('agric_consult')}}">Agric Consultancy</a></li>

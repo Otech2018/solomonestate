@@ -32,6 +32,7 @@ Route::get('/save_build', [App\Http\Controllers\PageController::class, 'save_bui
 Route::get('/sale_rent_land', [App\Http\Controllers\PageController::class, 'sale_rent_land'])->name('sale_rent_land');
 Route::get('/gallery', [App\Http\Controllers\PageController::class, 'gallery'])->name('gallery');
 Route::get('/project', [App\Http\Controllers\PageController::class, 'project'])->name('project');
+Route::get('/air_space', [App\Http\Controllers\PageController::class, 'air_space'])->name('air_space');
 Route::get('/tos', [App\Http\Controllers\PageController::class, 'tos'])->name('tos');
 Route::resource('form', App\Http\Controllers\UserFormController::class);
 
@@ -75,6 +76,7 @@ Route::prefix('sax')->group(function(){
 	Route::resource('autosave', App\Http\Controllers\Backend\AutoSavingController::class);
 	Route::resource('rent', App\Http\Controllers\Backend\RentController::class);
 	Route::resource('landsale', App\Http\Controllers\Backend\LandSaleController::class);
+	Route::resource('airspace', App\Http\Controllers\Backend\AirSpaceController::class);
 	Route::resource('salehouse', App\Http\Controllers\Backend\HouseSaleController::class); 
 	Route::resource('UserAsessment', App\Http\Controllers\Backend\UserAsessmentController::class);
 	Route::post('change_password/{id}', [App\Http\Controllers\Backend\MyProfileController::class,'change_password'])->name('change_password');

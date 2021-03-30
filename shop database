@@ -1,0 +1,27 @@
+//////////product
+title
+description
+stock number
+selling price
+cost price
+regdate
+status
+location
+supllier
+
+
+
+////////////supllier
+title
+description
+email
+phone
+phone2
+address
+
+
+///payed items
+product_id
+supplier_id
+date
+amount

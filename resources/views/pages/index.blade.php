@@ -167,6 +167,29 @@
 
 			<div class="single-agent">
 				<div class="image-box">
+					<img src="airspace/airspace.jpg"  alt="airspace">
+					<a  href="{{route('air_space')}}"  class="btn social-icons">
+						Know More
+					</a>
+				</div>
+				<div class="desc-box">
+					<h4>Air Space </h4>
+					<p class="person-number">
+						 "You can now sell your roof to someone who has the funds to develop your 
+						 property and co-own both the land and the new building with you!. <br/>
+						 It's simple! call any of our agent for more info.  <br/>
+
+
+
+
+					</p>
+					
+				</div>
+			</div>
+
+
+			<div class="single-agent">
+				<div class="image-box">
 					<img src="img/agents/land_agent.jpg"  alt="agent">
 					<a  href="{{route('register')}}"  class="btn social-icons">
 						Get Started

@@ -72,6 +72,9 @@ class PageController extends Controller
     }
 
 
+   
+
+    
  public function payment_details($id)
     {
         $properties = GigSubCategory::where('status','=','1')->where('featured','=','1')->get();
@@ -235,4 +238,12 @@ class PageController extends Controller
     {
         //
     }
+
+
+    public function air_space()
+    {
+        return view('pages.air_space');
+    }
+
+
 }
