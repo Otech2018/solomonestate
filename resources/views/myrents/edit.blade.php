@@ -183,7 +183,7 @@
                             <label class="col-md-3 col-form-label text-md-right">Landlord Full name </label>
 
                             <div class="col-md-7">
-                                <input type="text" class="form-control" placeholder="" name="landlord_name"  required  value='{{ $myrent->landlord_name  }}'  >
+                                <input type="text" class="form-control" readonly placeholder="" name="landlord_name"  required  value='{{ $myrent->landlord_name  }}'  >
                             </div>
                         </div>
 
@@ -193,12 +193,12 @@
 
                             <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="Account Number" name="landlord_acc_num" required 
-                                value='{{ $myrent->landlord_acc_num  }}' >
+                                readonly value='{{ $myrent->landlord_acc_num  }}' >
                             </div>
 
                               <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="Bank Name" name="landlord_bank" required
-                                value='{{ $myrent->landlord_bank  }}' >
+                                readonly value='{{ $myrent->landlord_bank  }}' >
                             </div>
 
 
@@ -212,11 +212,11 @@
 
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="" name="landlord_acc_name" required value='{{ $myrent->landlord_acc_name  }}' >
+                                <input type="text" class="form-control" placeholder="" name="landlord_acc_name" required readonly value='{{ $myrent->landlord_acc_name  }}' >
                             </div>
 
                               <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Landlord's Phone" name="landlord_phone" required value='{{ $myrent->landlord_phone  }}' >
+                                <input type="text" class="form-control" placeholder="Landlord's Phone" name="landlord_phone" required readonly value='{{ $myrent->landlord_phone  }}' >
                             </div>
 
 

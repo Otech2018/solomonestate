@@ -163,10 +163,15 @@
     </td>
   </tr>
 
-        
+  <tr>
+    <td> How would you want us to pay your rent? :</td>
+    <td>
+     <b> {{$myrent->how_to_pay}} </b><br/>
+    </td>
+  </tr>      
 </table>
       </h3>
-       <button class="btn btn-sm btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       <button class="btn btn-sm btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo{{$myrent->id}}" aria-expanded="false" aria-controls="collapseTwo">
         More  Details
         </button>
 
@@ -174,7 +179,7 @@
    
       
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample"
+    <div id="collapseTwo{{$myrent->id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample"
      style="border:2px solid #c8e6c9; padding:14px;">
       <div class="card-body">
      
@@ -210,12 +215,12 @@
 </table>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal{{$myrent->id}}">
   Payments Details
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{$myrent->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" >

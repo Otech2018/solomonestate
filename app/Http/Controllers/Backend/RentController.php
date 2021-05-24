@@ -90,6 +90,7 @@ class RentController extends Controller
        'landlord_phone'=> '',
             
        'start_date'=> '',
+       'how_to_pay'=> '',
        'rent_amt'=> '',
        'rent_interval'=> '',
        'type'=>'required|max:1999',

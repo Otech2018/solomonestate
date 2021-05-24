@@ -179,9 +179,6 @@
 						 property and co-own both the land and the new building with you!. <br/>
 						 It's simple! call any of our agent for more info.  <br/>
 
-
-
-
 					</p>
 					
 				</div>

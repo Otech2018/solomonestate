@@ -44,6 +44,8 @@
 			<div class="inner-wrapper">
 				<h1><b><i class="fa fa-user"></i> My Profile</b></h1>
                 
+
+             
                 <hr/>
 
                      @include('layouts.messages1')   
@@ -68,6 +70,9 @@
             <tr><td><b> <i class="fa fa-phone"></i> Phone :</b></td><td>  <i>{{auth()->user()->phone}}</i></td></tr>
             <tr><td><b> <i class="fa fa-user"></i> Gender :</b></td><td>  <i>{{auth()->user()->gender}}</i></td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <i>{{auth()->user()->email}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-user"></i> Account Name  :</b></td><td>  <i>{{auth()->user()->acc_name}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-lock"></i> Account Number  :</b></td><td>  <i>{{auth()->user()->acc_number}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-bank"></i> Bank  :</b></td><td>  <i>{{auth()->user()->acc_bank}}</i></td></tr>
 
             </table>
             <a href="{{route('myprofile1.edit', 1)}}"  class="btn btn-sm btn-primary pull-right"><i class="fa fa-edit"></i>Edit Profile</a>

@@ -41,7 +41,7 @@
 		</div>
 		
             <div class="col-md-8 contact-form-wrapper" style="padding:40px;">
-			<div class="inner-wrapper">
+			<div class="inner-wrapper" style="font-size:15px !important;">
 				<h1><b><i class="fa fa-edit"></i> Edit Profile</b></h1>
                 
                 <hr/>
@@ -67,11 +67,11 @@
    
              <table class="table table-sm table-striped text-primary"> 
             <tr><td><b> <i class="fa fa-user"></i> Username :</b></td><td>  <input type="text"  class="form-control form-control-sm"   value="{{auth()->user()->username}}" readonly /></td></tr>
-            <tr><td><b> <i class="fa fa-user"></i> First Name :</b></td><td>  <input type="text"  class="form-control form-control-sm" required name="first_name"  value="{{auth()->user()->first_name}}" /></td></tr>
-            <tr><td><b><i class="fa fa-user"></i>  Middle Name :</b></td><td>  <input type="text"  class="form-control form-control-sm" required name="middle_name"  value="{{auth()->user()->middle_name}}" /></td></tr>
-            <tr><td><b> <i class="fa fa-user"></i> Last Name :</b></td><td>  <input type="text"  class="form-control form-control-sm" required name="last_name"  value="{{auth()->user()->last_name}}" /></td></tr>
-            <tr><td><b> <i class="fa fa-phone"></i> Phone :</b></td><td>  <input type="text"  class="form-control form-control-sm" required name="phone"  value="{{auth()->user()->phone}}" /></td></tr>
-            <tr><td><b> <i class="fa fa-user"></i> Gender :</b></td><td>  
+            <tr><td><b> <i class="fa fa-user"></i> First Name: <span style="color:red;">*</span></b></td><td>  <input type="text"  class="form-control form-control-sm" required name="first_name"  value="{{auth()->user()->first_name}}" /></td></tr>
+            <tr><td><b><i class="fa fa-user"></i>  Middle Name: <span style="color:red;">*</span></b></td><td>  <input type="text"  class="form-control form-control-sm" required name="middle_name"  value="{{auth()->user()->middle_name}}" /></td></tr>
+            <tr><td><b> <i class="fa fa-user"></i> Last Name:  <span style="color:red;">*</span></b></td><td>  <input type="text"  class="form-control form-control-sm" required name="last_name"  value="{{auth()->user()->last_name}}" /></td></tr>
+            <tr><td><b> <i class="fa fa-phone"></i> Phone: <span style="color:red;">*</span></b></td><td>  <input type="text"  class="form-control form-control-sm" required name="phone"  value="{{auth()->user()->phone}}" /></td></tr>
+            <tr><td><b> <i class="fa fa-user"></i> Gender:<span style="color:red;">*</span></b></td><td>  
             
             <select  class="form-control form-control-sm" required name="gender"  value="{{auth()->user()->gender}}">
             <option @if(auth()->user()->gender =='Male') selected @endif value="Male">Male</option>
@@ -79,7 +79,19 @@
             </select>
             </td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <input type="text"  class="form-control form-control-sm"   value="{{auth()->user()->email}}" readonly /></td></tr>
+        </table>
 
+        <hr/>
+        <span style="color:red;">Would you like to benefit from our <b>referral</b> Packages?, Enter your Account Details Below</span>
+        
+            @if(auth()->user()->acc_number ==null || auth()->user()->acc_number =="" ) 
+             <table class="table table-sm table-striped text-primary"> 
+             @else
+             <table class="table table-sm table-striped text-primary" style="display:none" >
+           @endif  
+            <tr><td><b> <i class="fa fa-user"></i> Account Name  (Optional):</b></td><td>  <input type="text"  class="form-control form-control-sm"  name="acc_name"  value="{{auth()->user()->acc_name}}" /></td></tr>
+            <tr><td><b><i class="fa fa-lock"></i>  Account Number  (Optional):</b></td><td>  <input type="text"  class="form-control form-control-sm"  name="acc_number"  value="{{auth()->user()->acc_number}}" /></td></tr>
+            <tr><td><b> <i class="fa fa-bank"></i> Bank Name  (Optional):</b></td><td>  <input type="text"  class="form-control form-control-sm"  name="acc_bank"  value="{{auth()->user()->acc_bank}}" /></td></tr>
             </table>
             
             </div>

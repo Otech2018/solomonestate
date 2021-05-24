@@ -43,9 +43,10 @@ class Rent extends Model
            'rent_interval',
            'rent_interval_amt',
            'user_id',
+           'how_to_pay',
            'status',
 
-
+           
         ];
 
     use HasFactory;

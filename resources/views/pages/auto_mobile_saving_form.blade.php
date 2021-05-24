@@ -492,7 +492,7 @@
                         
 
                               <div class="col-md-4">
-                                <input type="number" class="form-control"  onkeyup="rent_amt_f()"  id="budget" placeholder="Total Budget Amount" name="saving_budget" required >
+                                <input type="number" class="form-control"  onclick="rent_amt_f()" onkeyup="rent_amt_f()"   id="budget" placeholder="Total Budget Amount" name="saving_budget" required >
                             </div>
 </div>
 
@@ -502,7 +502,7 @@
 
                             <div class="col-md-4">
                                 <select class="form-control" id="interval" name="saving_interval" onchange="rent_amt_f()"  required>
-                                  <option hidden value="">Select Interval</option>
+                                  <option hidden selected value="">Select Interval</option>
                                     <option value="day">daily</option>
                                     <option value="week">Weekly</option>
                                     <option value="month">Monthly</option>
@@ -511,7 +511,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="number" id="interval_no" onkeyup="rent_amt_f()" class="form-control" placeholder="Interval Number?" name="saving_interval_no" required >
+                                <input type="number" id="interval_no" onkeyup="rent_amt_f()"  onclick="rent_amt_f()" class="form-control"  placeholder="Interval Number?" name="saving_interval_no" required >
                             </div>
 
                             

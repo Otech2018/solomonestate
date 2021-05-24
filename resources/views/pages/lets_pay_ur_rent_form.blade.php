@@ -117,6 +117,7 @@
                             </div>
                         </div>
 
+                        <div class="landlord" style="displaWERy:none;">
 
                         <br/><br/>    <h2 align="center" style="font-size:27px; font-weight:bold;">Landlord Information </h2><hr/>
 
@@ -161,6 +162,8 @@
                               <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="Landlord's Phone" name="landlord_phone" required value='{{ $pay_rent1->landlord_phone  }}' >
                             </div>
+                        </div>
+                    </div>
 
 
 
@@ -385,14 +388,14 @@
 
 
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label text-md-right">Closeset LandMark <span style="color:red;">*</span></label>
+                            <label class="col-md-3 col-form-label text-md-right">Closest LandMark <span style="color:red;">*</span></label>
 
                             <div class="col-md-7">
                                 <input type="text" placeholder="e.g. Lagos toll gate"  style="font-weight:bold;" class="form-control" name="landmark" required >
                             </div>
                         </div>
 
-
+                <div class="landlord" style="displsay:none;">
                         <br/><br/>    <h2 align="center" style="font-size:27px; font-weight:bold;">Landlord Information </h2><hr/>
 
 
@@ -437,6 +440,7 @@
 
 
                         </div>
+                    </div>
 
 
 
@@ -460,7 +464,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <input type="number" class="form-control" onkeyup="rent_amt_f();" placeholder="House Rent Amount" name="rent_amt" id='rent_amt' required >
+                                <input type="number" class="form-control" onclick="rent_amt_f();"  onkeyup="rent_amt_f();" placeholder="House Rent Amount" name="rent_amt" id='rent_amt' required >
                             </div>
 
                             <div class="col-md-3">
@@ -487,7 +491,32 @@
             <h4 align="center" id="rent_display" style="background-color: red; color:white; padding:10px; font-weight:bold; font-size:17px;"> Your house rent amount  is needed </h4>
       
 
-                            <br/><br/><br/>
+            <br/><br/>
+           <b><big>How do we pay your Rent?</big> <br/> 
+            <div class="col-md-3">
+                <input class="form-check-input" type="radio" name="how_to_pay" value="Pay to my Landlord" required id="rememberr11">
+
+                <label class="form-check-label" for="rememberr11" >
+                   Pay to my Landlord   
+                </label>
+            </div>
+
+            <div class="col-md-6">
+                <input class="form-check-input" type="radio" name="how_to_pay" value="Pay to my account" required id="rememberrr11">
+
+                <label class="form-check-label" for="rememberrr11" >
+                   Pay to my Account   
+                </label>
+            </div>
+
+
+
+            
+              
+            
+            
+            
+            <br/><br/><br/>
                             <div class="col-md-12">
                                     <input class="form-check-input" type="checkbox" name="rtfvd" required id="remember11">
 

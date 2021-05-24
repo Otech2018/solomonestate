@@ -32,6 +32,15 @@
 		
             <div class="col-md-10 contact-form-wrapper" style="padding:40px;">
 			<div class="inner-wrapper">
+
+				@guest @else	@if( auth()->user()->phone ==null )
+				<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Please Set Your Profile </a>
+				@elseif(auth()->user()->acc_number ==null || auth()->user()->acc_number =="" )
+				<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Input you Account Details For payment </a>
+				 @else 
+				 @endif @endguest
+
+
 				<h1 style="font-size:40px;"><b><i class="fa fa-home"></i> DASHBOARD</b></h1><hr/>
 				
 

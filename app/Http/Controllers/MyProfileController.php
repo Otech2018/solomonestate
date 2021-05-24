@@ -83,8 +83,11 @@ class MyProfileController extends Controller
             'first_name' => 'required|string|max:255',
            'middle_name' => 'required|string|max:955',
            'last_name' => 'required|string|max:955',
-           'phone' => 'required|string|max:955',
+           'phone' => 'required|string|max:955|unique:users',
            'gender' => 'required|string|max:955',
+           'acc_name' => '',
+           'acc_number' => '',
+           'acc_bank' => '',
             ]);
 
         $Admin =User::find(auth()->user()->id);
@@ -102,10 +105,6 @@ class MyProfileController extends Controller
             $fileNameToStore = time().'.'.$extension;
             //upload Image
 
-            if(auth()->user()->pic !=null){
-              //  unlink("storage/profile_img/".auth()->user()->pic); //delete existing file
-            
-            }
             $path = $request->file('cover_image')->storeAs('public/profile_img', $fileNameToStore);
             
         }
@@ -116,14 +115,14 @@ class MyProfileController extends Controller
          $Admin->last_name= $request->input('last_name');
          $Admin->phone= $request->input('phone');
          $Admin->gender= $request->input('gender');
+         $Admin->acc_name= $request->input('acc_name');
+         $Admin->acc_number= $request->input('acc_number');
+         $Admin->acc_bank= $request->input('acc_bank');
          if($request->hasFile('cover_image')){
             $Admin->pic= $fileNameToStore;
         }
             $Admin->save();
                 return redirect()->back()->with('success','Profile Updated  Successfully!');
-        
-
-                
     }
 
 

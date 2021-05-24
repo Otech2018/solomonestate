@@ -93,7 +93,7 @@
 			<li><a href="#" class="fa fa-pinterest"></a></li>
 			<li><a href="#" class="fa fa-dribbble"></a></li>
 			<li><a href="#" class="fa fa-linkedin"></a></li>
-			<li><a href="#" class="fa fa-facebook"></a></li>
+			<li><a href="https://web.facebook.com/pg/Solomons-Ideas-Ltd-103408694762381/about/" class="fa fa-facebook"></a></li>
 		</ul>
 		<div id="login-box" class='pull-right'>
 			{{-- <a href="{{route('myshop.index')}}" class='btn btn-success'><span>Online Shop</span></a> --}}
@@ -123,7 +123,7 @@
 </header>
 <!-- /Header -->
 <div class="slider-section">
-	<div id="premium-bar">
+	<div id="premium-bar" style="background-color: black;">
 		<div class="container">
 			<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
@@ -136,27 +136,37 @@
 					<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{{route('homepage')}}" style=" color:white !important; font-weight:bold;"><img src="{{ asset('img/logo1.png')}}" width="50px" height="50px" alt="logo">SOLOMON'S IDEAS LTD</a>
+					@guest @else	@if( auth()->user()->phone ==null )
+					<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Please Set Your Profile </a>
+					@elseif(auth()->user()->acc_number ==null || auth()->user()->acc_number =="" )
+					<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Input you Account Details For payment </a>
+					 @else 
+					 @endif @endguest
+
+				
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-					@guest
-						<li class="@if(isset($homepage)) active @endif"><a href="{{route('homepage')}}">Home</a></li>
+					
+						
 
-					@endguest
-						{{-- <li class="@if(isset($listing)) active @endif" ><a href="{{route('listing')}}">Listings</a></li> --}}
+						
+
+						 {{-- <li class="@if(isset($listing)) active @endif" ><a href="{{route('listing')}}">Listings</a></li> --}}
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							{{-- <li><a href="#">About Us</a></li> --}}
-							<li><a href="{{route('our_team')}}">Our Team</a></li>
-							<li><a a href="{{route('contact_us')}}">contact			</a></li>
-							<li><a  href="{{route('project')}}">Our Project</a></li>
-							<li><a href="{{route('gallery')}}">Our Gallery</a></li>
-						</ul>
-						</li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{route('our_team')}}">Our Team</a></li>
+								<li><a a href="{{route('contact_us')}}">contact			</a></li>
+								<li><a  href="{{route('project')}}">Our Project</a></li>
+								<li><a href="{{route('gallery')}}">Our Gallery</a></li>
+							</ul>
+							</li>
+						 
  
-
+						<li class="active" style="background-color:green;"><a  class="blink_me" href="{{route('save_build')}}">Save for a project </a></li>
+				
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Real Estate<b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -166,7 +176,7 @@
 							<li><a href="{{route('build_u')}}">Let's Build for you</a></li>
 							<li><a href="{{route('sale_rent_property')}}">Let's Manage your  property and your tenants </a></li>
 							<li><a href="{{route('sale_rent_land')}}">Let's Sale Your Land For You  Within Days</a></li>
-							<li><a href="{{route('save_build')}}">Save for a project </a></li>
+							{{-- <li><a href="{{route('save_build')}}">Save for a project </a></li> --}}
 							<li><a href="{{route('pay_rent')}}">Let's Pay your House Rent</a></li>
 							<li><a href="{{route('air_space')}}">Air Space Purchase</a></li>
 						</ul>
@@ -212,6 +222,7 @@
 	</div>
 
 
+
             @yield('content')
        
 
@@ -233,8 +244,10 @@
 			<li><a  href="{{ route('tos') }}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  Terms And Conditions</a></li>
 			<li><a href="{{ route('tos') }}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>   Privacy Policy</a></li>
 			<li><a href="{{route('homepage')}}" style="font-weight:normal;"  ><i class="fa fa-arrow-circle-right"></i>  HomePage</a></li>
-			<li><a href="{{route('pay_rent')}}" class="btn btn-success" style="font-weight:normal;"  > Let's Pay Your Rent</a></li>
+			{{-- <li><a href="{{route('pay_rent')}}" class="btn btn-success" style="font-weight:normal;"  > Let's Pay Your Rent</a></li>
 			<li> .</li>
+			<li><a href="{{route('pay_rent')}}" style="font-weight:normal;"  class="blink_me btn btn-success" href="{{route('save_build')}}">Save for a project </a></li>
+			<li> .</li> --}}
 			
 			<li><a href="https://web.facebook.com/pg/Solomons-Ideas-Ltd-103408694762381/about/"  target="_blank" class="btn btn-primary" style="font-weight:normal;"  ><i class="fa fa-facebook"></i> We are on  FaceBook</a></li>
 		</ul>
@@ -282,7 +295,7 @@
 				<li><a href="#" class="fa fa-pinterest"></a></li>
 				<li><a href="#" class="fa fa-dribbble"></a></li>
 				<li><a href="#" class="fa fa-linkedin"></a></li>
-				<li><a href="#" class="fa fa-facebook"></a></li>
+				<li><a hhref="https://web.facebook.com/pg/Solomons-Ideas-Ltd-103408694762381/about/" class="fa fa-facebook"></a></li>
 			</ul>
 		</div>
 	</div>

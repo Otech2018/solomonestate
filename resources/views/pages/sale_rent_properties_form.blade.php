@@ -44,7 +44,7 @@
 			<div class="inner-wrapper">
                 @include('layouts.messages1')
 
-				<h1><b> Property Manaement Form </b></h1>
+				<h1><b> Property Management Form </b></h1>
                 <a target="_blank"  href="{{route('our_team')}}" class="btn btn-success pull-right">Contact our Agent</a>
 
                 <i style="color:red; font-size:14px;"><b>(Fill this Form carefully)</b></i>
