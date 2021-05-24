@@ -26,6 +26,27 @@
 
 
 
+
+
+    <form action="{{route('admin_users.search')}}" method="post">
+      @csrf
+      <div class="row">
+        <div class="col-md-9">
+          <input type="text" class="form-control form-control-lg" required name="search" placeholder="Search User Enter Email * ">
+        </div>
+        <div class="col-md-2">
+        <button type="submit" class="btn btn-primary btn-lg"> <i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form><br/><br/>
+
+
+
+
+
+
+
+
     <ul class="nav nav-pills mb-3 nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">All Users</a>
@@ -72,6 +93,7 @@
                                 
                                 {{-- <td><?php echo date('D d-M-Y g:i:s A',strtotime($User->created_at)); ?> </td> --}}
                                 <td><?php echo date('d-M-Y',strtotime($User->created_at)); ?> </td>
+
                                  <td> 
                               @if(CheckAccess::check(22))
                                  <a href="#!" class="btn-success btn-sm" title="Activate User "
@@ -92,6 +114,12 @@
                                     }
                                   "><i class="fa fa-close"></i></a>
                                @endif
+
+
+                               @if(CheckAccess::check(63))
+                               <a href="{{route('admin_edit_users.edit',$User->id)}}" class="btn-primary btn-sm" title="Edit User Account Details "><i class="fa fa-edit"></i></a>
+                             @endif 
+
 
                               @if(CheckAccess::check(23))
                                  <a href="{{route('admin_users.show',$User->id)}}" class="btn-info btn-sm" title="View User "><i class="fa fa-eye"></i></a>

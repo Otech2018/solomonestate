@@ -114,7 +114,7 @@ if($request->input('type') == 1){
                         ['user_id' => auth()->user()->id]
                         
                     ));
-                    return redirect()->back()->with('success','Submitted successfully!!,  on the navigation menu, please click your username and then click on House Rent to start saving. Thank You!');
+                    return redirect()->back()->with('success','Submitted successfully!!,   <a href="'. route('myrents.index') . '" style="color:red"> <u> <b>Click here</b> </u> </a>  to start saving. Thank You!');
     }
 
     /**

@@ -22,6 +22,19 @@ class AdminUserController extends Controller
     }
 
 
+
+    public function search(Request $request)
+    {
+            $search14 = $request->input('search');
+            $Users = User::where('email',$search14)->paginate(20);
+            return view('backend.admin_users.index',['Users'=>$Users])
+            // ->withErrors('User Activated Successfully!');
+            ->withErrors("Search Result for $search14 " );
+ 
+       
+    }
+
+
     public function index()
     {
         if(CheckAccess::check(20)){

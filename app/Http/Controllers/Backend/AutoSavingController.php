@@ -115,7 +115,7 @@ if($request->input('type') == 1){
                         ['saving_interval_amt' => $saving_interval_amt],
                         ['user_id' => auth()->user()->id]
                     ));
-                    return redirect()->back()->with('success','Submitted successfully!!,  on the navigation menu, please click your username and then click on My savings to start saving. Thank You!');
+                    return redirect()->back()->with('success','Submitted successfully!!,  <a href="'. route('mysavings.index') . '" style="color:red"> <u> <b>Click here</b> </u> </a> to start saving. Thank You!');
     }
 
     /**

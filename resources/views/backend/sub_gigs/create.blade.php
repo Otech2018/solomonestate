@@ -333,7 +333,7 @@
                                 <input class="form-check-input" type="radio" value="4" name="sale_mode" id="remember21">
 
                                     <label class="form-check-label btn btn-primary" for="remember21" >
-                                       For Sale  non  as  Landed Property
+                                       For Sale as non Landed Property
                                     </label>
                            </div>
 

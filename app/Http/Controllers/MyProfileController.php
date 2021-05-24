@@ -83,7 +83,7 @@ class MyProfileController extends Controller
             'first_name' => 'required|string|max:255',
            'middle_name' => 'required|string|max:955',
            'last_name' => 'required|string|max:955',
-           'phone' => 'required|string|max:955|unique:users',
+           'phone' => 'required|string|max:955',
            'gender' => 'required|string|max:955',
            'acc_name' => '',
            'acc_number' => '',

@@ -28,10 +28,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>NAME</th>
-                                <th>View</th>
-                                @if(CheckAccess::check(6))
                                   <th>BUTTON</th>
-                                @endif
+                                
                                 
                             </tr>
                         </thead>
@@ -39,19 +37,19 @@
                         <?php $no= 1; ?>
                         @foreach($GigSubCategories as $GigSubCategory)
                             <tr>
-                                <th>{{$no}}</th>
+                                <td>{{$no}}</td>
                                 <td>{{$GigSubCategory->sub_category_name}}</td>
-                                <th><a href="{{route('listing_details',$GigSubCategory->id)}}"  target="_blank" class='btn btn-sm btn-success'>Details <i class='fa fa-eye '></i></a> </th>
+                                <td>
+                                  <a href="{{route('listing_details',$GigSubCategory->id)}}"  target="_blank" class='btn btn-sm btn-success' title="View Details"> <i class='fa fa-eye '></i></a> 
 
                                   @if(CheckAccess::check(6))
-                                  <td>
                                     
                                       <a href="#!"
                                       onclick="if( confirm('Are you sure you want to Delete This Property {{$GigSubCategory->sub_category_name}}?')){
                                         event.preventDefault();
                                       document.getElementById('del{{$GigSubCategory->id}}').submit();
                                     }"
-                                     class='btn btn-sm btn-danger'>Delete <i class='fa fa-trash'></i></a>  |
+                                     class='btn btn-sm btn-danger' title="Delete"> <i class='fa fa-trash'></i></a>  |
 
 
 
@@ -60,24 +58,20 @@
                                         <a href="#!" onclick="if( confirm('Are you sure you want to Remove {{$GigSubCategory->sub_category_name}} as a featured property?')){
                                         event.preventDefault();
                                       document.getElementById('rsus{{$GigSubCategory->id}}').submit();
-                                    }" class='btn btn-sm btn-warning'>Remove Featured <i class='fa fa-star '></i></a>
+                                    }" class='btn btn-sm btn-success' title="Remove Featured"> <i class='fa fa-star '></i></a>
 
                                       @else
 
                                         <a href="#!" onclick="if( confirm('Are you sure you want to set {{$GigSubCategory->sub_category_name}} as a featured property?')){
                                         event.preventDefault();
                                       document.getElementById('sus{{$GigSubCategory->id}}').submit();
-                                    }" class='btn btn-sm btn-primary'>Featured <i class='fa fa-star '></i></a>
+                                    }" class='btn btn-sm btn-danger' title="Featured"> <i class='fa fa-star '></i></a>
 
 
                                       @endif
+                                    @endif
 
-                                     
-                               
-                                  </td>
-                                @endif
-
-
+                              </td>
 
                                  <form id="del{{$GigSubCategory->id}}" action="{{ route('sub_gigs.destroy',$GigSubCategory->id ) }}" method="POST" class="d-none">
                                     @csrf

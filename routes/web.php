@@ -70,6 +70,7 @@ Route::prefix('sax')->group(function(){
 	Route::resource('lesson', App\Http\Controllers\Backend\LessonsController::class);
 	Route::resource('myprofile', App\Http\Controllers\Backend\MyProfileController::class);
 	Route::resource('admin_users', App\Http\Controllers\Backend\AdminUserController::class);
+	Route::resource('admin_edit_users', App\Http\Controllers\Backend\AdminUserEditController::class);
 	Route::resource('admin_admin', App\Http\Controllers\Backend\AdminAdminController::class);
 	Route::resource('gallery', App\Http\Controllers\Backend\galleriesController::class);
 	Route::resource('buildyou', App\Http\Controllers\Backend\BuildYouController::class);
@@ -86,6 +87,7 @@ Route::prefix('sax')->group(function(){
 	Route::post('lesson_delete/{id}', [App\Http\Controllers\Backend\LessonsController::class,'lesson_delete'])->name('lesson_delete');
 	Route::get('/lesson_img', [App\Http\Controllers\Backend\LessonsController::class,'lesson_img'])->name('lesson_img');
 	Route::post('/lesson_img_store', [App\Http\Controllers\Backend\LessonsController::class,'lesson_img_store'])->name('lesson_img_store');
+	Route::post('/admin_users', [App\Http\Controllers\Backend\AdminUserController::class,'search'])->name('admin_users.search');
 	Route::get('/addAdiminToUserGrp', [App\Http\Controllers\Backend\User_groupController::class, 'addAdiminToUserGrp'])->name('user_group.addAdiminToUserGrp');
 	Route::put('/updateAddAdiminToUserGrp/{id}', [App\Http\Controllers\Backend\User_groupController::class, 'updateAddAdiminToUserGrp'])->name('updateAddAdiminToUserGrp');
 	Route::get('/addAdiminToUserGrp/{id}', [App\Http\Controllers\Backend\User_groupController::class, 'addAdiminToUserGrp1'])->name('user_group.addAdiminToUserGrp1');

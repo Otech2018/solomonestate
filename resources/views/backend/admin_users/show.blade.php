@@ -1,5 +1,5 @@
-<?php $User_grp_add ='tffgt';; ?>
-
+<?php use App\Http\Controllers\Backend\Customs\CheckAccess; 
+ $User_grp_add ='tffgt';; ?>
 
 @extends('layouts.admin')
 
@@ -47,9 +47,16 @@
             <tr><td><b> <i class="fa fa-envelope"></i> Email  :</b></td><td>  <i>{{$User->email}}</i></td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Date Of Birth  :</b></td><td>  <i>{{$User->date_of_birth}}</i></td></tr>
             <tr><td><b> <i class="fa fa-envelope"></i> Reg Date  :</b></td><td>  <i>{{$User->created_at}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-user"></i> Account Name  :</b></td><td>  <i>{{$User->acc_name}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-lock"></i> Account Number  :</b></td><td>  <i>{{$User->acc_number}}</i></td></tr>
+            <tr><td><b> <i class="fa fa-bank"></i> Bank  :</b></td><td>  <i>{{$User->acc_bank}}</i></td></tr>
 
             </table>
             <a href="{{route('admin_users.index', 1)}}"  class="btn btn-sm btn-primary pull-left"><i class="fa fa-arrow-left"></i>Go Back </a>
+
+            @if(CheckAccess::check(63))
+            <a href="{{route('admin_edit_users.edit',$User->id)}}" class="btn-primary btn-sm pull-right" title="Edit User Account Details "><i class="fa fa-edit"></i> Edit</a>
+          @endif 
             </div>
 
            
