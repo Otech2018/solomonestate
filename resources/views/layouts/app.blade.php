@@ -136,7 +136,7 @@
 					<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{{route('homepage')}}" style=" color:white !important; font-weight:bold;"><img src="{{ asset('img/logo1.png')}}" width="50px" height="50px" alt="logo">SOLOMON'S IDEAS LTD</a>
-					@guest @else	@if( auth()->user()->phone ==null )
+					@guest @else	@if( auth()->user()->first_name ==null  || auth()->user()->first_name =="")
 					<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Please Set Your Profile </a>
 					@elseif(auth()->user()->acc_number ==null || auth()->user()->acc_number =="" )
 					<a  class="blink_me btn btn-sm btn-danger" href="{{route('myprofile1.edit', 1)}}" >Input you Account Details For payment </a>
